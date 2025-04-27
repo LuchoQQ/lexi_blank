@@ -1,0 +1,37 @@
+# Legal Retriever Configuration
+
+# Weaviate Vector Database Configuration
+weaviate:
+  enabled: true
+  url: "http://localhost:8080"
+  api_key: ""  # Add your API key if needed
+  collection_name: "ArticulosLegales"
+  embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
+  use_cache: true  # Enable caching of embeddings to avoid regenerating them
+
+# Neo4j Graph Database Configuration
+neo4j:
+  enabled: true
+  uri: "bolt://localhost:7687"
+  username: "neo4j"
+  password: "password"  # Change this in production
+
+# BM25 Keyword Search Configuration
+bm25:
+  enabled: true
+
+# OpenAI Configuration
+openai:
+  enabled: true  # Activado por defecto
+  model: "gpt-4o-mini"  # Modelo a utilizar
+  temperature: 0.3  # Controla la creatividad (0.0-1.0)
+  max_tokens: 1500  # Longitud máxima de la respuesta aumentada para permitir análisis más completos
+
+# Retrieval Strategy Configuration
+retrieval:
+  top_n: 5  # Number of results to return
+  combine_method: "weighted"  # Method to combine results: weighted, rank_fusion
+  weights:
+    weaviate: 0.4  # Weight for vector search results
+    neo4j: 0.3     # Weight for graph search results
+    bm25: 0.3      # Weight for keyword search results
