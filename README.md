@@ -1,147 +1,180 @@
-# Sistema de Recuperación de Documentos Legales
+# Guía de Uso - Sistema de Recuperación de Documentos Legales
 
-Este sistema permite recuperar artículos legales utilizando múltiples métodos de búsqueda:
-1. Búsqueda vectorial (semántica) con Weaviate
-2. Búsqueda en grafo con Neo4j
-3. Búsqueda por palabras clave con BM25
+## Introducción
 
-## Requisitos
+Este sistema permite la búsqueda y recuperación de documentos legales utilizando técnicas avanzadas de procesamiento de lenguaje natural y bases de datos gráficas y vectoriales. El sistema implementa un enfoque de búsqueda federada que combina:
 
-- Python 3.8+
-- Weaviate (opcional, para búsqueda vectorial)
-- Neo4j (opcional, para búsqueda en grafo)
+1. **Búsqueda vectorial** con Weaviate
+2. **Búsqueda basada en grafos** con Neo4j
+3. **Búsqueda léxica** con BM25
+
+## Requisitos Previos
+
+- Python 3.7 o superior
+- Docker y Docker Compose
+- Dependencias especificadas en `install_dependencies.py`
 
 ## Instalación
 
-Instale las dependencias necesarias:
+### 1. Clonar el repositorio
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/tu-usuario/sistema-recuperacion-legal.git
+cd sistema-recuperacion-legal
 ```
 
-## Estructura del Proyecto
+### 2. Instalar dependencias
 
-### Directorios Principales
-- `src/`: Contiene los módulos principales del sistema
-  - `data_loader.py`: Carga de datos desde archivos JSON
-  - `weaviate_utils.py`: Integración con Weaviate para búsqueda vectorial
-  - `neo4j_utils.py`: Integración con Neo4j para búsqueda en grafo
-  - `bm25_utils.py`: Implementación de búsqueda BM25 por palabras clave
-  - `config_loader.py`: Carga de configuración desde archivos YAML
-  - `legal_retriever.py`: Módulo principal de recuperación
-- `setup/`: Contiene scripts de configuración y preparación
-  - `setup_weaviate.py`: Configuración de Weaviate con Docker
-  - `setup_neo4j.py`: Configuración de Neo4j con Docker
-  - `setup_system.py`: Script principal para configurar todo el sistema
-  - `install_dependencies.py`: Instalación de dependencias
-- `data/`: Contiene los archivos de datos en formato JSON
-- `main.py`: Script principal para ejecutar el sistema
-- `config.yaml`: Archivo de configuración
+```bash
+python setup/install_dependencies.py
+```
 
-## Configuración
+### 3. Configurar el sistema
 
-Edite el archivo `config.yaml` para configurar las conexiones a Weaviate y Neo4j, así como las estrategias de recuperación.
+```bash
+python setup/setup_system.py
+```
+
+Este comando:
+- Verifica la instalación de dependencias
+- Configura Weaviate y Neo4j con Docker
+- Crea un archivo de configuración predeterminado si no existe
+
+## Uso Básico
+
+### Realizar una búsqueda
+
+```bash
+python main.py --query "estafa defraudación incumplimiento contractual"
+```
+
+### Configurar el sistema sin ejecutar búsqueda de ejemplo
+
+```bash
+python main.py --setup
+```
+
+### Opciones adicionales
+
+```bash
+python main.py --help
+```
+
+## Flujo de Procesamiento
+
+El sistema implementa un flujo de procesamiento optimizado:
+
+### 1. Expansión de Consulta Multi-perspectiva
+
+La consulta del usuario se procesa para:
+- Clasificar en categorías legales (penal, civil, comercial, etc.)
+- Extraer entidades legales clave (acciones, sujetos, objetos, lugares, tiempos)
+- Generar sub-consultas especializadas para cada categoría relevante
+
+### 2. Búsqueda Multi-modal Federada
+
+Las consultas expandidas se envían en paralelo a:
+- **Weaviate**: Para búsqueda vectorial semántica
+- **Neo4j**: Para búsqueda basada en relaciones entre artículos y leyes
+- **BM25**: Para búsqueda léxica de coincidencia de términos
+
+### 3. Fusión Inteligente de Resultados
+
+Los resultados de las diferentes fuentes se combinan mediante:
+- Ponderación configurable de cada fuente de búsqueda
+- Eliminación de duplicados
+- Normalización de puntuaciones
+- Ordenamiento por relevancia
+
+## Configuración Avanzada
+
+El sistema se configura mediante el archivo `config.yaml`:
+
+### Configuración de Weaviate
 
 ```yaml
-# Ejemplo de configuración
 weaviate:
   enabled: true
   url: "http://localhost:8080"
-  api_key: ""  # Agregue su clave API si es necesario
+  api_key: null
   collection_name: "ArticulosLegales"
+  embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
+  use_cache: true
+```
 
+### Configuración de Neo4j
+
+```yaml
 neo4j:
   enabled: true
   uri: "bolt://localhost:7687"
   username: "neo4j"
-  password: "password"  # Cambie esto en producción
+  password: "password"
+```
 
+### Configuración de BM25
+
+```yaml
 bm25:
   enabled: true
+```
 
+### Configuración de Recuperación
+
+```yaml
 retrieval:
   top_n: 5
-  combine_method: "weighted"
-  weights:
-    weaviate: 0.4
-    neo4j: 0.3
-    bm25: 0.3
+  weights: [0.5, 0.3, 0.2]  # vectorial, grafo, léxico
+  save_results: true
+  results_dir: "results"
+  fusion_strategy: "weighted_max"
+  min_score_threshold: 0.3
 ```
 
-## Formato de Datos
+## Estructura del Proyecto
 
-Los documentos legales deben estar en formato JSON con la siguiente estructura:
-
-```json
-[
-  {
-    "article_id": "cc_9",
-    "law_name": "Código Civil y Comercial de la Nación",
-    "article_number": "9",
-    "content": "Principio de buena fe. Los derechos deben ser ejercidos de buena fe.",
-    "category": "Principios generales",
-    "source": "Infoleg"
-  },
-  {
-    "article_id": "cc_10",
-    "law_name": "Código Civil y Comercial de la Nación",
-    "article_number": "10",
-    "content": "Abuso del derecho. El ejercicio regular de un derecho propio o el cumplimiento de una obligación legal no puede constituir como ilícito ningún acto.",
-    "category": "Principios generales",
-    "source": "Infoleg"
-  }
-]
+```
+sistema-recuperacion-legal/
+├── main.py                 # Punto de entrada principal
+├── config.yaml             # Configuración del sistema
+├── data/                   # Directorio para archivos de datos
+├── cache/                  # Directorio para caché de embeddings
+├── results/                # Resultados de búsquedas guardados
+├── setup/                  # Scripts de configuración
+│   ├── install_dependencies.py
+│   ├── setup_system.py
+│   ├── setup_neo4j.py
+│   └── setup_weaviate.py
+└── src/                    # Código fuente
+    ├── config_loader.py
+    ├── data_loader.py
+    ├── neo4j_utils.py
+    └── weaviate_utils.py
 ```
 
-## Uso
+## Técnicas Implementadas
 
-### Modo Interactivo
+### 1. Expansión de Consulta Multi-perspectiva
 
-```bash
-python main.py --config config.yaml --data ./data
-```
+- **Clasificación temática**: Identifica las categorías legales más relevantes para la consulta
+- **Extracción de entidades**: Reconoce acciones, sujetos, objetos y contexto temporal/espacial
+- **Generación de subconsultas**: Crea variantes especializadas para mejorar la cobertura
 
-### Búsqueda Directa
+### 2. Búsqueda Federada
 
-```bash
-python main.py --config config.yaml --data ./data --query "incumplimiento contractual daños y perjuicios"
-```
+- **Búsqueda vectorial**: Captura la semántica y el significado contextual
+- **Búsqueda por grafo**: Explora relaciones y conexiones entre leyes y artículos
+- **Búsqueda léxica**: Encuentra coincidencias basadas en términos específicos
 
-## Ejemplo de Uso en Código
+### 3. Procesamiento Paralelo
 
-```python
-from src.config_loader import load_config
-from src.data_loader import load_json_data
-from src.weaviate_utils import connect_weaviate, create_weaviate_schema, store_embeddings_weaviate
-from src.neo4j_utils import connect_neo4j, create_neo4j_nodes, create_law_relationship
-from src.bm25_utils import create_bm25_index
-from src.legal_retriever import retrieve_legal_articles
+- Ejecución concurrente de búsquedas para minimizar latencia
+- Aprovechamiento eficiente de recursos computacionales
+- Escalabilidad para manejar grandes volúmenes de consultas
 
-# Cargar configuración
-config = load_config("config.yaml")
+## Extensiones Futuras
 
-# Cargar documentos
-documents = load_json_data("./data")
-
-# Inicializar Weaviate
-weaviate_client = connect_weaviate(config["weaviate"]["url"], config["weaviate"]["api_key"])
-create_weaviate_schema(weaviate_client, config["weaviate"]["collection_name"])
-store_embeddings_weaviate(weaviate_client, config["weaviate"]["collection_name"], documents)
-
-# Inicializar Neo4j
-neo4j_driver = connect_neo4j(config["neo4j"]["uri"], config["neo4j"]["username"], config["neo4j"]["password"])
-create_neo4j_nodes(neo4j_driver, documents)
-
-# Inicializar BM25
-bm25_index = create_bm25_index(documents)
-
-# Realizar búsqueda
-query = "incumplimiento contractual daños y perjuicios"
-results = retrieve_legal_articles(query, config, weaviate_client, neo4j_driver, bm25_index)
-
-# Mostrar resultados
-for result in results:
-    print(f"{result['law_name']} - Art. {result['article_number']}")
-    print(f"Contenido: {result['content'][:200]}...")
-    print(f"Score: {result.get('combined_score', 0):.2f}")
-    print("-" * 80)
+- Integración de modelos de IA específicos para el dominio legal
+- Implementación de análisis de precedentes jurídicos
+- Extracción de argumentos y razonamiento legal
+- Interfaz de usuario web o API REST

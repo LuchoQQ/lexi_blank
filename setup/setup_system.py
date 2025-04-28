@@ -88,6 +88,54 @@ def setup_docker_services():
     print("\nConfigurando Neo4j...")
     run_command(f"{sys.executable} {os.path.join(os.path.dirname(__file__), 'setup_neo4j.py')}")
 
+def create_default_config():
+    """Crea un archivo de configuración por defecto si no existe."""
+    from src.config_loader import save_config
+    
+    config_path = os.path.join(os.path.dirname(__file__), '..', 'config.yaml')
+    
+    # Si el archivo ya existe, no sobrescribirlo
+    if os.path.exists(config_path):
+        print(f"El archivo de configuración ya existe en {config_path}")
+        return
+    
+    # Configuración por defecto
+    default_config = {
+        "weaviate": {
+            "enabled": True,
+            "url": "http://localhost:8080",
+            "api_key": None,
+            "collection_name": "ArticulosLegales",
+            "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+            "use_cache": True
+        },
+        "neo4j": {
+            "enabled": True,
+            "uri": "bolt://localhost:7687",
+            "username": "neo4j",
+            "password": "password"
+        },
+        "bm25": {
+            "enabled": True
+        },
+        "retrieval": {
+            "top_n": 5,
+            "weights": [0.5, 0.3, 0.2],  # vectorial, grafo, léxico
+            "save_results": True,
+            "results_dir": "results"
+        }
+    }
+    
+    try:
+        # Crear directorio si no existe
+        os.makedirs(os.path.dirname(config_path), exist_ok=True)
+        
+        # Guardar configuración
+        save_config(default_config, config_path)
+        print(f"Archivo de configuración creado en {config_path}")
+    except Exception as e:
+        print(f"Error al crear archivo de configuración: {str(e)}")
+
 def run_search_example():
     """Ejecuta una búsqueda de ejemplo."""
     print("\n=== Ejecutando búsqueda de ejemplo ===")
@@ -108,8 +156,11 @@ def main():
     # Verificar dependencias
     if not check_dependencies():
         print("\nAlgunas dependencias no están instaladas.")
-        print("Por favor, ejecute: pip install -r requirements.txt")
+        print("Por favor, ejecute primero el script install_dependencies.py")
         return
+    
+    # Crear archivo de configuración por defecto si no existe
+    create_default_config()
     
     # Configurar servicios Docker (Weaviate y Neo4j)
     if not args.skip_docker:

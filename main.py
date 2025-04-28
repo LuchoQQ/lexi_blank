@@ -1,17 +1,23 @@
 """
 Script principal para el sistema de recuperación de documentos legales.
-Configuración inicial básica que verifica conexiones y genera embeddings si no están en caché.
+Integra las capacidades de búsqueda vectorial, por grafo y léxica para
+proporcionar resultados de alta relevancia y precisión.
 """
 import os
 import argparse
+import time
+import concurrent.futures
 from dotenv import load_dotenv
-from typing import Dict, Any, List, Optional, Tuple
+from typing import Dict, Any, List, Optional, Tuple, Set, Union
+import numpy as np
+from collections import defaultdict
+import json
 
 # Importar módulos del sistema
 from src.config_loader import load_config
 from src.data_loader import load_json_data
-from src.weaviate_utils import connect_weaviate, create_weaviate_schema, store_embeddings_weaviate
-from src.neo4j_utils import connect_neo4j, create_neo4j_nodes, create_law_relationship, check_data_exists
+from src.weaviate_utils import connect_weaviate, create_weaviate_schema, store_embeddings_weaviate, search_weaviate
+from src.neo4j_utils import connect_neo4j, create_neo4j_nodes, create_law_relationship, check_data_exists, search_neo4j, create_thematic_relationships, create_cross_law_relationships
 
 # Cargar variables de entorno
 load_dotenv()
@@ -19,6 +25,22 @@ load_dotenv()
 # Rutas por defecto
 DEFAULT_CONFIG_PATH = os.path.join(os.path.dirname(__file__), "config.yaml")
 DEFAULT_DATA_PATH = os.path.join(os.path.dirname(__file__), "data")
+DEFAULT_CACHE_PATH = os.path.join(os.path.dirname(__file__), "cache")
+
+# Asegurar que existan los directorios necesarios
+for directory in [DEFAULT_CACHE_PATH]:
+    os.makedirs(directory, exist_ok=True)
+
+# Categorías legales principales para clasificación
+LEGAL_CATEGORIES = {
+    "PENAL": ["delito", "crimen", "pena", "sentencia", "prisión", "multa", "cárcel", "homicidio", "robo", "estafa", "defraudación", "lesiones"],
+    "CIVIL": ["contrato", "obligación", "derecho real", "propiedad", "posesión", "daño", "perjuicio", "indemnización", "responsabilidad civil", "herencia", "testamento", "matrimonio", "divorcio"],
+    "COMERCIAL": ["sociedad", "empresa", "accionista", "comerciante", "compraventa", "mercantil", "cheque", "pagaré", "quiebra", "concurso", "patente", "marca"],
+    "ADMINISTRATIVO": ["administración pública", "acto administrativo", "procedimiento administrativo", "recurso administrativo", "contrato administrativo", "función pública", "servicio público"],
+    "LABORAL": ["trabajador", "empleador", "contrato de trabajo", "salario", "despido", "indemnización laboral", "sindicato", "huelga", "convenio colectivo"],
+    "CONSTITUCIONAL": ["derecho fundamental", "garantía constitucional", "amparo", "habeas corpus", "habeas data", "inconstitucionalidad", "acción de tutela"],
+    "PROCESAL": ["demanda", "contestación", "prueba", "audiencia", "sentencia", "recurso", "apelación", "casación", "medida cautelar", "embargo", "ejecución"]
+}
 
 def check_connections(config: Dict[str, Any]) -> Tuple[Optional[Any], Optional[Any]]:
     """
@@ -36,7 +58,7 @@ def check_connections(config: Dict[str, Any]) -> Tuple[Optional[Any], Optional[A
     # Verificar conexión a Weaviate
     if config.get("weaviate", {}).get("enabled", False):
         try:
-            weaviate_url = config["weaviate"].get("url")
+            weaviate_url = config["weaviate"].get("url", "http://localhost:8080")
             weaviate_api_key = config["weaviate"].get("api_key")
             print(f"Conectando a Weaviate en {weaviate_url}...")
             weaviate_client = connect_weaviate(weaviate_url, weaviate_api_key)
@@ -47,9 +69,9 @@ def check_connections(config: Dict[str, Any]) -> Tuple[Optional[Any], Optional[A
     # Verificar conexión a Neo4j
     if config.get("neo4j", {}).get("enabled", False):
         try:
-            neo4j_uri = config["neo4j"].get("uri")
-            neo4j_username = config["neo4j"].get("username")
-            neo4j_password = config["neo4j"].get("password")
+            neo4j_uri = config["neo4j"].get("uri", "bolt://localhost:7687")
+            neo4j_username = config["neo4j"].get("username", "neo4j")
+            neo4j_password = config["neo4j"].get("password", "password")
             print(f"Conectando a Neo4j en {neo4j_uri}...")
             neo4j_driver = connect_neo4j(neo4j_uri, neo4j_username, neo4j_password)
             print("✓ Conexión a Neo4j exitosa")
@@ -98,13 +120,63 @@ def setup_weaviate(weaviate_client, config: Dict[str, Any], documents: List[Dict
     except Exception as e:
         print(f"Error al almacenar documentos: {str(e)}")
 
-def main():
-    """Función principal del programa."""
-    print("\n=== Sistema de Recuperación de Documentos Legales ===")
-    print("Iniciando configuración básica...\n")
+def setup_neo4j(neo4j_driver, config: Dict[str, Any], documents: List[Dict[str, Any]]) -> None:
+    """
+    Configura Neo4j y carga documentos si es necesario.
     
-    # Cargar configuración desde la ruta por defecto
-    config_path = DEFAULT_CONFIG_PATH
+    Args:
+        neo4j_driver: Driver de Neo4j
+        config: Diccionario de configuración
+        documents: Lista de documentos
+    """
+    if not neo4j_driver:
+        return
+        
+    # Verificar si ya existen datos en Neo4j
+    data_exists = check_data_exists(neo4j_driver)
+    if data_exists:
+        print("Ya existen datos en Neo4j, omitiendo carga...")
+        return
+    
+    # Crear nodos de artículos
+    print("Creando nodos de artículos en Neo4j...")
+    article_ids = create_neo4j_nodes(neo4j_driver, documents)
+    print(f"✓ Creados {len(article_ids)} nodos de artículos")
+    
+    # Agrupar artículos por ley
+    law_articles = defaultdict(list)
+    for doc in documents:
+        law_name = doc.get("law_name")
+        article_id = doc.get("article_id")
+        if law_name and article_id:
+            law_articles[law_name].append(article_id)
+    
+    # Crear nodos de leyes y relaciones
+    print("Creando nodos de leyes y relaciones...")
+    for law_name, article_ids in law_articles.items():
+        create_law_relationship(neo4j_driver, law_name, article_ids)
+    
+    # Crear relaciones temáticas
+    try:
+        print("Creando relaciones temáticas entre artículos...")
+        create_thematic_relationships(neo4j_driver)
+        print("Creando relaciones entre diferentes códigos y leyes...")
+        create_cross_law_relationships(neo4j_driver, documents)
+        print("✓ Relaciones creadas correctamente")
+    except Exception as e:
+        print(f"Error al crear relaciones temáticas: {str(e)}")
+
+def setup_system(config_path: str = DEFAULT_CONFIG_PATH, data_path: str = DEFAULT_DATA_PATH):
+    """
+    Configura todo el sistema: verifica conexiones y carga datos iniciales.
+    
+    Args:
+        config_path: Ruta al archivo de configuración
+        data_path: Ruta al directorio de datos
+    """
+    print("\n=== Configuración del Sistema de Recuperación de Documentos Legales ===")
+    
+    # Cargar configuración
     print(f"Cargando configuración desde {config_path}...")
     config = load_config(config_path)
     if not config:
@@ -114,8 +186,7 @@ def main():
     # Verificar conexiones
     weaviate_client, neo4j_driver = check_connections(config)
     
-    # Cargar datos desde la ruta por defecto
-    data_path = DEFAULT_DATA_PATH
+    # Cargar datos
     documents = []
     try:
         print(f"Cargando documentos desde {data_path}...")
@@ -123,13 +194,528 @@ def main():
         print(f"✓ Cargados {len(documents)} documentos")
     except Exception as e:
         print(f"Error al cargar documentos: {str(e)}")
+        return
     
-    # Configurar Weaviate si está habilitado
+    # Configurar Weaviate
     if config.get("weaviate", {}).get("enabled", False) and weaviate_client and documents:
         setup_weaviate(weaviate_client, config, documents)
     
+    # Configurar Neo4j
+    if config.get("neo4j", {}).get("enabled", False) and neo4j_driver and documents:
+        setup_neo4j(neo4j_driver, config, documents)
+    
     print("\n=== Configuración completada ===")
     print("El sistema está listo para su uso.")
+
+def classify_query(query: str) -> Dict[str, float]:
+    """
+    Clasifica la consulta en categorías legales calculando un puntaje para cada categoría.
+    
+    Args:
+        query: Consulta del usuario
+        
+    Returns:
+        Diccionario con categorías y sus puntajes
+    """
+    categories_scores = {}
+    
+    # Convertir a minúsculas para comparación
+    query_lower = query.lower()
+    
+    # Calcular puntaje para cada categoría
+    for category, keywords in LEGAL_CATEGORIES.items():
+        score = 0
+        for keyword in keywords:
+            if keyword.lower() in query_lower:
+                # Incrementar puntaje basado en la especificidad de la palabra clave
+                keyword_len = len(keyword.split())
+                score += keyword_len * 0.1
+        
+        if score > 0:
+            categories_scores[category] = score
+    
+    # Si no se encuentra ninguna categoría, asignar un puntaje bajo a todas
+    if not categories_scores:
+        for category in LEGAL_CATEGORIES:
+            categories_scores[category] = 0.1
+    
+    # Normalizar puntajes
+    total_score = sum(categories_scores.values())
+    if total_score > 0:
+        for category in categories_scores:
+            categories_scores[category] /= total_score
+    
+    return categories_scores
+
+def extract_legal_entities(query: str) -> Dict[str, List[str]]:
+    """
+    Extrae entidades legales clave de la consulta.
+    
+    Args:
+        query: Consulta del usuario
+        
+    Returns:
+        Diccionario con tipos de entidades y sus valores
+    """
+    # En una implementación completa, aquí se usaría NER o modelos específicos
+    # para extraer entidades. Esta es una implementación simplificada.
+    
+    # Palabras clave para diferentes tipos de entidades
+    entity_keywords = {
+        "ACCION": ["apropiación", "falsificación", "estafa", "robo", "hurto", "daño", "lesión", "homicidio", 
+                   "defraudación", "incumplimiento", "fraude", "violación", "abuso"],
+        "SUJETO": ["persona", "individuo", "empresa", "sociedad", "menor", "cónyuge", "trabajador", 
+                   "empleador", "funcionario", "acreedor", "deudor", "propietario", "inquilino"],
+        "OBJETO": ["bien", "propiedad", "inmueble", "vehículo", "documento", "contrato", "dinero", 
+                  "información", "datos", "derecho", "obra", "marca", "patente"],
+        "LUGAR": ["domicilio", "establecimiento", "local", "vivienda", "lugar público", "territorio"],
+        "TIEMPO": ["plazo", "término", "período", "prescripción", "caducidad"]
+    }
+    
+    entities = {entity_type: [] for entity_type in entity_keywords}
+    words = query.lower().split()
+    
+    # Buscar palabras clave en la consulta
+    for i, word in enumerate(words):
+        for entity_type, keywords in entity_keywords.items():
+            for keyword in keywords:
+                # Buscar coincidencias exactas o parciales
+                if keyword.lower() in word or word in keyword.lower():
+                    # Tratar de extraer un contexto (n-grama) alrededor de la palabra clave
+                    start = max(0, i - 2)
+                    end = min(len(words), i + 3)
+                    context = " ".join(words[start:end])
+                    if context not in entities[entity_type]:
+                        entities[entity_type].append(context)
+    
+    return entities
+
+def generate_expanded_queries(query: str, category_scores: Dict[str, float], entities: Dict[str, List[str]]) -> List[str]:
+    """
+    Genera consultas expandidas basadas en la categorización y entidades extraídas.
+    
+    Args:
+        query: Consulta original del usuario
+        category_scores: Puntajes de categorías
+        entities: Entidades extraídas
+        
+    Returns:
+        Lista de consultas expandidas
+    """
+    expanded_queries = [query]  # Incluir la consulta original
+    
+    # Seleccionar las categorías más relevantes (top 2)
+    top_categories = sorted(category_scores.items(), key=lambda x: x[1], reverse=True)[:2]
+    
+    # Para cada categoría relevante, generar consultas específicas
+    for category, score in top_categories:
+        if score < 0.1:  # Ignorar categorías con puntaje muy bajo
+            continue
+            
+        # Añadir términos específicos de la categoría
+        category_keywords = LEGAL_CATEGORIES.get(category, [])
+        if category_keywords:
+            # Seleccionar algunas palabras clave relevantes (no todas para evitar sobreexpansión)
+            selected_keywords = category_keywords[:3]
+            category_query = f"{query} {' '.join(selected_keywords)}"
+            expanded_queries.append(category_query)
+    
+    # Generar consultas basadas en entidades extraídas
+    for entity_type, entity_values in entities.items():
+        if not entity_values:
+            continue
+            
+        # Usar hasta 2 entidades de cada tipo para evitar consultas demasiado largas
+        for value in entity_values[:2]:
+            entity_query = f"{query} {value}"
+            if entity_query not in expanded_queries:
+                expanded_queries.append(entity_query)
+    
+    # Eliminar duplicados mientras se mantiene el orden
+    return list(dict.fromkeys(expanded_queries))
+
+def search_with_weaviate(weaviate_client, config: Dict[str, Any], query: str) -> List[Dict[str, Any]]:
+    """
+    Realiza una búsqueda vectorial en Weaviate.
+    
+    Args:
+        weaviate_client: Cliente de Weaviate
+        config: Diccionario de configuración
+        query: Consulta expandida
+        
+    Returns:
+        Lista de resultados relevantes
+    """
+    if not weaviate_client:
+        return []
+        
+    collection_name = config["weaviate"].get("collection_name", "ArticulosLegales")
+    embedding_model = config["weaviate"].get("embedding_model", "paraphrase-multilingual-MiniLM-L12-v2")
+    use_cache = config["weaviate"].get("use_cache", True)
+    top_n = config["retrieval"].get("top_n", 5)
+    
+    try:
+        return search_weaviate(
+            weaviate_client,
+            collection_name,
+            query,
+            embedding_model=embedding_model,
+            top_n=top_n,
+            use_cache=use_cache
+        )
+    except Exception as e:
+        print(f"Error en búsqueda vectorial: {str(e)}")
+        return []
+
+def search_with_neo4j(neo4j_driver, config: Dict[str, Any], query: str, entities: Dict[str, List[str]]) -> List[Dict[str, Any]]:
+    """
+    Realiza una búsqueda basada en grafo en Neo4j.
+    
+    Args:
+        neo4j_driver: Driver de Neo4j
+        config: Diccionario de configuración
+        query: Consulta expandida
+        entities: Entidades extraídas de la consulta
+        
+    Returns:
+        Lista de resultados relevantes
+    """
+    if not neo4j_driver:
+        return []
+        
+    top_n = config["retrieval"].get("top_n", 5)
+    
+    # Extraer palabras clave de la consulta
+    keywords = [word for word in query.split() if len(word) > 3]
+    
+    # Preparar parámetros de búsqueda
+    search_params = {
+        "keywords": keywords,
+    }
+    
+    # Añadir información de entidades si está disponible
+    for entity_type, values in entities.items():
+        if values and entity_type.lower() in ["accion", "sujeto", "objeto"]:
+            # Añadir la primera entidad como parámetro de búsqueda
+            entity_key = entity_type.lower()
+            search_params[entity_key] = values[0]
+    
+    try:
+        return search_neo4j(neo4j_driver, search_params, limit=top_n)
+    except Exception as e:
+        print(f"Error en búsqueda por grafo: {str(e)}")
+        return []
+
+def search_with_bm25(config: Dict[str, Any], query: str, documents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    Realiza una búsqueda léxica usando BM25.
+    
+    Args:
+        config: Diccionario de configuración
+        query: Consulta expandida
+        documents: Lista de documentos
+        
+    Returns:
+        Lista de resultados relevantes
+    """
+    # Importar localmente para evitar dependencia si el módulo no está disponible
+    try:
+        from rank_bm25 import BM25Okapi
+        import re
+    except ImportError:
+        print("Error: No se pudo importar rank_bm25")
+        return []
+    
+    top_n = config["retrieval"].get("top_n", 5)
+    
+    # Preprocesar documentos
+    processed_docs = []
+    for doc in documents:
+        content = doc.get("content", "")
+        if not content:
+            continue
+            
+        # Preprocesar: convertir a minúsculas y tokenizar
+        tokens = re.findall(r'\w+', content.lower())
+        processed_docs.append(tokens)
+    
+    if not processed_docs:
+        return []
+    
+    # Inicializar BM25
+    bm25 = BM25Okapi(processed_docs)
+    
+    # Tokenizar consulta
+    query_tokens = re.findall(r'\w+', query.lower())
+    
+    # Obtener puntuaciones
+    try:
+        scores = bm25.get_scores(query_tokens)
+        
+        # Ordenar documentos por puntuación y seleccionar los top_n
+        top_indices = np.argsort(scores)[::-1][:top_n]
+        
+        # Construir resultados
+        results = []
+        for i in top_indices:
+            if scores[i] > 0:  # Solo incluir resultados con puntuación positiva
+                doc = documents[i]
+                results.append({
+                    "content": doc.get("content", ""),
+                    "article_id": doc.get("article_id", ""),
+                    "law_name": doc.get("law_name", ""),
+                    "article_number": doc.get("article_number", ""),
+                    "category": doc.get("category", ""),
+                    "source": doc.get("source", ""),
+                    "score": float(scores[i])
+                })
+                
+        return results
+    except Exception as e:
+        print(f"Error en búsqueda BM25: {str(e)}")
+        return []
+
+def merge_search_results(results_list: List[List[Dict[str, Any]]], weights: List[float] = None) -> List[Dict[str, Any]]:
+    """
+    Fusiona los resultados de diferentes métodos de búsqueda con un enfoque ponderado.
+    
+    Args:
+        results_list: Lista de listas de resultados de diferentes métodos
+        weights: Pesos para cada método de búsqueda (opcional)
+        
+    Returns:
+        Lista fusionada de resultados
+    """
+    if not results_list:
+        return []
+        
+    # Si no se proporcionan pesos, asumir pesos iguales
+    if not weights:
+        weights = [1.0] * len(results_list)
+    elif len(weights) != len(results_list):
+        weights = [1.0] * len(results_list)
+    
+    # Normalizar pesos
+    total_weight = sum(weights)
+    if total_weight > 0:
+        weights = [w / total_weight for w in weights]
+    else:
+        weights = [1.0 / len(weights)] * len(weights)
+    
+    # Combinar todos los resultados en un diccionario con puntuaciones ponderadas
+    merged = {}
+    for i, results in enumerate(results_list):
+        weight = weights[i]
+        for result in results:
+            # Usar article_id como clave de fusión
+            key = result.get("article_id", "")
+            if not key:
+                # Generar un identificador único basado en el contenido
+                content = result.get("content", "")
+                if content:
+                    key = f"content_{hash(content)}"
+                else:
+                    # Si no hay article_id ni contenido, generar un ID único
+                    key = f"item_{i}_{results.index(result)}"
+            
+            if key in merged:
+                # Actualizar puntuación con el máximo ponderado
+                merged[key]["score"] = max(merged[key]["score"], result.get("score", 0) * weight)
+            else:
+                # Añadir nuevo resultado con puntuación ponderada
+                result_copy = result.copy()
+                result_copy["score"] = result.get("score", 0) * weight
+                merged[key] = result_copy
+    
+    # Convertir el diccionario a lista y ordenar por puntuación
+    results = list(merged.values())
+    results.sort(key=lambda x: x.get("score", 0), reverse=True)
+    
+    return results
+
+def search_query(query: str, config: Dict[str, Any], weaviate_client=None, neo4j_driver=None, documents=None) -> List[Dict[str, Any]]:
+    """
+    Procesa una consulta del usuario y devuelve resultados relevantes.
+    
+    Args:
+        query: Consulta del usuario
+        config: Diccionario de configuración
+        weaviate_client: Cliente de Weaviate (opcional)
+        neo4j_driver: Driver de Neo4j (opcional)
+        documents: Lista de documentos (opcional, para BM25)
+        
+    Returns:
+        Lista de resultados relevantes
+    """
+    print(f"\nProcesando consulta: '{query}'")
+    start_time = time.time()
+    
+    # 1. Multi-perspective query expansion
+    print("Clasificando consulta...")
+    category_scores = classify_query(query)
+    print(f"Categorías identificadas: {category_scores}")
+    
+    print("Extrayendo entidades legales...")
+    entities = extract_legal_entities(query)
+    print(f"Entidades extraídas: {entities}")
+    
+    print("Generando consultas expandidas...")
+    expanded_queries = generate_expanded_queries(query, category_scores, entities)
+    print(f"Consultas expandidas: {expanded_queries}")
+    
+    # 2. Multi-modal search - ejecutar búsquedas en paralelo
+    all_results = []
+    
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        # Iniciar búsquedas en paralelo para cada consulta expandida
+        future_to_query = {}
+        
+        for exp_query in expanded_queries:
+            # Búsqueda vectorial (Weaviate)
+            if weaviate_client and config.get("weaviate", {}).get("enabled", False):
+                future = executor.submit(search_with_weaviate, weaviate_client, config, exp_query)
+                future_to_query[future] = f"vectorial_{exp_query}"
+            
+            # Búsqueda por grafo (Neo4j)
+            if neo4j_driver and config.get("neo4j", {}).get("enabled", False):
+                future = executor.submit(search_with_neo4j, neo4j_driver, config, exp_query, entities)
+                future_to_query[future] = f"grafo_{exp_query}"
+            
+            # Búsqueda léxica (BM25)
+            if documents and config.get("bm25", {}).get("enabled", False):
+                future = executor.submit(search_with_bm25, config, exp_query, documents)
+                future_to_query[future] = f"lexico_{exp_query}"
+        
+        # Recopilar resultados a medida que se completan
+        for future in concurrent.futures.as_completed(future_to_query):
+            query_name = future_to_query[future]
+            try:
+                results = future.result()
+                print(f"Búsqueda completada: {query_name} - {len(results)} resultados")
+                all_results.append(results)
+            except Exception as e:
+                print(f"Error en búsqueda {query_name}: {str(e)}")
+    
+    # 3. Fusión inteligente de resultados
+    print("Fusionando resultados...")
+    weights = []
+    
+    # Asignar pesos según configuración o usar valores predeterminados
+    if config.get("retrieval", {}).get("weights"):
+        weights = config["retrieval"]["weights"]
+    else:
+        # Pesos predeterminados: vectorial (0.5), grafo (0.3), léxico (0.2)
+        num_vector = sum(1 for k in future_to_query.values() if "vectorial_" in k)
+        num_graph = sum(1 for k in future_to_query.values() if "grafo_" in k)
+        num_lexical = sum(1 for k in future_to_query.values() if "lexico_" in k)
+        
+        # Ajustar pesos según el número de consultas de cada tipo
+        for k in future_to_query.values():
+            if "vectorial_" in k:
+                weights.append(0.5 / max(1, num_vector))
+            elif "grafo_" in k:
+                weights.append(0.3 / max(1, num_graph))
+            elif "lexico_" in k:
+                weights.append(0.2 / max(1, num_lexical))
+    
+    # Fusionar resultados con pesos
+    results = merge_search_results(all_results, weights)
+    
+    # Limitar a top_n resultados
+    top_n = config.get("retrieval", {}).get("top_n", 5)
+    results = results[:top_n]
+    
+    end_time = time.time()
+    print(f"Búsqueda completada en {end_time - start_time:.2f} segundos, {len(results)} resultados.")
+    
+    return results
+
+def format_search_results(results: List[Dict[str, Any]]) -> str:
+    """
+    Formatea los resultados de búsqueda para su presentación.
+    
+    Args:
+        results: Lista de resultados de búsqueda
+        
+    Returns:
+        Texto formateado con los resultados
+    """
+    if not results:
+        return "No se encontraron resultados para la consulta."
+    
+    formatted = "\n=== RESULTADOS DE BÚSQUEDA ===\n\n"
+    
+    for i, result in enumerate(results, 1):
+        formatted += f"RESULTADO #{i} (Relevancia: {result.get('score', 0):.2f})\n"
+        formatted += f"Ley/Código: {result.get('law_name', 'N/A')}\n"
+        formatted += f"Artículo: {result.get('article_number', 'N/A')}\n"
+        formatted += f"Categoría: {result.get('category', 'N/A')}\n"
+        formatted += "-" * 50 + "\n"
+        formatted += f"{result.get('content', 'Sin contenido')}\n"
+        formatted += "=" * 80 + "\n\n"
+    
+    return formatted
+
+def main():
+    """Función principal del programa."""
+    parser = argparse.ArgumentParser(description="Sistema de Recuperación de Documentos Legales")
+    parser.add_argument("--setup", action="store_true", help="Configurar el sistema antes de ejecutarlo")
+    parser.add_argument("--query", type=str, help="Consulta para buscar documentos legales")
+    parser.add_argument("--config", type=str, default=DEFAULT_CONFIG_PATH, help="Ruta al archivo de configuración")
+    parser.add_argument("--data", type=str, default=DEFAULT_DATA_PATH, help="Ruta al directorio de datos")
+    args = parser.parse_args()
+    
+    # Si se solicita configurar el sistema
+    if args.setup:
+        setup_system(args.config, args.data)
+        return
+    
+    # Si no hay consulta, mostrar ayuda
+    if not args.query:
+        print("\n=== Sistema de Recuperación de Documentos Legales ===")
+        print("Utilice --query para realizar una búsqueda o --setup para configurar el sistema")
+        print("Ejemplo: python main.py --query \"estafa defraudación incumplimiento contractual\"")
+        parser.print_help()
+        return
+    
+    # Cargar configuración
+    config = load_config(args.config)
+    if not config:
+        print("Error: No se pudo cargar la configuración.")
+        return
+    
+    # Verificar conexiones
+    weaviate_client, neo4j_driver = check_connections(config)
+    
+    # Cargar documentos para búsqueda léxica si está habilitada
+    documents = None
+    if config.get("bm25", {}).get("enabled", False):
+        try:
+            print(f"Cargando documentos desde {args.data} para búsqueda léxica...")
+            documents = load_json_data(args.data)
+            print(f"✓ Cargados {len(documents)} documentos")
+        except Exception as e:
+            print(f"Error al cargar documentos: {str(e)}")
+    
+    # Realizar búsqueda
+    results = search_query(args.query, config, weaviate_client, neo4j_driver, documents)
+    
+    # Formatear y mostrar resultados
+    formatted_results = format_search_results(results)
+    print(formatted_results)
+    
+    # Guardar resultados en un archivo si está configurado
+    if config.get("retrieval", {}).get("save_results", False):
+        results_dir = config.get("retrieval", {}).get("results_dir", "results")
+        os.makedirs(results_dir, exist_ok=True)
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        results_file = os.path.join(results_dir, f"results_{timestamp}.txt")
+        
+        with open(results_file, "w", encoding="utf-8") as f:
+            f.write(f"Consulta: {args.query}\n\n")
+            f.write(formatted_results)
+            
+        print(f"Resultados guardados en {results_file}")
 
 if __name__ == "__main__":
     main()

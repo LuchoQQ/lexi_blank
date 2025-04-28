@@ -1,37 +1,39 @@
-# Legal Retriever Configuration
+# Configuración del Sistema de Recuperación de Documentos Legales
 
-# Weaviate Vector Database Configuration
+# Configuración de Weaviate para búsqueda vectorial
 weaviate:
   enabled: true
   url: "http://localhost:8080"
-  api_key: ""  # Add your API key if needed
+  api_key: null
   collection_name: "ArticulosLegales"
   embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
-  use_cache: true  # Enable caching of embeddings to avoid regenerating them
+  use_cache: true
 
-# Neo4j Graph Database Configuration
+# Configuración de Neo4j para búsqueda basada en grafos
 neo4j:
   enabled: true
   uri: "bolt://localhost:7687"
   username: "neo4j"
-  password: "password"  # Change this in production
+  password: "password"
 
-# BM25 Keyword Search Configuration
+# Configuración de BM25 para búsqueda léxica
 bm25:
   enabled: true
 
-# OpenAI Configuration
-openai:
-  enabled: true  # Activado por defecto
-  model: "gpt-4o-mini"  # Modelo a utilizar
-  temperature: 0.3  # Controla la creatividad (0.0-1.0)
-  max_tokens: 1500  # Longitud máxima de la respuesta aumentada para permitir análisis más completos
-
-# Retrieval Strategy Configuration
+# Configuración de recuperación y presentación de resultados
 retrieval:
-  top_n: 5  # Number of results to return
-  combine_method: "weighted"  # Method to combine results: weighted, rank_fusion
-  weights:
-    weaviate: 0.4  # Weight for vector search results
-    neo4j: 0.3     # Weight for graph search results
-    bm25: 0.3      # Weight for keyword search results
+  # Número máximo de resultados a mostrar
+  top_n: 10
+  
+  # Pesos para los diferentes métodos de búsqueda (vectorial, grafo, léxico)
+  weights: [0.5, 0.3, 0.2]
+  
+  # Guardar resultados en archivos
+  save_results: true
+  results_dir: "results"
+  
+  # Estrategia de fusión de resultados
+  fusion_strategy: "weighted_max"
+  
+  # Umbral mínimo de relevancia para incluir resultados
+  min_score_threshold: 0.3
