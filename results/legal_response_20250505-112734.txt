@@ -1,0 +1,383 @@
+Consulta: Una trabajadora informa a su empleador que está embarazada. Semanas después, es cambiada de área sin justificación y finalmente es despedida por reestructuración, mientras su puesto es ocupado por otra persona.
+
+RESPUESTA LEGAL:
+==============
+
+### 1. ANÁLISIS DETALLADO
+
+La situación planteada involucra varios aspectos legales que se derivan de la Ley de Contrato de Trabajo, especialmente en relación con el trabajo de mujeres y la protección durante el embarazo.
+
+#### Cambios de Área y Despido
+
+- **Cambio de Área**: Según el Artículo 66 de la Ley de Contrato de Trabajo, el empleador puede introducir cambios en la forma y modalidades de la prestación del trabajo, pero no puede alterar las condiciones esenciales del contrato ni causar perjuicio al trabajador. Si el cambio de área no fue justificado y perjudicó a la trabajadora, ella podría optar por considerarse despedida sin causa.
+  
+- **Despido**: El despido de la trabajadora, en este contexto, podría considerarse injustificado, especialmente si se produce tras la notificación de su embarazo y la ocupación de su puesto por otra persona. El Artículo 231 establece que el despido sin causa debe ser notificado con preaviso o, en su defecto, indemnización.
+
+#### Indemnizaciones Correspondientes
+
+1. **Indemnización por Antigüedad**: Según el Artículo 245 de la Ley de Contrato de Trabajo, la indemnización por despido injustificado es equivalente a un mes de salario por cada año de servicio o fracción mayor de tres meses.
+  
+2. **Preaviso**: Si no se dio preaviso, el empleador debe indemnizar a la trabajadora con el pago correspondiente. Para antigüedades menores a 5 años, el preaviso es de un mes.
+
+3. **Integración del Mes**: Si el despido se produce en un momento que no permite completar el mes, se considerará la parte proporcional. 
+
+4. **SAC Proporcional**: Se debe incluir el cálculo del Sueldo Anual Complementario (SAC) proporcional, que es equivalente a un doceavo de los salarios devengados.
+
+5. **Vacaciones Proporcionales**: La trabajadora tiene derecho a percibir las vacaciones proporcionales no gozadas.
+
+#### Ejemplo Numérico
+
+Supongamos que la trabajadora tenía un salario mensual de $50,000 y trabajó durante 2 años:
+
+- **Indemnización por Antigüedad**: 2 meses de salario = 2 * $50,000 = $100,000.
+- **Preaviso**: 1 mes de salario = $50,000.
+- **SAC Proporcional**: $50,000 / 12 = $4,166.67.
+- **Vacaciones Proporcionales**: Asumiendo que le corresponden 14 días de vacaciones por año (aproximadamente 1.16 días por mes), por 2 años serían 2.32 meses de vacaciones = 2.32 * $50,000 = $116,000 (aproximadamente).
+
+**Total Indemnización**: $100,000 (antigüedad) + $50,000 (preaviso) + $4,166.67 (SAC) + $116,000 (vacaciones) = **$270,166.67**.
+
+### 2. PROCEDIMIENTO RECOMENDADO
+
+1. **Notificación al Empleador**: La trabajadora debe notificar su despido por escrito al empleador, solicitando la indemnización correspondiente. 
+
+2. **Plazo para Reclamo**: Tiene un plazo de 2 años para realizar el reclamo judicial por despido injustificado, según lo establecido en el Artículo 256 de la Ley de Contrato de Trabajo (no mencionado pero de conocimiento general).
+
+3. **Instancia Administrativa**: Si desea iniciar un reclamo administrativo, debe acudir al **Ministerio de Trabajo**, donde puede solicitar una conciliación laboral obligatoria.
+
+4. **Conciliación**: En la conciliación, ambas partes intentarán llegar a un acuerdo sobre las indemnizaciones. Si no hay acuerdo, se puede acudir a la vía judicial.
+
+5. **Acción Judicial**: Si no se llega a un acuerdo en la conciliación, la trabajadora puede presentar una demanda ante el **Juzgado de Trabajo** correspondiente.
+
+### 3. RECOMENDACIONES LEGALES
+
+- **Documentación Necesaria**: 
+  - Copia del contrato de trabajo.
+  - Recibos de sueldo.
+  - Comunicación del embarazo.
+  - Documentación relacionada con el cambio de área y despido.
+
+- **Pruebas a Reunir**: 
+  - Testimonios de compañeros de trabajo.
+  - Documentos que demuestren el cambio de área y la ocupación del puesto por otra persona.
+
+- **Alternativas de Solución**: 
+  - Conciliación laboral.
+  - Mediación.
+  - Juicio laboral.
+
+- **Posibles Defensas del Empleador**: 
+  - Justificación del cambio de área.
+  - Justificación del despido por razones económicas si se alega reestructuración.
+
+- **Dificultades o Complejidades del Proceso**: 
+  - La carga probatoria recae sobre la trabajadora para demostrar que el despido fue injustificado.
+  - La posibilidad de que el empleador argumente que el despido fue por causas económicas legítimas.
+
+### LISTA DE VERIFICACIÓN
+
+1. ✓ Plazos exactos que corresponden según la situación: 2 años para reclamo.
+2. ✓ Montos o porcentajes de indemnizaciones: 25% de la remuneración por cada año de servicio.
+3. ✓ Ejemplos numéricos concretos: Total indemnización de $270,166.67.
+4. ✓ Organismos específicos donde acudir: Ministerio de Trabajo, Juzgados de Trabajo.
+5. ✓ Alternativas de resolución: Conciliación, mediación, juicio.
+6. ✓ Plazos de prescripción: 2 años para reclamos.
+7. ✓ Documentación y pruebas necesarias: Contrato, recibos, comunicación de embarazo, testimonios. 
+
+Este análisis proporciona un marco claro para que la trabajadora pueda proceder con su reclamo y obtener la indemnización correspondiente tras el despido injustificado.
+
+==============
+
+PROMPT UTILIZADO:
+==============
+
+Eres un asistente legal especializado. Debes proporcionar asesoramiento legal sobre la siguiente consulta utilizando únicamente la información presente en los artículos proporcionados:
+
+CONSULTA: Una trabajadora informa a su empleador que está embarazada. Semanas después, es cambiada de área sin justificación y finalmente es despedida por reestructuración, mientras su puesto es ocupado por otra persona.
+
+A continuación se presentan los artículos legales más relevantes:
+
+[ARTÍCULO 1] Ley de contrato de trabajo, Artículo 183 (Relevancia: 4.50)
+Categoría: Título VII: Trabajo de Mujeres
+### Artículo 183
+
+La mujer trabajadora que, vigente la relación laboral, tuviera un hijo y continuara residiendo en el país podrá optar entre las siguientes situaciones:
+
+a) Continuar su trabajo en la empresa, en las mismas condiciones en que lo venía haciendo.
+
+b) Rescindir su contrato de trabajo, percibiendo la compensación por tiempo de servicio que se le asigna por este inciso, o los mayores beneficios que surjan de los estatutos profesionales o convenciones colectivas de trabajo.
+
+En tal caso, la compensación será equivalente al veinticinco por ciento (25%) de la remuneración de la trabajadora, calculada en base al promedio fijado en el artículo 245 por cada año de servicio, la que no podrá exceder de un salario mínimo vital por año de servicio o fracción mayor de tres (3) meses.
+
+c) Quedar en situación de excedencia por un período no inferior a tres (3) meses ni superior a seis (6) meses.
+
+Se considera situación de excedencia la que asuma voluntariamente la mujer trabajadora que le permite reintegrarse a las tareas que desempeñaba en la empresa a la época del alumbramiento, dentro de los plazos fijados. La mujer trabajadora que hallándose en situación de excedencia formalizara nuevo contrato de trabajo con otro empleador quedará privada de pleno derecho de la facultad de reintegrarse.
+
+Lo normado en los incisos b) y c) del presente artículo es de aplicación para la madre en el supuesto justificado de cuidado de hijo enfermo menor de edad a su cargo, con los alcances y limitaciones que establezca la reglamentación.
+
+[ARTÍCULO 2] Ley de contrato de trabajo, Artículo 186 (Relevancia: 4.39)
+Categoría: Título VII: Trabajo de Mujeres
+### Artículo 186
+
+Si la mujer no se reincorporara a su empleo luego de vencidos los plazos de licencia previstos por el artículo 177, y no comunicara a su empleador dentro de las cuarenta y ocho (48) horas anteriores a la finalización de los mismos, que se acoge a los plazos de excedencia, se entenderá que opta por la percepción de la compensación establecida en el artículo 183 inciso b) párrafo final.
+
+El derecho que se reconoce a la mujer trabajadora en mérito a lo antes dispuesto no enerva los derechos que le corresponden a la misma por aplicación de otras normas.
+
+[ARTÍCULO 3] Ley de contrato de trabajo, Artículo 101 (Relevancia: 4.17)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 101
+
+Habrá contrato de trabajo de grupo o por equipo, cuando el mismo se celebrase por un empleador con un grupo de trabajadores que, actuando por intermedio de un delegado o representante, se obligue a la prestación de servicios propios de la actividad de aquél. El empleador tendrá respecto de cada uno de los integrantes del grupo, individualmente, los mismos deberes y obligaciones previstos en esta ley, con las limitaciones que resulten de la modalidad de las tareas a efectuarse y la conformación del grupo.
+
+Si el salario fuese pactado en forma colectiva, los componentes del grupo tendrán derecho a la participación que les corresponda según su contribución al resultado del trabajo. Cuando un trabajador dejase el grupo o equipo, el delegado o representante deberá sustituirlo por otro, proponiendo el nuevo integrante a la aceptación del empleador, si ello resultare indispensable en razón de la modalidad de las tareas a efectuarse y a las calidades personales exigidas en la integración del grupo.
+
+El trabajador que se hubiese retirado, tendrá derecho a la liquidación de la participación que le corresponda en el trabajo ya realizado.
+
+Los trabajadores incorporados por el empleador para colaborar con el grupo o equipo, no participarán del salario común y correrán por cuenta de aquél.
+
+[ARTÍCULO 4] Ley de contrato de trabajo, Artículo 92bis (Relevancia: 4.16)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 92 bis
+
+El contrato de trabajo por tiempo indeterminado se entenderá celebrado a prueba durante los primeros seis (6) meses de vigencia. Las convenciones colectivas de trabajo podrán ampliar dicho período de prueba:
+
+a) hasta ocho (8) meses, en las empresas de seis (6) y hasta cien (100) trabajadores; y
+
+b) hasta un (1) año en las empresas de hasta cinco (5) trabajadores.
+
+Cualquiera de las partes podrá extinguir la relación durante ese lapso sin expresión de causa, sin derecho a indemnización con motivo a la extinción.
+
+El período de prueba se regirá por las siguientes reglas:
+
+(i) Un empleador no puede contratar a un mismo trabajador, más de una vez, utilizando el período de prueba. De hacerlo, se considerará de pleno derecho, que el empleador ha renunciado al período de prueba.
+
+(ii) El uso abusivo del período de prueba con el objeto de evitar la efectivización de trabajadores será pasible de las sanciones previstas en los regímenes sobre infracciones a las leyes de trabajo. En especial, se considerará abusiva la conducta del empleador que contratare sucesivamente a distintos trabajadores para un mismo puesto de trabajo de naturaleza permanente.
+
+(iii) Las partes tienen los derechos y las obligaciones propias de la relación laboral, con las excepciones que se establecen en este artículo. Tal reconocimiento respecto del trabajador incluye los derechos sindicales.
+
+(iv) Las partes están obligadas al pago de los aportes y contribuciones a la seguridad social, con los beneficios establecidos en cada caso.
+
+(v) El trabajador tiene derecho, durante el período de prueba, a las prestaciones por accidente o enfermedad del trabajo. También por accidente o enfermedad inculpable, que perdurará exclusivamente hasta la finalización del período de prueba si el empleador rescindiere el contrato de trabajo durante ese lapso. Queda excluida la aplicación de lo prescripto en el cuarto párrafo del artículo 212.
+
+(vi) El período de prueba se computará como tiempo de servicio a todos los efectos laborales y de la seguridad social.
+
+El empleador deberá registrar al trabajador desde la fecha de inicio de la relación; caso contrario, se considerará que ha renunciado al período de prueba.
+
+(Artículo sustituido por art. 91 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+[ARTÍCULO 5] Ley de contrato de trabajo, Artículo 252 (Relevancia: 4.12)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 252
+
+A partir de que el trabajador cumpla setenta (70) años de edad y reúna los requisitos necesarios para acceder a la Prestación Básica Universal (PBU) establecida en el artículo 17, inciso a) de la ley 24.241 y sus modificaciones, el empleador podrá intimarlo a que inicie los trámites pertinentes, extendiéndole los certificados de servicios y demás documentación necesaria a esos fines. A partir de ese momento, el empleador deberá mantener la relación de trabajo hasta que el trabajador obtenga el beneficio y por un plazo máximo de un (1) año.
+
+Lo dispuesto en el párrafo precedente no afecta el derecho del trabajador de solicitar el beneficio previsional con anterioridad al cumplimiento de los setenta (70) años de edad.
+
+Concedido el beneficio o vencido dicho plazo, el contrato de trabajo quedará extinguido sin obligación para el empleador del pago de la indemnización por antigüedad que prevean las leyes o estatutos profesionales.
+
+La intimación a que se refiere el primer párrafo de este artículo implicará la notificación del preaviso establecido por la presente ley o disposiciones similares contenidas en otros estatutos, cuyo plazo se considerará comprendido dentro del término durante el cual el empleador deberá mantener la relación de trabajo.
+
+(Artículo sustituido por art. 7° de la Ley N° 27.426 B.O. 28/12/2017. Vigencia: el día siguiente de su publicación en el Boletín Oficial)
+
+[ARTÍCULO 6] Ley de contrato de trabajo, Artículo 177 (Relevancia: 3.57)
+Categoría: TITULO VII: Trabajo de Mujeres
+### Artículo 177
+
+Queda prohibido el trabajo del personal femenino o persona gestante durante los cuarenta y cinco (45) días anteriores al parto y hasta cuarenta y cinco (45) días después del mismo.
+
+Sin embargo, la persona interesada podrá optar por que se le reduzca la licencia anterior al parto, que en tal caso no podrá ser inferior a diez (10) días; el resto del período total de licencia se acumulará al período de descanso posterior al parto. En caso de nacimiento pretérmino se acumulará al descanso posterior todo el lapso de licencia que no se hubiere gozado antes del parto, de modo de completar los noventa (90) días.
+
+La trabajadora o persona gestante deberá comunicar fehacientemente su embarazo al empleador, con presentación de certificado médico en el que conste la fecha presunta del parto, o requerir su comprobación por el empleador.
+
+La misma conservará su empleo durante los períodos indicados, y gozará de las asignaciones que le confieren los sistemas de seguridad social, que garantizarán a la misma la percepción de una suma igual a la retribución que corresponda al período de licencia legal, todo de conformidad con las exigencias y demás requisitos que prevean las reglamentaciones respectivas.
+
+Garantízase a toda mujer o persona gestante durante la gestación el derecho a la estabilidad en el empleo, el que tendrá carácter de derecho adquirido a partir del momento en que la misma practique la notificación a que se refiere el párrafo anterior.
+
+[ARTÍCULO 7] Codigo Civil y Comercial, Artículo 1957 (Relevancia: 3.52)
+Categoría: Título III
+### Artículo 1957
+
+Hay adquisición del dominio por transformación si alguien de buena fe con una cosa ajena, mediante su sola actividad o la incorporación de otra cosa, hace una nueva con intención de adquirirla, sin que sea posible volverla al estado anterior. En tal caso, sólo debe el valor de la primera.
+
+Si la transformación se hace de mala fe, el dueño de la materia tiene derecho a ser indemnizado de todo daño, si no prefiere tener la cosa en su nueva forma; en este caso debe pagar al transformador su trabajo o el mayor valor que haya adquirido la cosa, a su elección.
+
+Si el transformador es de buena fe y la cosa transformada es reversible a su estado anterior, el dueño de la nueva especie; en este caso debe pagar al transformador su trabajo; pero puede optar por exigir el valor de los gastos de la reversión.
+
+Si el transformador es de mala fe, y la cosa transformada es reversible a su estado anterior, el dueño de la cosa puede optar por reclamar la cosa nueva sin pagar nada al que la hizo; o abdicarla con indemnización del valor de la materia y del daño.
+
+[ARTÍCULO 8] Ley de contrato de trabajo, Artículo 231 (Relevancia: 3.11)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 231
+
+El contrato de trabajo no podrá ser disuelto por voluntad de una de las partes, sin previo aviso, o en su defecto, indemnización además de la que corresponda al trabajador por su antigüedad en el empleo, cuando el contrato se disuelva por voluntad del empleador. El preaviso, cuando las partes no lo fijen en un término mayor, deberá darse con la anticipación siguiente:
+
+a) por el trabajador, de QUINCE (15) días;
+
+b) por el empleador, de QUINCE (15) días cuando el trabajador se encontrare en período de prueba; de UN (1) mes cuando el trabajador tuviese una antigüedad en el empleo que no exceda de CINCO (5) años y de DOS (2) meses cuando fuere superior.
+
+(Artículo sustituido por art. 3° de la Ley N° 25.877 B.O. 19/3/2004)
+
+[ARTÍCULO 9] Ley de contrato de trabajo, Artículo 240 (Relevancia: 2.89)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 240
+
+La extinción del contrato de trabajo por renuncia del trabajador, medie o no preaviso, como requisito para su validez, deberá formalizarse mediante despacho telegráfico colacionado cursado personalmente por el trabajador a su empleador o ante la autoridad administrativa del trabajo.
+
+Los despachos telegráficos serán expedidos por las oficinas de correo en forma gratuita, requiriéndose la presencia personal del remitente y la justificación de su identidad.
+
+Cuando la renuncia se formalizara ante la autoridad administrativa ésta dará inmediata comunicación de la misma al empleador, siendo ello suficiente a los fines del artículo 235 de esta ley.
+
+[ARTÍCULO 10] Ley de contrato de trabajo, Artículo 184 (Relevancia: 2.88)
+Categoría: Título VII: Trabajo de Mujeres
+### Artículo 184
+
+El reintegro de la mujer trabajadora en situación de excedencia deberá producirse al término del período por el que optara.
+
+El empleador podrá disponerlo:
+
+a) En cargo de la misma categoría que tenía al momento del alumbramiento o de la enfermedad del hijo.
+
+b) En cargo o empleo superior o inferior al indicado, de común acuerdo con la mujer trabajadora.
+
+Si no fuese admitida, será indemnizada como si se tratara de despido injustificado, salvo que el empleador demostrara la imposibilidad de reincorporarla, en cuyo caso la indemnización se limitará a la prevista en el artículo 183, inciso b) párrafo final.
+
+Los plazos de excedencia no se computarán como tiempo de servicio.
+
+[ARTÍCULO 11] Ley de contrato de trabajo, Artículo 224 (Relevancia: 2.87)
+Categoría: Título X: De la Suspensión de Ciertos Efectos del Contrato de Trabajo
+### Artículo 224
+
+Cuando la suspensión se origine en denuncia criminal efectuada por el empleador y ésta fuera desestimada o el trabajador imputado, sobreseído provisoria o definitivamente, aquél deberá reincorporarlo al trabajo y satisfacer el pago de los salarios perdidos durante el tiempo de la suspensión preventiva, salvo que el trabajador optase, en razón de las circunstancias del caso, por considerarse en situación de despido. En caso de negativa del empleador a la reincorporación, pagará la indemnización por despido, a más de los salarios perdidos durante el tiempo de la suspensión preventiva.
+
+Si la suspensión se originara en denuncia criminal efectuada por terceros o en proceso promovido de oficio y se diese el caso de la privación de la libertad del trabajador, el empleador no estará obligado a pagar la remuneración por el tiempo que dure la suspensión de la relación laboral, salvo que se tratara de hecho relativo o producido en ocasión del trabajo.
+
+[ARTÍCULO 12] Ley de contrato de trabajo, Artículo 215 (Relevancia: 2.63)
+Categoría: Título X: De la Suspensión de Ciertos Efectos del Contrato de Trabajo
+### Artículo 215
+
+Los trabajadores que por razón de ocupar cargos electivos en el orden nacional, provincial o municipal, dejaran de prestar servicios, tendrán derecho a la reserva de su empleo por parte del empleador, y a su reincorporación hasta treinta (30) días después de concluido el ejercicio de sus funciones.
+
+
+Los trabajadores que por razón de ocupar cargos electivos en el orden nacional, provincial o municipal, dejaran de prestar servicios, tendrán derecho a la reserva de su empleo por parte del empleador, y a su reincorporación hasta treinta (30) días después de concluido el ejercicio de sus funciones.
+
+El período de tiempo durante el cual los trabajadores hubieran desempeñado las funciones precedentemente aludidas será considerado período de trabajo a los efectos del cómputo de su antigüedad, frente a los beneficios que por esta ley, estatutos profesionales y convenciones colectivas de trabajo le hubiesen correspondido en el caso de haber prestado servicios. El tiempo de permanencia en tales funciones no será considerado para determinar los promedios de remuneración a los fines de la aplicación de las mismas disposiciones.
+
+[ARTÍCULO 13] Ley de contrato de trabajo, Artículo 66 (Relevancia: 2.53)
+Categoría: Título II: Del Contrato de Trabajo en General
+### Artículo 66
+
+El empleador está facultado para introducir todos aquellos cambios relativos a la forma y modalidades de la prestación del trabajo, en tanto esos cambios no importen un ejercicio irrazonable de esa facultad, ni alteren modalidades esenciales del contrato, ni causen perjuicio material ni moral al trabajador.
+
+Cuando el empleador disponga medidas vedadas por este artículo, al trabajador le asistirá la posibilidad de optar por considerarse despedido sin causa o accionar persiguiendo el restablecimiento de las condiciones alteradas. En este último supuesto la acción se substanciará por el procedimiento sumarísimo, no pudiéndose innovar en las condiciones y modalidades de trabajo, salvo que éstas sean generales para el establecimiento o sección, hasta que recaiga sentencia definitiva.
+
+(Artículo sustituido por art. 1º de la Ley Nº 26.088, B.O. 24/04/2006.)
+
+[ARTÍCULO 14] Ley de contrato de trabajo, Artículo 98 (Relevancia: 2.45)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 98
+
+Con una antelación no menor a treinta (30) días respecto del inicio de cada temporada, el empleador deberá notificar en forma personal o por medios públicos idóneos a los trabajadores de su voluntad de reiterar la relación o contrato en los términos del ciclo anterior. El trabajador deberá manifestar su decisión de continuar o no la relación laboral en un plazo de cinco (5) días de notificado, sea por escrito o presentándose ante el empleador. En caso que el empleador no cursara la notificación a que se hace referencia en el párrafo anterior, se considerará que rescinde unilateralmente el contrato y, por lo tanto, responderá por las consecuencias de la extinción del mismo.
+
+(Artículo sustituido por art. 67 de la Ley N° 24.013 B.O. 17/12/1991)
+
+[ARTÍCULO 15] Codigo Civil y Comercial, Artículo 1513 (Relevancia: 2.42)
+Categoría: Capítulo 19: Franquicia
+### Artículo 1513
+
+A los fines de la interpretación del contrato se entiende que:
+
+a) franquicia mayorista es aquella en virtud de la cual el franquiciante otorga a una persona física o jurídica un territorio o ámbito de actuación Nacional o regional o provincial con derecho de nombrar subfranquiciados, el uso de sus marcas y sistema de franquicias bajo contraprestaciones específicas;
+
+b) franquicia de desarrollo es aquella en virtud de la cual el franquiciante otorga a un franquiciado denominado desarrollador el derecho a abrir múltiples negocios franquiciados bajo el sistema, método y marca del franquiciante en una región o en el país durante un término prolongado no menor a cinco años, y en el que todos los locales o negocios que se abren dependen o están controlados, en caso de que se constituyan como sociedades, por el desarrollador, sin que éste tenga el derecho de ceder su posición como tal o subfranquiciar, sin el consentimiento del franquiciante;
+
+c) sistema de negocios: es el conjunto de conocimientos prácticos y la experiencia acumulada por el franquiciante, no patentado, que ha sido debidamente probado, secreto, sustancial y transmisible. Es secreto cuando en su conjunto o la configuración de sus componentes no es generalmente conocida o fácilmente accesible. Es sustancial cuando la información que contiene es relevante para la venta o prestación de servicios y permite al franquiciado prestar sus servicios o vender los productos conforme con el sistema de negocios. Es transmisible cuando su descripción es suficiente para permitir al franquiciado desarrollar su negocio de conformidad a las pautas creadas o desarrolladas por el franquiciante.
+
+Basándote ÚNICAMENTE en los artículos proporcionados, construye una respuesta DETALLADA Y ESTRUCTURADA con las siguientes secciones:
+
+1. ANÁLISIS DETALLADO: 
+   - Explica cómo las leyes y artículos se aplican específicamente a la situación
+   - Incluye TODOS los conceptos indemnizatorios que corresponden según la normativa (indemnización por antigüedad, preaviso, integración del mes, SAC proporcional, vacaciones proporcionales, etc.)
+   - Especifica EXACTAMENTE la base de cálculo para cada concepto (Mejor Remuneración Mensual, Normal y Habitual)
+   - Incluye TODOS los montos, porcentajes y plazos exactos mencionados en los artículos
+   - Calcula ejemplos numéricos concretos cuando sea posible (ej. "Si el trabajador ganaba $50,000...")
+   
+2. PROCEDIMIENTO RECOMENDADO:
+   - Enumera los pasos prácticos que debe seguir la persona, en orden cronológico
+   - Menciona TODOS los plazos legales para cada acción (días hábiles o corridos)
+   - Especifica el plazo de prescripción para realizar el reclamo
+   - Incluye instancias administrativas o judiciales específicas donde debe acudir (nombres exactos)
+   - Detalla el procedimiento de conciliación laboral obligatoria si corresponde
+   
+3. RECOMENDACIONES LEGALES:
+   - Ofrece consejos adicionales sobre documentación necesaria
+   - Especifica qué pruebas debería reunir el consultante
+   - Menciona alternativas de solución (ej. conciliación, mediación, juicio)
+   - Advierte sobre posibles defensas del empleador
+   - Advierte sobre posibles dificultades o complejidades del proceso
+
+IMPORTANTE:
+- Utiliza SOLAMENTE la información de los artículos proporcionados
+- Cita los artículos específicos para cada afirmación legal que hagas (Por ejemplo: "Según el Art. 231 de la Ley de Contrato de Trabajo...")
+- INCLUYE TODOS LOS PLAZOS Y VALORES NUMÉRICOS mencionados en los artículos (días, meses, años, montos)
+- MENCIONA INSTITUCIONES ESPECÍFICAS cuando corresponda (tribunales, organismos administrativos)
+- PROPORCIONA EJEMPLOS NUMÉRICOS para ilustrar cálculos cuando sea posible
+- EXPLICA el cálculo de TODAS las indemnizaciones que corresponden legalmente 
+- Si la información proporcionada es insuficiente para algún aspecto, indícalo claramente
+- Usa un lenguaje claro y accesible, evitando jerga legal excesiva
+- No inventes información que no esté respaldada por los artículos proporcionados
+
+LISTA DE VERIFICACIÓN - Asegúrate de incluir en caso de ser necesario:
+1. ✓ Plazos exactos que corresponden según la situación 
+2. ✓ Montos o porcentajes de indemnizaciones o compensaciones
+3. ✓ Ejemplos numéricos concretos
+4. ✓ Organismos específicos donde acudir (Ministerio de Trabajo, Tribunales laborales, SECLO, etc.)
+5. ✓ Alternativas de resolución
+6. ✓ Plazos de prescripción
+7. ✓ Documentación y pruebas necesarias
+
+Tu respuesta:
+
+
+==============
+
+ARTÍCULOS UTILIZADOS:
+
+1. Ley de contrato de trabajo, Artículo 183
+   Relevancia: 4.50
+   Categoría: Título VII: Trabajo de Mujeres
+
+2. Ley de contrato de trabajo, Artículo 186
+   Relevancia: 4.39
+   Categoría: Título VII: Trabajo de Mujeres
+
+3. Ley de contrato de trabajo, Artículo 101
+   Relevancia: 4.17
+   Categoría: Título III: De las Modalidades del Contrato de Trabajo
+
+4. Ley de contrato de trabajo, Artículo 92bis
+   Relevancia: 4.16
+   Categoría: Título III: De las Modalidades del Contrato de Trabajo
+
+5. Ley de contrato de trabajo, Artículo 252
+   Relevancia: 4.12
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+6. Ley de contrato de trabajo, Artículo 177
+   Relevancia: 3.57
+   Categoría: TITULO VII: Trabajo de Mujeres
+
+7. Codigo Civil y Comercial, Artículo 1957
+   Relevancia: 3.52
+   Categoría: Título III
+
+8. Ley de contrato de trabajo, Artículo 231
+   Relevancia: 3.11
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+9. Ley de contrato de trabajo, Artículo 240
+   Relevancia: 2.89
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+10. Ley de contrato de trabajo, Artículo 184
+   Relevancia: 2.88
+   Categoría: Título VII: Trabajo de Mujeres
+

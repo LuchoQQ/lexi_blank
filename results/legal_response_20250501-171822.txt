@@ -1,0 +1,260 @@
+Consulta: El consultante ha sido despedido sin causa después de 5 años de trabajo
+
+RESPUESTA LEGAL:
+==============
+
+### 1. ANÁLISIS DETALLADO
+
+El consultante ha sido despedido sin causa después de 5 años de trabajo, lo que implica que tiene derecho a recibir una indemnización por despido. Según el **Artículo 231 de la Ley de Contrato de Trabajo**, un empleador no puede despedir a un trabajador sin previo aviso o, en su defecto, indemnización. Dado que el consultante ha trabajado durante 5 años, debe recibir una indemnización por su antigüedad.
+
+#### Indemnización por despido
+La indemnización por despido sin causa se calcula de la siguiente manera:
+- **Indemnización equivalente a un mes de salario por cada año de servicio**: En este caso, el consultante tiene 5 años de antigüedad, por lo que le corresponde una indemnización equivalente a 5 meses de salario.
+
+Si el consultante ganaba, por ejemplo, **$50,000 mensuales**, la indemnización total sería:
+- **Indemnización total = 5 meses x $50,000 = $250,000**.
+
+Además, según el **Artículo 156**, el trabajador tiene derecho a percibir una indemnización equivalente al salario correspondiente al período de descanso proporcional a la fracción del año trabajada. En este caso, como el consultante ha trabajado más de 5 años, tiene derecho a 21 días de vacaciones (Art. 150). Si consideramos que el salario diario es **$1,666.67** (calculado como $50,000 dividido por 30 días), el cálculo sería:
+- **Indemnización por vacaciones = 21 días x $1,666.67 = $35,000**.
+
+Por lo tanto, el total de indemnización por despido y vacaciones sería:
+- **Total = $250,000 (despido) + $35,000 (vacaciones) = $285,000**.
+
+### 2. PROCEDIMIENTO RECOMENDADO
+
+Para hacer valer sus derechos, el consultante debe seguir estos pasos:
+
+1. **Reunir documentación**: Recopilar contrato de trabajo, recibos de sueldo y cualquier comunicación relacionada con el despido.
+   
+2. **Notificación formal al empleador**: Si no se ha recibido el pago de la indemnización, enviar una carta documento al empleador solicitando el pago correspondiente. Este paso no tiene un plazo específico, pero es recomendable hacerlo lo antes posible.
+
+3. **Esperar respuesta del empleador**: El empleador tiene un plazo de **5 días hábiles** para responder a la carta documento.
+
+4. **Reclamo ante el Ministerio de Trabajo**: Si no se recibe respuesta o el empleador no cumple con el pago, el consultante puede presentar una denuncia ante el **Ministerio de Trabajo** correspondiente a su jurisdicción. 
+
+5. **Conciliación**: Se puede solicitar una audiencia de conciliación en el Ministerio de Trabajo, donde se intentará llegar a un acuerdo. Este proceso suele ser rápido, pero el tiempo puede variar.
+
+6. **Acción judicial**: Si la conciliación no resulta exitosa, el siguiente paso es presentar una demanda en el **Juzgado de Trabajo**. Este procedimiento puede llevar varios meses.
+
+7. **Plazos para el pago de indemnización**: Según el **Artículo 255 bis**, el pago de las indemnizaciones debe hacerse dentro de los plazos establecidos en el **Artículo 128**, que son **10 días hábiles** desde la extinción del contrato.
+
+### 3. RECOMENDACIONES LEGALES
+
+- **Documentación necesaria**: Mantener copias de todos los documentos relacionados con el empleo y el despido, incluyendo el contrato de trabajo, recibos de sueldo, y cualquier comunicación escrita con el empleador.
+
+- **Alternativas de solución**: Además de la conciliación, el consultante puede considerar la mediación como un método para resolver el conflicto antes de llegar a juicio. La mediación puede ser menos formal y más rápida.
+
+- **Dificultades posibles**: Es importante estar preparado para posibles retrasos en el proceso judicial, así como la necesidad de presentar pruebas que sustenten la reclamación de indemnización. También puede haber resistencia por parte del empleador a pagar la indemnización completa.
+
+### LISTA DE VERIFICACIÓN
+1. ✓ Plazos exactos que corresponden según la situación: 5 días hábiles para respuesta del empleador; 10 días hábiles para el pago de indemnización.
+2. ✓ Montos o porcentajes de indemnizaciones o compensaciones: $250,000 por despido + $35,000 por vacaciones = $285,000 total.
+3. ✓ Ejemplos numéricos concretos: Se utilizó un ejemplo de salario de $50,000.
+4. ✓ Organismos específicos donde acudir:
+
+==============
+
+PROMPT UTILIZADO:
+==============
+
+Eres un asistente legal especializado. Debes proporcionar asesoramiento legal sobre la siguiente consulta utilizando únicamente la información presente en los artículos proporcionados:
+
+CONSULTA: El consultante ha sido despedido sin causa después de 5 años de trabajo
+
+A continuación se presentan los artículos legales más relevantes:
+
+[ARTÍCULO 1] Ley de contrato de trabajo, Artículo 236 (Relevancia: 13.99)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 236
+
+Cuando el preaviso hubiera sido otorgado por el empleador, el trabajador podrá considerar extinguido el contrato de trabajo, antes del vencimiento del plazo, sin derecho a la remuneración por el período faltante del preaviso, pero conservará el derecho a percibir la indemnización que le corresponda en virtud del despido. Esta manifestación deberá hacerse en la forma prevista en el artículo 240.
+
+El empleador podrá relevar al trabajador de la obligación de prestar servicios durante el plazo de preaviso abonándole el importe de los salarios correspondientes.
+
+[ARTÍCULO 2] Ley de contrato de trabajo, Artículo 248 (Relevancia: 13.54)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 248
+
+En caso de muerte del trabajador, las personas enumeradas en el artículo 38 del Decreto-ley 18.037/69 (t.o. 1974) tendrán derecho, mediante la sola acreditación del vínculo, en el orden y prelación allí establecido, a percibir una indemnización igual a la prevista en el artículo 247 de esta ley. A los efectos indicados, queda equiparada a la viuda, para cuando el trabajador fallecido fuere soltero o viudo, la mujer que hubiese vivido públicamente con el mismo, en aparente matrimonio, durante un mínimo de dos (2) años anteriores al fallecimiento.
+
+Tratándose de un trabajador casado y presentándose la situación antes contemplada, igual derecho tendrá la mujer del trabajador cuando la esposa por su culpa o culpa de ambos estuviere divorciada o separada de hecho al momento de la muerte del causante, siempre que esta situación se hubiere mantenido durante los cinco (5) años anteriores al fallecimiento.
+
+Esta indemnización es independiente de la que se reconozca a los causa-habientes del trabajador por la ley de accidentes de trabajo, según el caso, y de cualquier otro beneficio que por las leyes, convenciones colectivas de trabajo, seguros, actos o contratos de previsión, le fuesen concedidos a los mismos en razón del fallecimiento del trabajador.
+
+[ARTÍCULO 3] Ley de contrato de trabajo, Artículo 249 (Relevancia: 12.13)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 249
+
+Se extingue el contrato de trabajo por muerte del empleador cuando sus condiciones personales o legales, actividad profesional y otras circunstancias hayan sido la causa determinante de la relación laboral y sin las cuales ésta no podría proseguir.
+
+En este caso, el trabajador tendrá derecho a percibir la indemnización prevista en el artículo 247 de esta ley.
+
+[ARTÍCULO 4] Ley de contrato de trabajo, Artículo 156 (Relevancia: 10.94)
+Categoría: TITULO V: De las Vacaciones y otras Licencias
+### Artículo 156
+
+Cuando por cualquier causa se produjera la extinción del contrato de trabajo, el trabajador tendrá derecho a percibir una indemnización equivalente al salario correspondiente al período de descanso proporcional a la fracción del año trabajada.
+
+Si la extinción del contrato de trabajo se produjera por muerte del trabajador, los causa-habientes del mismo tendrán derecho a percibir la indemnización prevista en el presente artículo.
+
+[ARTÍCULO 5] Ley de contrato de trabajo, Artículo 231 (Relevancia: 9.80)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 231
+
+El contrato de trabajo no podrá ser disuelto por voluntad de una de las partes, sin previo aviso, o en su defecto, indemnización además de la que corresponda al trabajador por su antigüedad en el empleo, cuando el contrato se disuelva por voluntad del empleador. El preaviso, cuando las partes no lo fijen en un término mayor, deberá darse con la anticipación siguiente:
+
+a) por el trabajador, de QUINCE (15) días;
+
+b) por el empleador, de QUINCE (15) días cuando el trabajador se encontrare en período de prueba; de UN (1) mes cuando el trabajador tuviese una antigüedad en el empleo que no exceda de CINCO (5) años y de DOS (2) meses cuando fuere superior.
+
+(Artículo sustituido por art. 3° de la Ley N° 25.877 B.O. 19/3/2004)
+
+[ARTÍCULO 6] Ley de contrato de trabajo, Artículo 255bis (Relevancia: 9.33)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 255 bis
+
+El pago de las remuneraciones e indemnizaciones que correspondieren por la extinción del contrato de trabajo, cualquiera sea su causa, se efectuará dentro de los plazos previstos en el artículo 128 computados desde la fecha de extinción de la relación laboral.
+
+(Artículo incorporado por art. 1° de la Ley N° 26.593 B.O. 26/5/2010)
+
+[ARTÍCULO 7] Ley de contrato de trabajo, Artículo 92bis (Relevancia: 8.86)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 92 bis
+
+El contrato de trabajo por tiempo indeterminado se entenderá celebrado a prueba durante los primeros seis (6) meses de vigencia. Las convenciones colectivas de trabajo podrán ampliar dicho período de prueba:
+
+a) hasta ocho (8) meses, en las empresas de seis (6) y hasta cien (100) trabajadores; y
+
+b) hasta un (1) año en las empresas de hasta cinco (5) trabajadores.
+
+Cualquiera de las partes podrá extinguir la relación durante ese lapso sin expresión de causa, sin derecho a indemnización con motivo a la extinción.
+
+El período de prueba se regirá por las siguientes reglas:
+
+(i) Un empleador no puede contratar a un mismo trabajador, más de una vez, utilizando el período de prueba. De hacerlo, se considerará de pleno derecho, que el empleador ha renunciado al período de prueba.
+
+(ii) El uso abusivo del período de prueba con el objeto de evitar la efectivización de trabajadores será pasible de las sanciones previstas en los regímenes sobre infracciones a las leyes de trabajo. En especial, se considerará abusiva la conducta del empleador que contratare sucesivamente a distintos trabajadores para un mismo puesto de trabajo de naturaleza permanente.
+
+(iii) Las partes tienen los derechos y las obligaciones propias de la relación laboral, con las excepciones que se establecen en este artículo. Tal reconocimiento respecto del trabajador incluye los derechos sindicales.
+
+(iv) Las partes están obligadas al pago de los aportes y contribuciones a la seguridad social, con los beneficios establecidos en cada caso.
+
+(v) El trabajador tiene derecho, durante el período de prueba, a las prestaciones por accidente o enfermedad del trabajo. También por accidente o enfermedad inculpable, que perdurará exclusivamente hasta la finalización del período de prueba si el empleador rescindiere el contrato de trabajo durante ese lapso. Queda excluida la aplicación de lo prescripto en el cuarto párrafo del artículo 212.
+
+(vi) El período de prueba se computará como tiempo de servicio a todos los efectos laborales y de la seguridad social.
+
+El empleador deberá registrar al trabajador desde la fecha de inicio de la relación; caso contrario, se considerará que ha renunciado al período de prueba.
+
+(Artículo sustituido por art. 91 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+[ARTÍCULO 8] Ley de contrato de trabajo, Artículo 93 (Relevancia: 6.96)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 93
+
+El contrato de trabajo a plazo fijo durará hasta el vencimiento del plazo convenido, no pudiendo celebrarse por más de cinco (5) años.
+
+[ARTÍCULO 9] Ley de contrato de trabajo, Artículo 150 (Relevancia: 6.93)
+Categoría: TITULO V: De las Vacaciones y otras Licencias
+### Artículo 150
+
+El trabajador gozará de un período mínimo y continuado de descanso anual remunerado por los siguientes plazos:
+
+a) De catorce (14) días corridos cuando la antigüedad en el empleo no exceda de cinco (5) años.
+
+b) De veintiún (21) días corridos cuando siendo la antigüedad mayor de cinco (5) años no exceda de diez (10).
+
+c) De veintiocho (28) días corridos cuando la antigüedad siendo mayor de diez (10) años no exceda de veinte (20).
+
+d) De treinta y cinco (35) días corridos cuando la antigüedad exceda de veinte (20) años.
+
+Para determinar la extensión de las vacaciones atendiendo a la antigüedad en el empleo, se computará como tal aquélla que tendría el trabajador al 31 de diciembre del año que correspondan las mismas.
+
+[ARTÍCULO 10] Ley de contrato de trabajo, Artículo 119 (Relevancia: 6.69)
+Categoría: TITULO IV: De la Remuneración del Trabajador
+### Artículo 119
+
+Por ninguna causa podrán abonarse salarios inferiores a los que se fijen de conformidad al presente capítulo, salvo los que resulten de reducciones para aprendices o para trabajadores que cumplan jornadas de trabajo reducida, no impuesta por la calificación, de acuerdo con lo dispuesto en el artículo 200.
+
+(Artículo sustituido por art. 5° de la Ley N° 26.390 B.O. 25/6/2008)
+
+Basándote ÚNICAMENTE en los artículos proporcionados, construye una respuesta DETALLADA Y ESTRUCTURADA con las siguientes secciones:
+
+1. ANÁLISIS DETALLADO: 
+   - Explica cómo las leyes y artículos se aplican específicamente a la situación
+   - Incluye TODOS los montos, porcentajes y plazos exactos mencionados en los artículos
+   - Calcula ejemplos numéricos concretos cuando sea posible (ej. "Si el trabajador ganaba $50,000...")
+   
+2. PROCEDIMIENTO RECOMENDADO:
+   - Enumera los pasos prácticos que debe seguir la persona, en orden cronológico
+   - Menciona todos los plazos legales para cada acción
+   - Incluye instancias administrativas o judiciales específicas donde debe acudir
+   
+3. RECOMENDACIONES LEGALES:
+   - Ofrece consejos adicionales sobre documentación necesaria
+   - Menciona alternativas de solución (ej. conciliación, mediación, juicio)
+   - Advierte sobre posibles dificultades o complejidades del proceso
+
+IMPORTANTE:
+- Utiliza SOLAMENTE la información de los artículos proporcionados
+- Cita los artículos específicos para cada afirmación legal que hagas (Por ejemplo: "Según el Art. 231 de la Ley de Contrato de Trabajo...")
+- INCLUYE TODOS LOS PLAZOS Y VALORES NUMÉRICOS mencionados en los artículos (días, meses, años, montos)
+- MENCIONA INSTITUCIONES ESPECÍFICAS cuando corresponda (tribunales, organismos administrativos)
+- PROPORCIONA EJEMPLOS NUMÉRICOS para ilustrar cálculos cuando sea posible
+- Si la información proporcionada es insuficiente para algún aspecto, indícalo claramente
+- Usa un lenguaje claro y accesible, evitando jerga legal excesiva
+- No inventes información que no esté respaldada por los artículos proporcionados
+
+LISTA DE VERIFICACIÓN - Asegúrate de incluir en caso de ser necesario:
+1. ✓ Plazos exactos que corresponden según la situación 
+2. ✓ Montos o porcentajes de indemnizaciones o compensaciones
+3. ✓ Ejemplos numéricos concretos
+4. ✓ Organismos específicos donde acudir
+5. ✓ Alternativas de resolución
+
+Tu respuesta:
+
+
+==============
+
+ARTÍCULOS UTILIZADOS:
+
+1. Ley de contrato de trabajo, Artículo 236
+   Relevancia: 13.99
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+2. Ley de contrato de trabajo, Artículo 248
+   Relevancia: 13.54
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+3. Ley de contrato de trabajo, Artículo 249
+   Relevancia: 12.13
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+4. Ley de contrato de trabajo, Artículo 156
+   Relevancia: 10.94
+   Categoría: TITULO V: De las Vacaciones y otras Licencias
+
+5. Ley de contrato de trabajo, Artículo 231
+   Relevancia: 9.80
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+6. Ley de contrato de trabajo, Artículo 255bis
+   Relevancia: 9.33
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+7. Ley de contrato de trabajo, Artículo 92bis
+   Relevancia: 8.86
+   Categoría: Título III: De las Modalidades del Contrato de Trabajo
+
+8. Ley de contrato de trabajo, Artículo 93
+   Relevancia: 6.96
+   Categoría: Título III: De las Modalidades del Contrato de Trabajo
+
+9. Ley de contrato de trabajo, Artículo 150
+   Relevancia: 6.93
+   Categoría: TITULO V: De las Vacaciones y otras Licencias
+
+10. Ley de contrato de trabajo, Artículo 119
+   Relevancia: 6.69
+   Categoría: TITULO IV: De la Remuneración del Trabajador
+

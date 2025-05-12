@@ -1,0 +1,357 @@
+Consulta: El consultante ha sido despedido sin causa después de 5 años de trabajo
+
+RESPUESTA LEGAL:
+==============
+
+### 1. ANÁLISIS DETALLADO
+
+El consultante ha sido despedido sin causa después de 5 años de trabajo, lo que le otorga derecho a una serie de indemnizaciones conforme a la Ley de Contrato de Trabajo.
+
+#### Indemnización por Antigüedad
+Según el **Artículo 245**, el trabajador tiene derecho a una indemnización equivalente a un mes de sueldo por cada año de servicio o fracción mayor de tres meses. En este caso, el trabajador tiene 5 años de antigüedad, por lo que le corresponde:
+
+- **Indemnización**: 5 meses de sueldo.
+
+#### Base de Cálculo
+La base de cálculo se establece como la mejor remuneración mensual, normal y habitual devengada durante el último año. Por ejemplo, si el trabajador ganaba **$50,000** mensuales, la indemnización por antigüedad sería:
+
+- **Indemnización por Antigüedad**: 5 meses * $50,000 = **$250,000**.
+
+#### Indemnización por Preaviso
+De acuerdo con el **Artículo 231**, si el despido se realizó sin preaviso, el empleador debe abonar una indemnización sustitutiva equivalente a la remuneración que correspondería al trabajador durante el plazo de preaviso. En este caso, el preaviso debe ser de 1 mes, por lo que:
+
+- **Indemnización por Preaviso**: **$50,000**.
+
+#### Integración del Mes de Despido
+Conforme al **Artículo 233**, si el despido se produjo en una fecha que no coincide con el último día del mes, se debe integrar el mes de despido con los días faltantes hasta el último día del mes. Si el despido fue, por ejemplo, el 15 de octubre, se deben incluir 16 días (del 15 al 31):
+
+- **Días faltantes**: 16 días / 30 días = 0.533 meses.
+- **Integración del mes**: 0.533 * $50,000 = **$26,650**.
+
+#### Sueldo Anual Complementario (SAC) Proporcional
+El trabajador también tiene derecho a recibir el SAC proporcional. Si se considera que el SAC es equivalente a un sueldo mensual, entonces:
+
+- **SAC Proporcional**: **$50,000** (si el despido fue antes de la fecha de pago del SAC).
+
+#### Vacaciones Proporcionales
+Según el **Artículo 156**, el trabajador tiene derecho a percibir una indemnización equivalente al salario correspondiente al período de descanso proporcional a la fracción del año trabajada. Si el trabajador tiene derecho a 14 días de vacaciones por 5 años, y ya ha tomado 7 días, le quedan 7 días:
+
+- **Vacaciones Proporcionales**: 7 días / 30 días * $50,000 = **$11,666.67**.
+
+#### Resumen de Indemnizaciones
+- Indemnización por Antigüedad: **$250,000**
+- Indemnización por Preaviso: **$50,000**
+- Integración del Mes: **$26,650**
+- SAC Proporcional: **$50,000**
+- Vacaciones Proporcionales: **$11,666.67**
+
+#### Total Indemnizaciones
+Total = $250,000 + $50,000 + $26,650 + $50,000 + $11,666.67 = **$388,316.67**.
+
+### 2. PROCEDIMIENTO RECOMENDADO
+
+1. **Reunir Documentación**: El trabajador debe recopilar todos los recibos de sueldo, contrato de trabajo, y cualquier comunicación escrita del despido.
+   
+2. **Presentar Reclamo**: Debe presentar un reclamo ante el **Ministerio de Trabajo** o el **SECLO** (Servicio de Conciliación Laboral Obligatoria) para iniciar el proceso de conciliación laboral.
+   - **Plazo para presentar el reclamo**: No hay un plazo específico en los artículos, pero se recomienda hacerlo lo antes posible tras el despido.
+
+3. **Conciliación Laboral Obligatoria**: Si se inicia el proceso de conciliación, ambas partes deben presentarse a una audiencia. Si no se llega a un acuerdo, se puede continuar con acciones legales.
+   - **Plazo para la conciliación**: Generalmente se realiza en un plazo de 10 a 30 días hábiles.
+
+4. **Acción Judicial**: Si no se llega a un acuerdo en la conciliación, el trabajador puede presentar una demanda ante el **Juzgado Laboral** correspondiente.
+   - **Plazo de prescripción para realizar el reclamo**: Generalmente, la prescripción para reclamar indemnizaciones laborales es de 2 años desde la fecha de despido (según la ley general).
+
+### 3. RECOMENDACIONES LEGALES
+
+- **Documentación Necesaria**: Recibos de sueldo, contrato de trabajo, notificación de despido, y cualquier comunicación que demuestre la relación laboral.
+  
+- **Pruebas a Reunir**: Testigos de la relación laboral, recibos que demuestren la remuneración habitual, y cualquier prueba que respalde la falta de causa en el despido.
+
+- **Alternativas de Solución**: Se puede optar por mediación o conciliación antes de llevar el caso a juicio. La conciliación es obligatoria y puede resultar en un acuerdo favorable sin necesidad de un litigio prolongado.
+
+- **Defensas del Empleador**: El empleador puede argumentar que el despido fue por causa justificada, por lo que es importante preparar pruebas que respalden la falta de causa.
+
+- **Dificultades Potenciales**: Puede haber resistencia del empleador a pagar la indemnización o alegaciones de justificación del despido. Además, la carga de la prueba puede recaer sobre el trabajador si se inicia un juicio.
+
+### LISTA DE VERIFICACIÓN
+1. ✓ Plazos exactos que corresponden según la situación.
+2. ✓ Montos o porcentajes de indemnizaciones o compensaciones.
+3. ✓ Ejemplos numéricos concretos.
+4. ✓ Organismos específicos donde acudir (Ministerio de Trabajo, SECLO).
+5. ✓ Alternativas de resolución.
+6. ✓ Plazos de prescripción.
+7. ✓ Documentación y pruebas necesarias.
+
+==============
+
+PROMPT UTILIZADO:
+==============
+
+Eres un asistente legal especializado. Debes proporcionar asesoramiento legal sobre la siguiente consulta utilizando únicamente la información presente en los artículos proporcionados:
+
+CONSULTA: El consultante ha sido despedido sin causa después de 5 años de trabajo
+
+A continuación se presentan los artículos legales más relevantes:
+
+[ARTÍCULO 1] Ley de contrato de trabajo, Artículo 232 (Relevancia: 15.00)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 232
+
+La parte que omita el preaviso o lo otorgue de modo insuficiente deberá abonar a la otra una indemnización substitutiva equivalente a la remuneración que correspondería al trabajador durante los plazos señalados en el artículo 231.
+
+[ARTÍCULO 2] Ley de contrato de trabajo, Artículo 233 (Relevancia: 15.00)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 233
+
+Los plazos del artículo 231 correrán a partir del día siguiente al de la notificación del preaviso.
+
+Cuando la extinción del contrato de trabajo dispuesta por el empleador se produzca sin preaviso y en fecha que no coincida con el último día del mes, la indemnización sustitutiva debida al trabajador se integrará con una suma igual a los salarios por los días faltantes hasta el último día del mes en el que se produjera el despido.
+
+La integración del mes de despido no procederá cuando la extinción se produzca durante el período de prueba establecido en el artículo 92 bis.
+
+(Artículo sustituido por art. 4° de la Ley N° 25.877 B.O. 19/3/2004)
+
+[ARTÍCULO 3] Ley de contrato de trabajo, Artículo 245 (Relevancia: 15.00)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 245
+
+En los casos de despido dispuesto por el empleador sin justa causa, habiendo o no mediado preaviso y luego de transcurrido el periodo de prueba, se deberá abonar al trabajador una indemnización equivalente a UN (1) mes de sueldo por cada año de servicio o fracción mayor de TRES (3) meses, tomando como base de cálculo la mejor remuneración mensual, normal y habitual devengada durante el último año o durante el tiempo de prestación de servicios si este fuera menor. La base de cálculo de esta indemnización no incluirá el Sueldo Anual Complementario, ni conceptos de pago semestral o anual.
+
+Para aquellos trabajadores remunerados a comisión o con remuneraciones mensuales variables, será de aplicación el promedio de los últimos SEIS (6) meses, o del último año si fuera más favorable al trabajador.
+
+Dicha base no podrá exceder el equivalente de TRES (3) veces el importe mensual de la suma que resulte del promedio de todas las remuneraciones previstas en el convenio colectivo de trabajo aplicable al trabajador, al momento del despido, por la jornada legal o convencional, excluida la antigüedad. Le corresponderá a la Autoridad de Aplicación fijar y publicar el promedio resultante, conjuntamente con las escalas salariales de cada convenio colectivo de trabajo.
+
+Para aquellos trabajadores excluidos de todo convenio colectivo de trabajo, el tope establecido en el párrafo anterior será el del convenio aplicable al establecimiento donde preste servicios o al convenio más favorable, en el caso de que hubiera más de uno.
+
+La base de cálculo de la indemnización no podrá en ningún caso ser inferior al SESENTA Y SIETE POR CIENTO (67 %) del importe correspondiente a UN (1) mes de sueldo, obtenido conforme el método descripto en el primer y segundo párrafo del presente.
+
+La indemnización en ningún caso podrá ser inferior a UN (1) mes de sueldo calculado sobre la base del sistema establecido en el primer y segundo párrafo del presente.
+
+Mediante convenio colectivo de trabajo, las partes podrán sustituir el presente régimen indemnizatorio por un fondo o sistema de cese laboral cuyo costo estará siempre a cargo del empleador, con un aporte mensual que no podrá ser superior al OCHO POR CIENTO (8%) de la remuneración computable.
+
+Por su parte, los empleadores podrán optar por contratar un sistema privado de capitalización a su costo, a fin de solventar la indemnización prevista en el presente artículo y/o la suma que libremente se pacte entre las partes para el supuesto de desvinculación por mutuo acuerdo conforme artículo 241 de la presente ley.
+
+(Artículo sustituido por art. 81 del Decreto N° 70/2023 B.O. 21/12/2023.)
+
+(Nota Infoleg: Ver - Fondo de cese- art. 96 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+[ARTÍCULO 4] Ley de contrato de trabajo, Artículo 246 (Relevancia: 15.00)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 246
+
+Cuando el trabajador hiciese denuncia del contrato de trabajo fundado en justa causa, tendrá derecho a las indemnizaciones previstas en los artículos 232, 233 y 245.
+
+[ARTÍCULO 5] Ley de contrato de trabajo, Artículo 247 (Relevancia: 15.00)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 247
+
+En los casos en que el despido fuese dispuesto por causa de fuerza mayor o por falta o disminución de trabajo no imputable al empleador fehacientemente justificada, el trabajador tendrá derecho a percibir una indemnización equivalente a la mitad de la prevista en el artículo 245 de esta ley.
+
+En tales casos el despido deberá comenzar por el personal menos antiguo dentro de cada especialidad.
+
+Respecto del personal ingresado en un mismo semestre, deberá comenzarse por el que tuviere menos cargas de familia, aunque con ello se alterara el orden de antigüedad.
+
+[ARTÍCULO 6] Ley de contrato de trabajo, Artículo 236 (Relevancia: 13.99)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 236
+
+Cuando el preaviso hubiera sido otorgado por el empleador, el trabajador podrá considerar extinguido el contrato de trabajo, antes del vencimiento del plazo, sin derecho a la remuneración por el período faltante del preaviso, pero conservará el derecho a percibir la indemnización que le corresponda en virtud del despido. Esta manifestación deberá hacerse en la forma prevista en el artículo 240.
+
+El empleador podrá relevar al trabajador de la obligación de prestar servicios durante el plazo de preaviso abonándole el importe de los salarios correspondientes.
+
+[ARTÍCULO 7] Ley de contrato de trabajo, Artículo 248 (Relevancia: 13.54)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 248
+
+En caso de muerte del trabajador, las personas enumeradas en el artículo 38 del Decreto-ley 18.037/69 (t.o. 1974) tendrán derecho, mediante la sola acreditación del vínculo, en el orden y prelación allí establecido, a percibir una indemnización igual a la prevista en el artículo 247 de esta ley. A los efectos indicados, queda equiparada a la viuda, para cuando el trabajador fallecido fuere soltero o viudo, la mujer que hubiese vivido públicamente con el mismo, en aparente matrimonio, durante un mínimo de dos (2) años anteriores al fallecimiento.
+
+Tratándose de un trabajador casado y presentándose la situación antes contemplada, igual derecho tendrá la mujer del trabajador cuando la esposa por su culpa o culpa de ambos estuviere divorciada o separada de hecho al momento de la muerte del causante, siempre que esta situación se hubiere mantenido durante los cinco (5) años anteriores al fallecimiento.
+
+Esta indemnización es independiente de la que se reconozca a los causa-habientes del trabajador por la ley de accidentes de trabajo, según el caso, y de cualquier otro beneficio que por las leyes, convenciones colectivas de trabajo, seguros, actos o contratos de previsión, le fuesen concedidos a los mismos en razón del fallecimiento del trabajador.
+
+[ARTÍCULO 8] Ley de contrato de trabajo, Artículo 249 (Relevancia: 12.13)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 249
+
+Se extingue el contrato de trabajo por muerte del empleador cuando sus condiciones personales o legales, actividad profesional y otras circunstancias hayan sido la causa determinante de la relación laboral y sin las cuales ésta no podría proseguir.
+
+En este caso, el trabajador tendrá derecho a percibir la indemnización prevista en el artículo 247 de esta ley.
+
+[ARTÍCULO 9] Ley de contrato de trabajo, Artículo 156 (Relevancia: 10.94)
+Categoría: TITULO V: De las Vacaciones y otras Licencias
+### Artículo 156
+
+Cuando por cualquier causa se produjera la extinción del contrato de trabajo, el trabajador tendrá derecho a percibir una indemnización equivalente al salario correspondiente al período de descanso proporcional a la fracción del año trabajada.
+
+Si la extinción del contrato de trabajo se produjera por muerte del trabajador, los causa-habientes del mismo tendrán derecho a percibir la indemnización prevista en el presente artículo.
+
+[ARTÍCULO 10] Ley de contrato de trabajo, Artículo 231 (Relevancia: 9.80)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 231
+
+El contrato de trabajo no podrá ser disuelto por voluntad de una de las partes, sin previo aviso, o en su defecto, indemnización además de la que corresponda al trabajador por su antigüedad en el empleo, cuando el contrato se disuelva por voluntad del empleador. El preaviso, cuando las partes no lo fijen en un término mayor, deberá darse con la anticipación siguiente:
+
+a) por el trabajador, de QUINCE (15) días;
+
+b) por el empleador, de QUINCE (15) días cuando el trabajador se encontrare en período de prueba; de UN (1) mes cuando el trabajador tuviese una antigüedad en el empleo que no exceda de CINCO (5) años y de DOS (2) meses cuando fuere superior.
+
+(Artículo sustituido por art. 3° de la Ley N° 25.877 B.O. 19/3/2004)
+
+[ARTÍCULO 11] Ley de contrato de trabajo, Artículo 255bis (Relevancia: 9.33)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 255 bis
+
+El pago de las remuneraciones e indemnizaciones que correspondieren por la extinción del contrato de trabajo, cualquiera sea su causa, se efectuará dentro de los plazos previstos en el artículo 128 computados desde la fecha de extinción de la relación laboral.
+
+(Artículo incorporado por art. 1° de la Ley N° 26.593 B.O. 26/5/2010)
+
+[ARTÍCULO 12] Ley de contrato de trabajo, Artículo 92bis (Relevancia: 8.86)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 92 bis
+
+El contrato de trabajo por tiempo indeterminado se entenderá celebrado a prueba durante los primeros seis (6) meses de vigencia. Las convenciones colectivas de trabajo podrán ampliar dicho período de prueba:
+
+a) hasta ocho (8) meses, en las empresas de seis (6) y hasta cien (100) trabajadores; y
+
+b) hasta un (1) año en las empresas de hasta cinco (5) trabajadores.
+
+Cualquiera de las partes podrá extinguir la relación durante ese lapso sin expresión de causa, sin derecho a indemnización con motivo a la extinción.
+
+El período de prueba se regirá por las siguientes reglas:
+
+(i) Un empleador no puede contratar a un mismo trabajador, más de una vez, utilizando el período de prueba. De hacerlo, se considerará de pleno derecho, que el empleador ha renunciado al período de prueba.
+
+(ii) El uso abusivo del período de prueba con el objeto de evitar la efectivización de trabajadores será pasible de las sanciones previstas en los regímenes sobre infracciones a las leyes de trabajo. En especial, se considerará abusiva la conducta del empleador que contratare sucesivamente a distintos trabajadores para un mismo puesto de trabajo de naturaleza permanente.
+
+(iii) Las partes tienen los derechos y las obligaciones propias de la relación laboral, con las excepciones que se establecen en este artículo. Tal reconocimiento respecto del trabajador incluye los derechos sindicales.
+
+(iv) Las partes están obligadas al pago de los aportes y contribuciones a la seguridad social, con los beneficios establecidos en cada caso.
+
+(v) El trabajador tiene derecho, durante el período de prueba, a las prestaciones por accidente o enfermedad del trabajo. También por accidente o enfermedad inculpable, que perdurará exclusivamente hasta la finalización del período de prueba si el empleador rescindiere el contrato de trabajo durante ese lapso. Queda excluida la aplicación de lo prescripto en el cuarto párrafo del artículo 212.
+
+(vi) El período de prueba se computará como tiempo de servicio a todos los efectos laborales y de la seguridad social.
+
+El empleador deberá registrar al trabajador desde la fecha de inicio de la relación; caso contrario, se considerará que ha renunciado al período de prueba.
+
+(Artículo sustituido por art. 91 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+[ARTÍCULO 13] Ley de contrato de trabajo, Artículo 93 (Relevancia: 6.96)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 93
+
+El contrato de trabajo a plazo fijo durará hasta el vencimiento del plazo convenido, no pudiendo celebrarse por más de cinco (5) años.
+
+[ARTÍCULO 14] Ley de contrato de trabajo, Artículo 150 (Relevancia: 6.93)
+Categoría: TITULO V: De las Vacaciones y otras Licencias
+### Artículo 150
+
+El trabajador gozará de un período mínimo y continuado de descanso anual remunerado por los siguientes plazos:
+
+a) De catorce (14) días corridos cuando la antigüedad en el empleo no exceda de cinco (5) años.
+
+b) De veintiún (21) días corridos cuando siendo la antigüedad mayor de cinco (5) años no exceda de diez (10).
+
+c) De veintiocho (28) días corridos cuando la antigüedad siendo mayor de diez (10) años no exceda de veinte (20).
+
+d) De treinta y cinco (35) días corridos cuando la antigüedad exceda de veinte (20) años.
+
+Para determinar la extensión de las vacaciones atendiendo a la antigüedad en el empleo, se computará como tal aquélla que tendría el trabajador al 31 de diciembre del año que correspondan las mismas.
+
+[ARTÍCULO 15] Ley de contrato de trabajo, Artículo 119 (Relevancia: 6.69)
+Categoría: TITULO IV: De la Remuneración del Trabajador
+### Artículo 119
+
+Por ninguna causa podrán abonarse salarios inferiores a los que se fijen de conformidad al presente capítulo, salvo los que resulten de reducciones para aprendices o para trabajadores que cumplan jornadas de trabajo reducida, no impuesta por la calificación, de acuerdo con lo dispuesto en el artículo 200.
+
+(Artículo sustituido por art. 5° de la Ley N° 26.390 B.O. 25/6/2008)
+
+Basándote ÚNICAMENTE en los artículos proporcionados, construye una respuesta DETALLADA Y ESTRUCTURADA con las siguientes secciones:
+
+1. ANÁLISIS DETALLADO: 
+   - Explica cómo las leyes y artículos se aplican específicamente a la situación
+   - Incluye TODOS los conceptos indemnizatorios que corresponden según la normativa (indemnización por antigüedad, preaviso, integración del mes, SAC proporcional, vacaciones proporcionales, etc.)
+   - Especifica EXACTAMENTE la base de cálculo para cada concepto (Mejor Remuneración Mensual, Normal y Habitual)
+   - Incluye TODOS los montos, porcentajes y plazos exactos mencionados en los artículos
+   - Calcula ejemplos numéricos concretos cuando sea posible (ej. "Si el trabajador ganaba $50,000...")
+   
+2. PROCEDIMIENTO RECOMENDADO:
+   - Enumera los pasos prácticos que debe seguir la persona, en orden cronológico
+   - Menciona TODOS los plazos legales para cada acción (días hábiles o corridos)
+   - Especifica el plazo de prescripción para realizar el reclamo
+   - Incluye instancias administrativas o judiciales específicas donde debe acudir (nombres exactos)
+   - Detalla el procedimiento de conciliación laboral obligatoria si corresponde
+   
+3. RECOMENDACIONES LEGALES:
+   - Ofrece consejos adicionales sobre documentación necesaria
+   - Especifica qué pruebas debería reunir el consultante
+   - Menciona alternativas de solución (ej. conciliación, mediación, juicio)
+   - Advierte sobre posibles defensas del empleador
+   - Advierte sobre posibles dificultades o complejidades del proceso
+
+IMPORTANTE:
+- Utiliza SOLAMENTE la información de los artículos proporcionados
+- Cita los artículos específicos para cada afirmación legal que hagas (Por ejemplo: "Según el Art. 231 de la Ley de Contrato de Trabajo...")
+- INCLUYE TODOS LOS PLAZOS Y VALORES NUMÉRICOS mencionados en los artículos (días, meses, años, montos)
+- MENCIONA INSTITUCIONES ESPECÍFICAS cuando corresponda (tribunales, organismos administrativos)
+- PROPORCIONA EJEMPLOS NUMÉRICOS para ilustrar cálculos cuando sea posible
+- EXPLICA el cálculo de TODAS las indemnizaciones que corresponden legalmente 
+- Si la información proporcionada es insuficiente para algún aspecto, indícalo claramente
+- Usa un lenguaje claro y accesible, evitando jerga legal excesiva
+- No inventes información que no esté respaldada por los artículos proporcionados
+
+LISTA DE VERIFICACIÓN - Asegúrate de incluir en caso de ser necesario:
+1. ✓ Plazos exactos que corresponden según la situación 
+2. ✓ Montos o porcentajes de indemnizaciones o compensaciones
+3. ✓ Ejemplos numéricos concretos
+4. ✓ Organismos específicos donde acudir (Ministerio de Trabajo, Tribunales laborales, SECLO, etc.)
+5. ✓ Alternativas de resolución
+6. ✓ Plazos de prescripción
+7. ✓ Documentación y pruebas necesarias
+
+Tu respuesta:
+
+
+==============
+
+ARTÍCULOS UTILIZADOS:
+
+1. Ley de contrato de trabajo, Artículo 232
+   Relevancia: 15.00
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+2. Ley de contrato de trabajo, Artículo 233
+   Relevancia: 15.00
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+3. Ley de contrato de trabajo, Artículo 245
+   Relevancia: 15.00
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+4. Ley de contrato de trabajo, Artículo 246
+   Relevancia: 15.00
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+5. Ley de contrato de trabajo, Artículo 247
+   Relevancia: 15.00
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+6. Ley de contrato de trabajo, Artículo 236
+   Relevancia: 13.99
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+7. Ley de contrato de trabajo, Artículo 248
+   Relevancia: 13.54
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+8. Ley de contrato de trabajo, Artículo 249
+   Relevancia: 12.13
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+9. Ley de contrato de trabajo, Artículo 156
+   Relevancia: 10.94
+   Categoría: TITULO V: De las Vacaciones y otras Licencias
+
+10. Ley de contrato de trabajo, Artículo 231
+   Relevancia: 9.80
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+

@@ -1,0 +1,14 @@
+{
+    "domain_boost": 2.0,
+    "category_boost": 1.5,
+    "actionable_boost": 1.3,
+    "rights_boost": 1.4,
+    "timeframe_boost": 1.2,
+    "compensation_boost": 1.5,
+    "recency_boost": 1.1,
+    "fallback_weight": 0.8,
+    "enabled_domains": [
+        "LABORAL",
+        "FAMILIA"
+    ]
+}

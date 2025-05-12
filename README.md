@@ -178,3 +178,12 @@ sistema-recuperacion-legal/
 - Implementación de análisis de precedentes jurídicos
 - Extracción de argumentos y razonamiento legal
 - Interfaz de usuario web o API REST
+
+
+Levantar en servidor
+
+python ./setup/setup_system.py
+
+python main.py --setup
+
+python api.py

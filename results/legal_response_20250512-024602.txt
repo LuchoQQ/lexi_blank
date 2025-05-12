@@ -1,0 +1,398 @@
+Consulta: Es legal grabar a un policia?
+
+RESPUESTA LEGAL:
+==============
+
+### ANÁLISIS DETALLADO
+
+La consulta sobre la legalidad de grabar a un policía no se encuentra directamente relacionada con los artículos proporcionados, que se centran en derecho laboral argentino. Sin embargo, es posible ofrecer un análisis sobre el contexto laboral en el que podría surgir esta situación, especialmente en un despido o conflicto laboral.
+
+1. **Legalidad de Grabar a un Policía**: En general, la grabación de conversaciones puede estar sujeta a las leyes de privacidad y protección de datos personales. En Argentina, el Código Civil y Comercial establece ciertos derechos sobre la imagen y el sonido de las personas (Art. 1692, 1679). Grabar a un policía en el ejercicio de sus funciones puede ser considerado una forma de documentación de un hecho, pero debe hacerse con la debida consideración a la legalidad de la grabación y a la privacidad de la persona.
+
+2. **Indemnización por despido**: Si la situación de grabar a un policía se relaciona con un despido, es importante considerar las indemnizaciones que corresponden:
+   - **Indemnización por antigüedad** (Art. 245 LCT): Se calcula como un mes de sueldo por cada año de servicio o fracción mayor a tres meses.
+   - **Preaviso** (Art. 232 LCT): Un mes de sueldo si el trabajador tiene menos de cinco años de antigüedad, o dos meses si tiene más.
+   - **Integración del mes de despido** (Art. 233 LCT): Se paga por los días que falten hasta fin de mes.
+   - **SAC proporcional**: Se calcula sobre la mejor remuneración semestral.
+   - **Vacaciones proporcionales**: Se abonan los días de vacaciones no gozados.
+   
+   Por ejemplo, si un trabajador ganaba $50,000 y tenía 3 años de antigüedad, la indemnización por antigüedad sería de $50,000 (sueldo mensual) x 3 (años) = $150,000. Si el despido fue sin preaviso, se sumarían $50,000 de preaviso, más la integración del mes de despido y otros conceptos.
+
+### PROCEDIMIENTO RECOMENDADO EN ARGENTINA
+
+1. **Reclamos Laborales**:
+   - Si el despido es considerado injustificado, el trabajador debe iniciar un reclamo laboral.
+   - **Plazo para reclamos**: Generalmente, el plazo de prescripción es de **2 años** para realizar reclamos laborales.
+   - **Instancias a seguir**:
+     - **Servicio de Conciliación Laboral Obligatoria (SECLO)**: Antes de acudir a la justicia, se debe intentar una conciliación.
+     - **Delegaciones del Ministerio de Trabajo**: Se puede presentar una denuncia o reclamo.
+     - **Fuero Laboral (Juzgados Nacionales/Provinciales del Trabajo)**: Si no se llega a un acuerdo en la conciliación, se puede presentar una demanda judicial.
+
+2. **Pasos prácticos**:
+   - **Reunir documentación**: Recibos de sueldo, prueba de la grabación, etc.
+   - **Presentar reclamo en SECLO**: Solicitar audiencia dentro de los 10 días desde la notificación del despido.
+   - **Esperar resolución**: Si no hay acuerdo, se puede elevar el caso a la justicia laboral.
+
+### RECOMENDACIONES LEGALES
+
+1. **Documentación necesaria**:
+   - Recibos de sueldo.
+   - Pruebas de la grabación (si es relevante).
+   - Testigos que puedan corroborar los hechos.
+
+2. **Alternativas de solución**:
+   - Intentar llegar a un acuerdo en la audiencia de SECLO.
+   - Si no se logra acuerdo, presentar juicio laboral.
+
+3. **Defensas del empleador**:
+   - El empleador puede argumentar que la grabación fue realizada sin consentimiento, o que el despido fue por justa causa.
+
+4. **Particularidades de convenios colectivos**:
+   - Revisar si existe un convenio colectivo que pueda modificar las condiciones de despido o indemnización.
+
+Este análisis proporciona un marco general sobre la legalidad de grabar a un policía y su posible implicancia en un contexto laboral, así como un procedimiento a seguir en caso de despido. Sin embargo, se recomienda consultar a un abogado especializado para obtener asesoramiento específico y adaptado a la situación particular.
+
+==============
+
+PROMPT UTILIZADO:
+==============
+
+Eres un asistente legal especializado en derecho laboral argentino. Debes proporcionar asesoramiento legal preciso y detallado sobre la siguiente consulta utilizando únicamente la información presente en los artículos proporcionados:
+
+CONSULTA DEL USUARIO: Es legal grabar a un policia?
+
+CONTEXTO DETECTADO:
+- Dominio legal principal: Despido
+
+NORMATIVA LABORAL ARGENTINA APLICABLE:
+- Ley de Contrato de Trabajo (Ley 20.744)
+- Ley Nacional de Empleo (Ley 24.013)
+- Ley de Riesgos del Trabajo (Ley 24.557)
+- Convenios Colectivos de Trabajo según la actividad
+
+A continuación se presentan los artículos legales más relevantes para tu consulta:
+
+[ARTÍCULO 1] Ley de empleo, Artículo 125 (Relevancia: 50.00)
+Categoría: Título IV: De la protección de los trabajadores desempleados
+### Artículo 125
+
+Las normas de procedimiento a aplicar serán las siguientes:
+
+a) La resolución de la autoridad de aplicación de reconocimiento, suspensión, reanudación y extinción del derecho a las prestaciones de desempleo deberá fundarse y contra ella podrá interponerse reclamación administrativa o judicial.
+
+b) 1. Cuando la actuación administrativa sea denegada expresamente podrá interponerse recurso por ante la Cámara Nacional de Apelaciones de la Seguridad Social, en el plazo de 30 días siguientes a la fecha en que sea notificada la denegatoria.
+
+2. Si no recae resolución expresa en la reclamación administrativa en el plazo de 45 días de presentada, el interesado podrá requerir pronto despacho y si transcurrieren otros 30 días sin emitir resolución, se considerará que existe silencio de la administración y quedará expedita la vía judicial.
+
+c) En todo lo no contemplado expresamente por esta ley, reglará supletoriamente la ley 19.549 de procedimientos administrativos.
+
+[ARTÍCULO 2] Codigo Civil y Comercial, Artículo 1863 (Relevancia: 50.00)
+Categoría: Título V: Otras fuentes de las obligaciones
+### Artículo 1863
+
+Depósito o entrega de las prestaciones. Las prestaciones dinerarias correspondientes al certificado provisorio deben ser depositadas por el emisor, a su vencimiento, en el banco oficial de su domicilio. El denunciante puede indicar, en cada oportunidad, la modalidad de inversión de su conveniencia, entre las ofrecidas por el banco oficial. En su defecto, el emisor la determina entre las corrientes en plaza, sin responsabilidad.
+
+A pedido del denunciante y previa constitución de garantía suficiente, a juicio del emisor, éste puede entregarle las acreencias dinerarias a su vencimiento, o posteriormente desafectándolas del depósito, con conformidad del peticionario. La garantía se mantiene, bajo responsabilidad del emisor, durante el plazo previsto en el artículo 1865, excepto orden judicial en contrario.
+
+Si no existe acuerdo sobre la suficiencia de la garantía, resuelve el juez con competencia en el domicilio del emisor, por el procedimiento más breve previsto por la legislación local.
+
+[ARTÍCULO 3] Codigo Civil y Comercial, Artículo 1692 (Relevancia: 50.00)
+Categoría: Capítulo 30: Contrato de fideicomiso
+### Artículo 1692
+
+Además de las exigencias de contenido generales artículo 1.667, el contrato de fideicomiso financiero debe contener los términos y condiciones de emisión de los títulos valores, las reglas para la adopción de decisiones por parte de los beneficiarios que incluyan las previsiones para el caso de insuficiencia o insolvencia del patrimonio fideicomitido, y la denominación o identificación particular del fideicomiso financiero.
+
+La obligación de inscripción en el registro dispuesta en el artículo 1.669 se entenderá cumplimentada con la autorización de oferta pública en aquellos contratos de fideicomisos financieros constituidos en los términos del artículo 1.691, de acuerdo al procedimiento que disponga el organismo de contralor de los mercados de valores.
+
+El plazo máximo de vigencia del fideicomiso dispuesto en el artículo 1.668 no será aplicable en los fideicomisos financieros que cuenten con oferta pública de sus títulos valores que tengan por objeto la titulización de créditos hipotecarios y/o instrumentos asimilables, de acuerdo con la reglamentación que dicte el organismo de contralor de los mercados de valores.
+
+[ARTÍCULO 4] Codigo Civil y Comercial, Artículo 1679 (Relevancia: 50.00)
+Categoría: Capítulo 30: Contrato de fideicomiso
+### Artículo 1679
+
+Producida una causa de cese del fiduciario, lo reemplaza el sustituto indicado en el contrato o el designado de acuerdo al procedimiento previsto por él. Si no lo hay o no acepta, el juez debe designar como fiduciario a una de las entidades autorizadas de acuerdo a lo previsto en el artículo 1690.
+
+En caso de muerte del fiduciario, los interesados pueden prescindir de la intervención judicial, otorgando los actos necesarios para la transferencia de bienes.
+
+En los restantes casos de los incisos b), c) y d) del artículo 1678, cualquier interesado puede solicitar al juez la comprobación del acaecimiento de la causal y la indicación del sustituto o el procedimiento para su designación, conforme con el contrato o la ley, por el procedimiento más breve previsto por la ley procesal local. En todos los supuestos del artículo 1678 el juez puede, a pedido del fiduciante, del beneficiario, del fideicomisario o de un acreedor del patrimonio separado, designar un fiduciario judicial provisorio o dictar medidas de protección del patrimonio, si hay peligro en la demora.
+
+Si la designación del nuevo fiduciario se realiza con intervención judicial, debe ser oído el fiduciante.
+
+Los bienes fideicomitidos deben ser transmitidos al nuevo fiduciario. Si son registrables es forma suficiente del título el instrumento judicial, notarial o privado autenticado, en los que conste la designación del nuevo fiduciario. La toma de razón también puede ser rogada por el nuevo fiduciario.
+
+[ARTÍCULO 5] Ley de empleo, Artículo 155 (Relevancia: 50.00)
+Categoría: Título XI: Indemnización por despido injustificado
+### Artículo 155
+
+Sustitúyase el inciso a) del artículo 76 de la ley 22.248 por el siguiente:
+
+Artículo 76: inciso a): Un mes de sueldo por cada año de servicio o fracción mayor de tres meses, tomando como base la mejor remuneración mensual normal y habitual percibida durante el último año o durante el plazo de prestación de servicios si éste fuera menor. Dicha base no podrá exceder de tres veces el importe mensual de la suma que resulta del promedio de todas las remuneraciones fijadas por la Comisión Nacional de Trabajo Agrario y vigentes a la fecha de despido. Dicha Comisión deberá fijar y publicar el monto que corresponda juntamente con las escalas salariales. El importe de esta indemnización en ningún caso podrá ser inferior a dos meses de sueldo, calculados en base al sistema del primer párrafo."
+
+[ARTÍCULO 6] Ley de empleo, Artículo 123 (Relevancia: 50.00)
+Categoría: Título IV: De la protección de los trabajadores desempleados
+### Artículo 123
+
+El derecho a la prestación se extinguirá en caso que el beneficiario quede comprendido en los siguientes supuestos:
+
+a) Haber agotado el plazo de duración de las prestaciones que le hubiere correspondido;
+
+b) Haber obtenido beneficios previsionales o prestaciones no contributivas;
+
+c) Haber celebrado contrato de trabajo por un plazo superior a 12 meses;
+
+d) Haber obtenido las prestaciones por desempleo mediante fraude, simulación o reticencia;
+
+e) Continuar percibiendo las prestaciones cuando correspondiere su suspensión;
+
+f) Incumplir las obligaciones establecidas en los incisos d) y e) del artículo 121;
+
+g) No haber declarado la percepción de gratificaciones por cese de la relación laboral correspondiente a los últimos seis meses;
+
+h) Negarse reiteradamente a aceptar los empleos adecuados ofrecidos por la entidad de aplicación.
+
+[ARTÍCULO 7] Ley de empleo, Artículo 122 (Relevancia: 50.00)
+Categoría: Título IV: De la protección de los trabajadores desempleados
+### Artículo 122
+
+La percepción de las prestaciones se suspenderá cuando el beneficiario:
+
+a) No comparezca ante requerimiento de la autoridad de aplicación sin causa que lo justifique;
+
+b) No dé cumplimiento a las obligaciones establecidas en los incisos a), b) y c) del artículo 121;
+
+c) Cumpla el servicio militar obligatorio salvo que tenga cargas de familia;
+
+d) Sea condenado penalmente con pena de privación de la libertad;
+
+e) Celebre contrato de trabajo de duración determinada por un plazo menor a 12 meses.
+
+La suspensión de la prestación no afecta el período de prestación que le restaba percibir al beneficiario pudiendo reanudarse al finalizar la causa que le dio origen.
+
+[ARTÍCULO 8] Ley de contrato de trabajo, Artículo 263 (Relevancia: 50.00)
+Categoría: Título XIV: De los Privilegios
+### Artículo 263
+
+Los privilegios no pueden resultar sino de la ley.
+
+En los acuerdos transaccionales, conciliatorios o liberatorios que se celebren, podrá imputarse todo o parte del crédito reconocido a uno o varios rubros incluidos en aquellos acuerdos, si correspondieran más de uno, de modo de garantizar el ejercicio de los derechos reconocidos en este título, si se diera el caso de concurrencia de acreedores.
+
+Los acuerdos que no contuviesen tal requisito podrán ser declarados nulos a instancia del trabajador, dado el caso de concurrencia de acreedores sobre bienes del empleador, sea con carácter general o particular.
+
+[ARTÍCULO 9] Ley de contrato de trabajo, Artículo 241 (Relevancia: 50.00)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 241
+
+Las partes, por mutuo acuerdo, podrán extinguir el contrato de trabajo. El acto deberá formalizarse mediante escritura pública o ante la autoridad judicial o administrativa del trabajo.
+
+Será nulo y sin valor el acto que se celebre sin la presencia personal del trabajador y los requisitos consignados precedentemente.
+
+Se considerará igualmente que la relación laboral ha quedado extinguida por voluntad concurrente de las partes, si ello resultase del comportamiento concluyente y recíproco de las mismas, que traduzca inequívocamente el abandono de la relación.
+
+[ARTÍCULO 10] Ley de contrato de trabajo, Artículo 66 (Relevancia: 23.68)
+Categoría: Título II: Del Contrato de Trabajo en General
+### Artículo 66
+
+El empleador está facultado para introducir todos aquellos cambios relativos a la forma y modalidades de la prestación del trabajo, en tanto esos cambios no importen un ejercicio irrazonable de esa facultad, ni alteren modalidades esenciales del contrato, ni causen perjuicio material ni moral al trabajador.
+
+Cuando el empleador disponga medidas vedadas por este artículo, al trabajador le asistirá la posibilidad de optar por considerarse despedido sin causa o accionar persiguiendo el restablecimiento de las condiciones alteradas. En este último supuesto la acción se substanciará por el procedimiento sumarísimo, no pudiéndose innovar en las condiciones y modalidades de trabajo, salvo que éstas sean generales para el establecimiento o sección, hasta que recaiga sentencia definitiva.
+
+(Artículo sustituido por art. 1º de la Ley Nº 26.088, B.O. 24/04/2006.)
+
+[ARTÍCULO 11] Codigo Civil y Comercial, Artículo 1474 (Relevancia: 15.79)
+Categoría: Capítulo 16
+### Artículo 1474
+
+El contrato debe contener:
+
+a) el nombre y datos personales de los miembros individuales, y en el caso de personas jurídicas, el nombre, denominación, domicilio y, si los tiene, datos de inscripción del contrato o estatuto social de cada uno de los participantes. Las personas jurídicas, además, deben consignar la fecha del acta y, la mención del órgano social que aprueba la participación en el consorcio;
+
+b) el objeto del consorcio;
+
+c) el plazo de duración del contrato;
+
+d) la denominación, que se forma con un nombre de fantasía integrado con la leyenda “Consorcio de cooperación”;
+
+e) la constitución de un domicilio especial para todos los efectos que deriven del contrato, tanto respecto de las partes como con relación a terceros;
+
+f) la constitución del fondo común operativo y la determinación de su monto, así como la participación que cada parte asume en el mismo, incluyéndose la forma de su actualización o aumento en su caso;
+
+g) las obligaciones y derechos que pactan los integrantes;
+
+h) la participación de cada contratante en la inversión del o de los proyectos del consorcio, si existen, y la proporción en que cada uno participa de los resultados;
+
+i) la proporción en que los participantes se responsabilizan por las obligaciones que asumen los representantes en su nombre;
+
+j) las formas y ámbitos de adopción de decisiones para el cumplimiento del objeto. Debe preverse la obligatoriedad de celebrar reunión para tratar los temas relacionados con los negocios propios del objeto cuando así lo solicita cualquiera de los participantes por sí o por representante. Las resoluciones se adoptan por mayoría absoluta de las partes, excepto que el contrato de constitución disponga otra forma de cómputo;
+
+k) la determinación del número de representantes del consorcio, nombre, domicilio y demás datos personales, forma de elección y de sustitución, así como sus facultades, poderes y, en caso de que la representación sea plural, formas de actuación. En caso de renuncia, incapacidad o revocación de mandato, el nuevo representante se designa por mayoría absoluta de los miembros, excepto disposición en contrario del contrato. Igual mecanismo se debe requerir para autorizar la sustitución de poder;
+
+l) las mayorías necesarias para la modificación del contrato constitutivo. En caso de silencio, se requiere unanimidad;
+
+m) las formas de tratamiento y las mayorías para decidir la exclusión y la admisión de nuevos participantes. En caso de silencio, la admisión de nuevos miembros requiere unanimidad;
+
+n) las sanciones por incumplimientos de los miembros y representantes;
+
+ñ) las causales de extinción del contrato y las formas de liquidación del consorcio;
+
+o) una fecha anual para el tratamiento del estado de situación patrimonial por los miembros del consorcio;
+
+p) la constitución del fondo operativo, el cual debe permanecer indiviso por todo el plazo de duración del consorcio.
+
+[ARTÍCULO 12] Ley de contrato de trabajo, Artículo 18 (Relevancia: 15.79)
+Categoría: Título I: Disposiciones Generales
+### Artículo 18
+
+Cuando se concedan derechos al trabajador en función de su antigüedad, se considerará tiempo de servicio el efectivamente trabajado desde el comienzo de la vinculación, el que corresponda a los sucesivos contratos a plazo que hubieren celebrado las partes y el tiempo de servicio anterior, cuando el trabajador, cesado en el trabajo por cualquier causa, reingrese a las órdenes del mismo empleador.
+
+[ARTÍCULO 13] Ley de contrato de trabajo, Artículo 132 (Relevancia: 11.84)
+Categoría: TITULO IV: De la Remuneración del Trabajador
+### Artículo 132 BIS
+
+Si el empleador hubiere retenido aportes del trabajador con destino a los organismos de la seguridad social, o cuotas, aportes periódicos o contribuciones a que estuviesen obligados los trabajadores en virtud de normas legales o provenientes de las convenciones colectivas de trabajo, o que resulten de su carácter de afiliados a asociaciones profesionales de trabajadores con personería gremial, o de miembros de sociedades mutuales o cooperativas, o por servicios y demás prestaciones que otorguen dichas entidades, y al momento de producirse la extinción del contrato de trabajo por cualquier causa no hubiere ingresado total o parcialmente esos importes a favor de los organismos, entidades o instituciones a los que estuvieren destinados, deberá a partir de ese momento pagar al trabajador afectado una sanción conminatoria mensual equivalente a la remuneración que se devengaba mensualmente a favor de este último al momento de operarse la extinción del contrato de trabajo, importe que se devengará con igual periodicidad a la del salario hasta que el empleador acreditare de modo fehaciente haber hecho efectivo el ingreso de los fondos retenidos. La imposición de la sanción conminatoria prevista en este artículo no enerva la aplicación de las penas que procedieren en la hipótesis de que hubiere quedado configurado un delito del derecho penal.
+
+(Artículo incorporado por art. 43 de la Ley N° 25.345 B.O. 17/11/2000. Artículo 43 de la Ley N° 25.345 derogado por art. 56 del Decreto N° 70/2023 B.O. 21/12/2023.)
+
+[ARTÍCULO 14] Ley de contrato de trabajo, Artículo 91 (Relevancia: 7.89)
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+### Artículo 91
+
+El contrato por tiempo indeterminado dura hasta que el trabajador se encuentre en condiciones de gozar de los beneficios que le asignan los regímenes de seguridad social, por límites de edad y años de servicios, salvo que se configuren algunas de las causales de extinción previstas en la presente ley.
+
+[ARTÍCULO 15] Ley de contrato de trabajo, Artículo 245 (Relevancia: 1.30)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 245
+
+En los casos de despido dispuesto por el empleador sin justa causa, habiendo o no mediado preaviso y luego de transcurrido el periodo de prueba, se deberá abonar al trabajador una indemnización equivalente a UN (1) mes de sueldo por cada año de servicio o fracción mayor de TRES (3) meses, tomando como base de cálculo la mejor remuneración mensual, normal y habitual devengada durante el último año o durante el tiempo de prestación de servicios si este fuera menor. La base de cálculo de esta indemnización no incluirá el Sueldo Anual Complementario, ni conceptos de pago semestral o anual.
+
+Para aquellos trabajadores remunerados a comisión o con remuneraciones mensuales variables, será de aplicación el promedio de los últimos SEIS (6) meses, o del último año si fuera más favorable al trabajador.
+
+Dicha base no podrá exceder el equivalente de TRES (3) veces el importe mensual de la suma que resulte del promedio de todas las remuneraciones previstas en el convenio colectivo de trabajo aplicable al trabajador, al momento del despido, por la jornada legal o convencional, excluida la antigüedad. Le corresponderá a la Autoridad de Aplicación fijar y publicar el promedio resultante, conjuntamente con las escalas salariales de cada convenio colectivo de trabajo.
+
+Para aquellos trabajadores excluidos de todo convenio colectivo de trabajo, el tope establecido en el párrafo anterior será el del convenio aplicable al establecimiento donde preste servicios o al convenio más favorable, en el caso de que hubiera más de uno.
+
+La base de cálculo de la indemnización no podrá en ningún caso ser inferior al SESENTA Y SIETE POR CIENTO (67 %) del importe correspondiente a UN (1) mes de sueldo, obtenido conforme el método descripto en el primer y segundo párrafo del presente.
+
+La indemnización en ningún caso podrá ser inferior a UN (1) mes de sueldo calculado sobre la base del sistema establecido en el primer y segundo párrafo del presente.
+
+Mediante convenio colectivo de trabajo, las partes podrán sustituir el presente régimen indemnizatorio por un fondo o sistema de cese laboral cuyo costo estará siempre a cargo del empleador, con un aporte mensual que no podrá ser superior al OCHO POR CIENTO (8%) de la remuneración computable.
+
+Por su parte, los empleadores podrán optar por contratar un sistema privado de capitalización a su costo, a fin de solventar la indemnización prevista en el presente artículo y/o la suma que libremente se pacte entre las partes para el supuesto de desvinculación por mutuo acuerdo conforme artículo 241 de la presente ley.
+
+(Artículo sustituido por art. 81 del Decreto N° 70/2023 B.O. 21/12/2023.)
+
+(Nota Infoleg: Ver - Fondo de cese- art. 96 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+Basándote ÚNICAMENTE en los artículos proporcionados, construye una respuesta DETALLADA Y ESTRUCTURADA con las siguientes secciones:
+
+1. ANÁLISIS DETALLADO: 
+   - Explica cómo las leyes y artículos se aplican específicamente a la situación
+   - Incluye TODOS los conceptos indemnizatorios que corresponden según la normativa:
+     * Indemnización por antigüedad (Art. 245 LCT) = Mejor remuneración mensual × años de servicio
+     * Preaviso (Art. 232 LCT) = 1 mes de sueldo (menor a 5 años) o 2 meses (mayor a 5 años)
+     * Integración del mes de despido (Art. 233 LCT) = días faltantes hasta fin de mes
+     * SAC proporcional = Mejor sueldo semestral × días trabajados / 180
+     * Vacaciones proporcionales = Días vacaciones × días trabajados / 365
+     * Indemnización Art. 2 Ley 25.323 (duplicación) si corresponde
+     * Indemnización Art. 8 Ley 24.013 (empleo no registrado) si corresponde
+     * Indemnización Art. 15 Ley 24.013 (registro parcial) si corresponde
+   - Especifica EXACTAMENTE la base de cálculo para cada concepto
+   - Incluye TODOS los montos, porcentajes y plazos exactos mencionados en los artículos
+   - Calcula ejemplos numéricos concretos cuando sea posible (ej. "Si el trabajador ganaba $50,000...")
+   
+2. PROCEDIMIENTO RECOMENDADO EN ARGENTINA:
+   - Enumera los pasos prácticos que debe seguir la persona, en orden cronológico
+   - Menciona TODOS los plazos legales para cada acción (especifica días hábiles o corridos)
+   - Explica el plazo de prescripción para realizar el reclamo (2 años en materia laboral)
+   - Incluye instancias específicas argentinas:
+     * Servicio de Conciliación Laboral Obligatoria (SECLO) en CABA
+     * Delegaciones del Ministerio de Trabajo
+     * Fuero Laboral (Juzgados Nacionales/Provinciales del Trabajo)
+   - Detalla el procedimiento según la jurisdicción en Argentina
+   
+3. RECOMENDACIONES LEGALES:
+   - Ofrece consejos sobre documentación necesaria según la legislación argentina
+   - Especifica qué pruebas debería reunir el consultante (recibos, testigos, etc.)
+   - Menciona alternativas de solución (ej. acuerdo, audiencia SECLO, juicio)
+   - Advierte sobre posibles defensas del empleador en el contexto argentino
+   - Advierte sobre posibles particularidades de convenios colectivos
+
+IMPORTANTE:
+- Utiliza SOLAMENTE la información de los artículos proporcionados
+- Cita los artículos específicos para cada afirmación legal que hagas (Por ejemplo: "Según el Art. 231 de la LCT...")
+- INCLUYE TODOS LOS PLAZOS Y VALORES NUMÉRICOS mencionados en los artículos (días, meses, años, montos)
+- MENCIONA INSTITUCIONES ESPECÍFICAS ARGENTINAS cuando corresponda (SECLO, Ministerio de Trabajo, etc.)
+- PROPORCIONA EJEMPLOS NUMÉRICOS para ilustrar cálculos cuando sea posible
+- EXPLICA el cálculo de TODAS las indemnizaciones que corresponden legalmente 
+- Si la información proporcionada es insuficiente para algún aspecto, indícalo claramente
+- Usa un lenguaje claro y accesible, evitando jerga legal excesiva
+- No inventes información que no esté respaldada por los artículos proporcionados
+
+SITUACIONES ESPECÍFICAS:
+
+PARA CASOS DE DESPIDO:
+- Aclara la diferencia entre despido con justa causa (sin indemnización) y sin justa causa (con indemnización)
+- Explica los requisitos del preaviso y su indemnización sustitutiva
+- Detalla la forma válida de comunicar y recibir un despido en Argentina (telegrama laboral/carta documento)
+
+PARA CASOS DE LICENCIAS:
+- Especifica los días correspondientes según la legislación argentina
+- Aclara si la licencia es con o sin goce de sueldo
+- Detalla los requisitos de aviso previo y documentación
+
+PARA CASOS DE ACCIDENTES DE TRABAJO:
+- Explica el procedimiento de denuncia ante la ART
+- Detalla las prestaciones que corresponden (médicas y económicas)
+- Informa sobre los plazos de reclamación y vías administrativas
+
+PARA CASOS DE REMUNERACIÓN:
+- Diferencia conceptos remunerativos y no remunerativos
+- Explica plazos de pago según normativa argentina (4° día hábil)
+- Detalla vías de reclamo por falta/retraso de pago
+
+Tu respuesta:
+
+
+==============
+
+ARTÍCULOS UTILIZADOS:
+
+1. Ley de empleo, Artículo 125
+   Relevancia: 50.00
+   Categoría: Título IV: De la protección de los trabajadores desempleados
+
+2. Codigo Civil y Comercial, Artículo 1863
+   Relevancia: 50.00
+   Categoría: Título V: Otras fuentes de las obligaciones
+
+3. Codigo Civil y Comercial, Artículo 1692
+   Relevancia: 50.00
+   Categoría: Capítulo 30: Contrato de fideicomiso
+
+4. Codigo Civil y Comercial, Artículo 1679
+   Relevancia: 50.00
+   Categoría: Capítulo 30: Contrato de fideicomiso
+
+5. Ley de empleo, Artículo 155
+   Relevancia: 50.00
+   Categoría: Título XI: Indemnización por despido injustificado
+
+6. Ley de empleo, Artículo 123
+   Relevancia: 50.00
+   Categoría: Título IV: De la protección de los trabajadores desempleados
+
+7. Ley de empleo, Artículo 122
+   Relevancia: 50.00
+   Categoría: Título IV: De la protección de los trabajadores desempleados
+
+8. Ley de contrato de trabajo, Artículo 263
+   Relevancia: 50.00
+   Categoría: Título XIV: De los Privilegios
+
+9. Ley de contrato de trabajo, Artículo 241
+   Relevancia: 50.00
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+10. Ley de contrato de trabajo, Artículo 66
+   Relevancia: 23.68
+   Categoría: Título II: Del Contrato de Trabajo en General
+

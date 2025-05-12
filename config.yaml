@@ -23,10 +23,11 @@ bm25:
 # Configuración de recuperación y presentación de resultados
 retrieval:
   # Número máximo de resultados a mostrar
-  top_n: 10
+  top_n: 20
   
   # Pesos para los diferentes métodos de búsqueda (vectorial, grafo, léxico)
-  weights: [0.5, 0.3, 0.2]
+  # Incrementamos el peso de la búsqueda por grafo para dar más relevancia a las relaciones temáticas
+  weights: [0.4, 0.4, 0.2]
   
   # Guardar resultados en archivos
   save_results: true
@@ -36,4 +37,4 @@ retrieval:
   fusion_strategy: "weighted_max"
   
   # Umbral mínimo de relevancia para incluir resultados
-  min_score_threshold: 0.3
+  min_score_threshold: 0.2

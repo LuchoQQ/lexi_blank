@@ -1,0 +1,382 @@
+Consulta: Trabaje 5 años en una empresa, cuando quedé embarazada me despidieron sin motivo ni indemnizacion
+
+RESPUESTA LEGAL:
+==============
+
+### 1. ANÁLISIS DETALLADO:
+
+En la situación planteada, el despido de una trabajadora embarazada sin motivo ni indemnización es una violación de la normativa laboral vigente, específicamente de la Ley de Contrato de Trabajo.
+
+#### Indemnizaciones a reclamar:
+
+1. **Indemnización por Antigüedad**:
+   - Según el Art. 231 de la Ley de Contrato de Trabajo, el trabajador tiene derecho a recibir indemnización por su antigüedad. La indemnización corresponde a un mes de sueldo por cada año trabajado. 
+   - Si asumimos que el trabajador ganaba $50,000 mensuales, la indemnización por 5 años sería:
+     - **Indemnización por antigüedad = 5 años x $50,000 = $250,000**.
+
+2. **Preaviso**:
+   - El empleador debe dar un preaviso de 1 mes para un trabajador con hasta 5 años de antigüedad (Art. 231). Si el preaviso no se da, se debe pagar el monto correspondiente.
+   - En este caso, sería **$50,000**.
+
+3. **Integración del Mes**:
+   - Si el despido se produce en un mes en que el empleado no ha trabajado un mes completo, se debe abonar la parte proporcional del mes en que se produce el despido. Por simplificación, asumimos que el despido fue al final del mes, entonces se considera un mes completo.
+   - Sería **$50,000**.
+
+4. **SAC Proporcional**:
+   - El aguinaldo (SAC) se calcula como la mitad de la mejor remuneración del semestre. Si el sueldo mensual es $50,000, el SAC proporcional por 5 años sería:
+     - **SAC = (1/2) x $50,000 = $25,000**.
+
+5. **Vacaciones Proporcionales**:
+   - Según el Art. 150 de la Ley de Contrato de Trabajo, el trabajador tiene derecho a 14 días de vacaciones por cada año trabajado hasta 5 años. Esto equivale a 14 días por 5 años.
+   - La base de cálculo sería:
+     - **Vacaciones = (14 días / 30 días) x $50,000 = $23,333.33** (aproximadamente).
+
+#### Resumen de cálculos:
+- **Indemnización por antigüedad**: $250,000
+- **Preaviso**: $50,000
+- **Integración del mes**: $50,000
+- **SAC proporcional**: $25,000
+- **Vacaciones proporcionales**: $23,333.33
+- **Total a reclamar**: **$250,000 + $50,000 + $50,000 + $25,000 + $23,333.33 = $398,333.33**.
+
+### 2. PROCEDIMIENTO RECOMENDADO:
+
+#### Pasos a seguir:
+1. **Recolección de Documentación**:
+   - Reunir recibos de sueldo, carta de despido (si existe), y cualquier comunicación con el empleador.
+  
+2. **Presentación de Reclamo**:
+   - Acudir al **Ministerio de Trabajo** o a la **Secretaría de Trabajo** para presentar un reclamo por despido injustificado.
+   - **Plazo para presentar el reclamo**: 2 años desde el despido (plazo de prescripción).
+
+3. **Conciliación Laboral Obligatoria**:
+   - Se iniciará un proceso de conciliación en el que se citará a ambas partes. Si se llega a un acuerdo, se formaliza, si no, se puede continuar con acciones judiciales.
+
+4. **Acción Judicial**:
+   - Si no hay acuerdo, se puede presentar una demanda ante el **Juzgado Laboral** correspondiente.
+   - **Plazo**: El juicio puede durar varios meses, dependiendo de la carga laboral del juzgado.
+
+### 3. RECOMENDACIONES LEGALES:
+
+#### Documentación necesaria:
+- Recibos de sueldo de los últimos meses.
+- Comunicación del despido (si existe).
+- Documentación que acredite el embarazo, si es relevante para el caso.
+
+#### Pruebas a reunir:
+- Testigos que puedan confirmar el despido y el contexto.
+- Registros de comunicación con el empleador.
+
+#### Alternativas de solución:
+- **Conciliación**: Es el primer paso y puede resultar en un acuerdo beneficioso sin necesidad de juicio.
+- **Mediación**: Puede ser una opción si la conciliación no tiene éxito.
+
+#### Posibles defensas del empleador:
+- El empleador podría argumentar que el despido fue por razones económicas o de rendimiento, aunque no debería ser válido en el caso de un despido durante el embarazo.
+
+#### Dificultades o complejidades:
+- La carga de la prueba puede recaer en la trabajadora para demostrar que el despido fue injustificado.
+- La duración del proceso judicial puede ser extensa, y es posible que se requiera asesoría legal adicional.
+
+### LISTA DE VERIFICACIÓN:
+1. ✓ Plazos exactos: 2 años para presentar reclamo.
+2. ✓ Montos o porcentajes de indemnizaciones: Total de $398,333.33.
+3. ✓ Ejemplos numéricos concretos: Calculados en el análisis.
+4. ✓ Organismos específicos: Ministerio de Trabajo, Juzgado Laboral.
+5. ✓ Alternativas de resolución: Conciliación, mediación, juicio.
+6. ✓ Plazos de prescripción: 2 años.
+7. ✓ Documentación y pruebas necesarias: Recibos de sueldo, comunicación de despido, prueba de embarazo si es relevante.
+
+==============
+
+PROMPT UTILIZADO:
+==============
+
+Eres un asistente legal especializado. Debes proporcionar asesoramiento legal sobre la siguiente consulta utilizando únicamente la información presente en los artículos proporcionados:
+
+CONSULTA: Trabaje 5 años en una empresa, cuando quedé embarazada me despidieron sin motivo ni indemnizacion
+
+A continuación se presentan los artículos legales más relevantes:
+
+[ARTÍCULO 1] Codigo Civil y Comercial, Artículo 665 (Relevancia: 6.43)
+Categoría: Libro Segundo: Relaciones de Familia
+### Artículo 665
+
+Mujer embarazada. La mujer embarazada tiene derecho a reclamar alimentos al progenitor presunto con la prueba sumaria de la filiación alegada.
+
+[ARTÍCULO 2] Ley de contrato de trabajo, Artículo 231 (Relevancia: 6.24)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 231
+
+El contrato de trabajo no podrá ser disuelto por voluntad de una de las partes, sin previo aviso, o en su defecto, indemnización además de la que corresponda al trabajador por su antigüedad en el empleo, cuando el contrato se disuelva por voluntad del empleador. El preaviso, cuando las partes no lo fijen en un término mayor, deberá darse con la anticipación siguiente:
+
+a) por el trabajador, de QUINCE (15) días;
+
+b) por el empleador, de QUINCE (15) días cuando el trabajador se encontrare en período de prueba; de UN (1) mes cuando el trabajador tuviese una antigüedad en el empleo que no exceda de CINCO (5) años y de DOS (2) meses cuando fuere superior.
+
+(Artículo sustituido por art. 3° de la Ley N° 25.877 B.O. 19/3/2004)
+
+[ARTÍCULO 3] Codigo Penal, Artículo 266 (Relevancia: 5.83)
+Categoría: Título XI: Delitos contra la Administración Pública
+### Artículo 266
+
+Será reprimido con prisión de un (1) a cuatro (4) años e inhabilitación especial de uno (1) a (5) cinco años, el funcionario público que, abusando de su cargo, solicitare, exigiere o hiciere pagar o entregar indebidamente, por sí o por interpuesta persona, una contribución, un derecho o una dádiva o cobrase mayores derechos que los que corresponden.
+
+Se aplicará también multa de dos (2) a cinco (5) veces del monto de la exacción.
+
+[ARTÍCULO 4] Codigo Penal, Artículo 142bis (Relevancia: 5.71)
+Categoría: Título V: Delitos contra la Libertad
+### Artículo 142 bis
+
+Se impondrá prisión o reclusión de cinco (5) a quince (15) años, al que sustrajere, retuviere u ocultare a una persona con el fin de obligar a la víctima o a un tercero, a hacer, no hacer, o tolerar algo contra su voluntad. Si el autor lograre su propósito, el mínimo de la pena se elevará a ocho (8) años.
+
+La pena será de diez (10) a veinticinco (25) años de prisión o reclusión:
+
+1. Si la víctima fuese una mujer embarazada; un menor de dieciocho (18) años de edad; o un mayor de setenta (70) años de edad.
+
+2. Si el hecho se cometiere en la persona de un ascendiente; de un hermano; del cónyuge o conviviente; o de otro individuo a quien se deba respeto particular.
+
+3. Si se causare a la víctima lesiones graves o gravísimas.
+
+4. Cuando la víctima sea una persona discapacitada, enferma o que no pueda valerse por sí misma.
+
+5. Cuando el agente sea funcionario o empleado público o pertenezca o haya pertenecido al momento de comisión del hecho a una fuerza armada, de seguridad u organismo de inteligencia del Estado. *(Inciso sustituido por art. 3° del Anexo I de la [Ley N° 26.394](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=143873) B.O. 29/8/2008. Vigencia: comenzará a regir a los SEIS (6) meses de su promulgación. Durante dicho período se llevará a cabo en las áreas pertinentes un programa de divulgación y capacitación sobre su contenido y aplicación)*
+
+6. Cuando participaran en el hecho tres (3) o más personas.
+
+[ARTÍCULO 5] Ley de contrato de trabajo, Artículo 5° (Relevancia: 5.32)
+Categoría: Título I: Disposiciones Generales
+### Artículo 5°
+
+A los fines de esta ley, se entiende como "empresa" la organización instrumental de medios personales, materiales e inmateriales, ordenados bajo una dirección para el logro de fines económicos o benéficos.
+
+A los mismos fines, se llama "empresario" a quien dirige la empresa por sí, o por medio de otras personas, y con el cual se relacionan jerárquicamente los trabajadores, cualquiera sea la participación que las leyes asignen a éstos en la gestión y dirección de la "empresa".
+
+[ARTÍCULO 6] Codigo Penal, Artículo 307 (Relevancia: 5.26)
+Categoría: Título XIII: Delitos contra el Orden Económico y Financiero
+### Artículo 307
+
+Será reprimido con prisión de uno (1) a cuatro (4) años, multa equivalente al monto de la operación, e inhabilitación especial de hasta cinco (5) años, el director, miembro de órgano de fiscalización, accionista, representante de accionista y todo el que por su trabajo, profesión o función dentro de una sociedad emisora, por sí o por persona interpuesta, suministrare o utilizare información privilegiada a la que hubiera tenido acceso en ocasión de su actividad, para la negociación, cotización, compra, venta o liquidación de valores negociables.
+
+*(Artículo incorporado por art. 3° de la [Ley N° 26.733](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=192139) B.O. 28/12/2011)* *(Artículo 306 renumerado como artículo 307 por art. 1° del [Decreto N° 169/2012](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=193841) B.O. 06/02/2012)*
+
+[ARTÍCULO 7] Codigo Penal, Artículo 10 (Relevancia: 4.80)
+Categoría: Título II: De las Penas
+### Artículo 10
+
+Podrán, a criterio del juez competente, cumplir la pena de reclusión o prisión en detención domiciliaria:
+
+a) El interno enfermo cuando la privación de la libertad en el establecimiento carcelario le impide recuperarse o tratar adecuadamente su dolencia y no correspondiere su alojamiento en un establecimiento hospitalario;
+
+b) El interno que padezca una enfermedad incurable en período terminal;
+
+c) El interno díscapacitado cuando la privación de la libertad en el establecimiento carcelario es inadecuada por su condición implicándole un trato indigno, inhumano o cruel;
+
+d) El interno mayor de setenta (70) años;
+
+e) La mujer embarazada;
+
+f) La madre de un niño menor de cinco (5) años o de una persona con discapacidad a su cargo.
+
+*(Artículo sustituido por art. 4° de la [Ley N° 26.472](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=149566), B.O. 20/1/2009)*
+
+[ARTÍCULO 8] Codigo Penal, Artículo 106 (Relevancia: 4.76)
+Categoría: Título II: Delitos contra las Personas
+### Artículo 106
+
+El que pusiere en peligro la vida o la salud de otro, sea colocándolo en situación de desamparo, sea abandonando a su suerte a una persona incapaz de valerse y a la que deba mantener o cuidar o a la que el mismo autor haya incapacitado, será reprimido con prisión de 2 a 6 años.
+
+La pena será de reclusión o prisión de 3 a 10 años, si a consecuencia del abandono resultare grave daño en el cuerpo o en la salud de la víctima.
+
+Si ocurriere la muerte, la pena será de 5 a 15 años de reclusión o prisión.
+
+*(Artículo sustituido por art. 2° de
+
+[ARTÍCULO 9] Codigo Penal, Artículo 145ter (Relevancia: 4.61)
+Categoría: Título V: Delitos contra la Libertad
+### Artículo 145 ter
+
+En los supuestos del artículo 145 bis la pena será de cinco (5) a diez (10) años de prisión, cuando:
+
+1\. Mediare engaño, fraude, violencia, amenaza o cualquier otro medio de intimidación o coerción, abuso de autoridad o de una situación de vulnerabilidad, o concesión o recepción de pagos o beneficios para obtener el consentimiento de una persona que tenga autoridad sobre la víctima.
+
+2\. La víctima estuviere embarazada, o fuere mayor de setenta (70) años.
+
+3\. La víctima fuera una persona discapacitada, enferma o que no pueda valerse por sí misma.
+
+4\. Las víctimas fueren tres (3) o más.
+
+5\. En la comisión del delito participaren tres (3) o más personas.
+
+6\. El autor fuere ascendiente, descendiente, cónyuge, afín en línea recta, colateral o conviviente, tutor, curador, autoridad o ministro de cualquier culto reconocido o no, o encargado de la educación o de la guarda de la víctima.
+
+7\. El autor fuere funcionario público o miembro de una fuerza de seguridad, policial o penitenciaria.
+
+Cuando se lograra consumar la explotación de la víctima objeto del delito de trata de personas la pena será de ocho (8) a doce (12) años de prisión.
+
+Cuando la víctima fuere menor de dieciocho (18) años la pena será de diez (10) a quince (15) años de prisión.
+
+*(Artículo sustituido por art. 26 de la [Ley N° 26.842](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=206554) B.O. 27/12/2012)*
+
+[ARTÍCULO 10] Codigo Penal, Artículo 144 (Relevancia: 4.45)
+Categoría: Título V: Delitos contra la Libertad
+### Artículo 144
+
+Cuando en los casos del artículo anterior concurriere alguna de las circunstancias enumeradas en los incisos 1, 2, 3 y 5 del artículo 142, el máximo de la pena privativa de la libertad se elevará a cinco años.
+
+[ARTÍCULO 11] Codigo Penal, Artículo 84 (Relevancia: 4.42)
+Categoría: Título II
+### Artículo 84
+
+Será reprimido con prisión de uno (1) a cinco (5) años e inhabilitación especial, en su caso, por cinco (5) a diez (10) años el que por imprudencia, negligencia, impericia en su arte o profesión o inobservancia de los reglamentos o de los deberes a su cargo causare a otro la muerte.
+
+El mínimo de la pena se elevará a dos (2) años si fueren más de una las víctimas fatales.
+
+*(Artículo sustituido por art. 1° de la [Ley N° 27.347](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=270433) B.O. 6/1/2017).*
+
+[ARTÍCULO 12] Ley de contrato de trabajo, Artículo 29 (Relevancia: 4.39)
+Categoría: Título II: Del Contrato de Trabajo en General
+### Artículo 29 BIS
+
+El empleador que ocupe trabajadores a través de una empresa de servicios eventuales habilitada por la autoridad competente, será solidariamente responsable con aquélla por todas las obligaciones laborales y deberá retener de los pagos que efectúe a la empresa de servicios eventuales los aportes y contribuciones respectivos para los organismos de la Seguridad Social y depositarlos en término. El trabajador contratado a través de una empresa de servicios eventuales estará regido por la Convención Colectiva, será representado por el Sindicato y beneficiado por la Obra Social de la actividad o categoría en la que efectivamente preste servicios en la empresa usuaria.
+
+(Artículo incorporado por art. 76 de la Ley N° 24.013 B.O. 17/12/1991)
+
+[ARTÍCULO 13] Ley de contrato de trabajo, Artículo 150 (Relevancia: 4.35)
+Categoría: TITULO V: De las Vacaciones y otras Licencias
+### Artículo 150
+
+El trabajador gozará de un período mínimo y continuado de descanso anual remunerado por los siguientes plazos:
+
+a) De catorce (14) días corridos cuando la antigüedad en el empleo no exceda de cinco (5) años.
+
+b) De veintiún (21) días corridos cuando siendo la antigüedad mayor de cinco (5) años no exceda de diez (10).
+
+c) De veintiocho (28) días corridos cuando la antigüedad siendo mayor de diez (10) años no exceda de veinte (20).
+
+d) De treinta y cinco (35) días corridos cuando la antigüedad exceda de veinte (20) años.
+
+Para determinar la extensión de las vacaciones atendiendo a la antigüedad en el empleo, se computará como tal aquélla que tendría el trabajador al 31 de diciembre del año que correspondan las mismas.
+
+[ARTÍCULO 14] Ley de empleo, Artículo 76 (Relevancia: 4.35)
+Categoría: Título III: De la promoción y defensa del empleo
+### Artículo 76
+
+Incorpórase como artículo 29 bis de la Ley de Contrato de Trabajo (t.o. 1976) el siguiente:
+
+"Artículo 29 bis. — El empleador que ocupe trabajadores a través de una empresa de servicios eventuales habilitada por la autoridad competente, será solidariamente responsable con aquélla por todas las obligaciones laborales y deberá retener de los pagos que efectúe a la empresa de servicios eventuales los aportes y contribuciones respectivos para los organismos de la seguridad social y depositarlos en término. El trabajador contratado a través de una empresa de servicios eventuales estará regido por la convención colectiva, será representado por el sindicato y beneficiado por la obra social de la actividad o categoría en la que efectivamente preste servicios en la empresa usuaria."
+
+[ARTÍCULO 15] Codigo Penal, Artículo 309 (Relevancia: 4.33)
+Categoría: Título XIII: Delitos contra el Orden Económico y Financiero
+### Artículo 309
+
+1. Será reprimido con prisión de uno (1) a cuatro (4) años, multa equivalente al monto de la operación e inhabilitación de hasta cinco (5) años, el que:
+
+a) Realizare transacciones u operaciones que hicieren subir, mantener o bajar el precio de valores negociables u otros instrumentos financieros, valiéndose de noticias falsas, negociaciones fingidas, reunión o coalición entre los principales tenedores de la especie, con el fin de producir la apariencia de mayor liquidez o de negociarla a un determinado precio;
+
+b) Ofreciere valores negociables o instrumentos financieros, disimulando u ocultando hechos o circunstancias verdaderas o afirmando o haciendo entrever hechos o circunstancias falsas.
+
+2. Será reprimido con prisión de dos (2) a seis (6) años, cuando el representante, administrador o fiscalizador de una sociedad comercial de las que tienen obligación de establecer órganos de fiscalización privada, informare a los socios o accionistas ocultando o falseando hechos importantes para apreciar la situación económica de la empresa o que en los balances, memorias u otros documentos de contabilidad, consignare datos falsos o incompletos.
+
+*(Artículo incorporado por art. 5° de la [Ley N° 26.733](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=192139) B.O. 28/12/2011)* *(Artículo 308 renumerado como artículo 309 por art. 3° del [Decreto N° 169/2012](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=193841) B.O. 06/02/2012)*
+
+Basándote ÚNICAMENTE en los artículos proporcionados, construye una respuesta DETALLADA Y ESTRUCTURADA con las siguientes secciones:
+
+1. ANÁLISIS DETALLADO: 
+   - Explica cómo las leyes y artículos se aplican específicamente a la situación
+   - Incluye TODOS los conceptos indemnizatorios que corresponden según la normativa (indemnización por antigüedad, preaviso, integración del mes, SAC proporcional, vacaciones proporcionales, etc.)
+   - Especifica EXACTAMENTE la base de cálculo para cada concepto (Mejor Remuneración Mensual, Normal y Habitual)
+   - Incluye TODOS los montos, porcentajes y plazos exactos mencionados en los artículos
+   - Calcula ejemplos numéricos concretos cuando sea posible (ej. "Si el trabajador ganaba $50,000...")
+   
+2. PROCEDIMIENTO RECOMENDADO:
+   - Enumera los pasos prácticos que debe seguir la persona, en orden cronológico
+   - Menciona TODOS los plazos legales para cada acción (días hábiles o corridos)
+   - Especifica el plazo de prescripción para realizar el reclamo
+   - Incluye instancias administrativas o judiciales específicas donde debe acudir (nombres exactos)
+   - Detalla el procedimiento de conciliación laboral obligatoria si corresponde
+   
+3. RECOMENDACIONES LEGALES:
+   - Ofrece consejos adicionales sobre documentación necesaria
+   - Especifica qué pruebas debería reunir el consultante
+   - Menciona alternativas de solución (ej. conciliación, mediación, juicio)
+   - Advierte sobre posibles defensas del empleador
+   - Advierte sobre posibles dificultades o complejidades del proceso
+
+IMPORTANTE:
+- Utiliza SOLAMENTE la información de los artículos proporcionados
+- Cita los artículos específicos para cada afirmación legal que hagas (Por ejemplo: "Según el Art. 231 de la Ley de Contrato de Trabajo...")
+- INCLUYE TODOS LOS PLAZOS Y VALORES NUMÉRICOS mencionados en los artículos (días, meses, años, montos)
+- MENCIONA INSTITUCIONES ESPECÍFICAS cuando corresponda (tribunales, organismos administrativos)
+- PROPORCIONA EJEMPLOS NUMÉRICOS para ilustrar cálculos cuando sea posible
+- EXPLICA el cálculo de TODAS las indemnizaciones que corresponden legalmente 
+- Si la información proporcionada es insuficiente para algún aspecto, indícalo claramente
+- Usa un lenguaje claro y accesible, evitando jerga legal excesiva
+- No inventes información que no esté respaldada por los artículos proporcionados
+
+LISTA DE VERIFICACIÓN - Asegúrate de incluir en caso de ser necesario:
+1. ✓ Plazos exactos que corresponden según la situación 
+2. ✓ Montos o porcentajes de indemnizaciones o compensaciones
+3. ✓ Ejemplos numéricos concretos
+4. ✓ Organismos específicos donde acudir (Ministerio de Trabajo, Tribunales laborales, SECLO, etc.)
+5. ✓ Alternativas de resolución
+6. ✓ Plazos de prescripción
+7. ✓ Documentación y pruebas necesarias
+
+Tu respuesta:
+
+
+==============
+
+ARTÍCULOS UTILIZADOS:
+
+1. Codigo Civil y Comercial, Artículo 665
+   Relevancia: 6.43
+   Categoría: Libro Segundo: Relaciones de Familia
+
+2. Ley de contrato de trabajo, Artículo 231
+   Relevancia: 6.24
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+3. Codigo Penal, Artículo 266
+   Relevancia: 5.83
+   Categoría: Título XI: Delitos contra la Administración Pública
+
+4. Codigo Penal, Artículo 142bis
+   Relevancia: 5.71
+   Categoría: Título V: Delitos contra la Libertad
+
+5. Ley de contrato de trabajo, Artículo 5°
+   Relevancia: 5.32
+   Categoría: Título I: Disposiciones Generales
+
+6. Codigo Penal, Artículo 307
+   Relevancia: 5.26
+   Categoría: Título XIII: Delitos contra el Orden Económico y Financiero
+
+7. Codigo Penal, Artículo 10
+   Relevancia: 4.80
+   Categoría: Título II: De las Penas
+
+8. Codigo Penal, Artículo 106
+   Relevancia: 4.76
+   Categoría: Título II: Delitos contra las Personas
+
+9. Codigo Penal, Artículo 145ter
+   Relevancia: 4.61
+   Categoría: Título V: Delitos contra la Libertad
+
+10. Codigo Penal, Artículo 144
+   Relevancia: 4.45
+   Categoría: Título V: Delitos contra la Libertad
+
+==============
+
+MÉTRICAS:
+
+Tiempo de búsqueda: 1.45 segundos
+Tiempo de modelo: 22.63 segundos
+Tiempo total: 45.51 segundos
+Tokens de entrada: 4308
+Tokens de salida: 1216
+Tokens totales: 5524

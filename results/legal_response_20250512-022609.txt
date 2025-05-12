@@ -1,0 +1,422 @@
+Consulta: Trabaje 5 años en una empresa, cuando quedé embarazada me despidieron sin motivo ni indemnizacion
+
+RESPUESTA LEGAL:
+==============
+
+### 1. ANÁLISIS DETALLADO
+
+**Situación del Despido:**
+Según el **Artículo 178 de la Ley de Contrato de Trabajo (LCT)**, se presume que el despido de una mujer trabajadora obedece a razones de maternidad o embarazo si ocurre dentro de los 7 meses y medio anteriores o posteriores al parto. Esto implica que, si el despido ocurrió en este plazo y la trabajadora notificó su embarazo, el despido es considerado discriminatorio, y la trabajadora tiene derecho a una indemnización.
+
+**Indemnización por Despido Sin Causa:**
+De acuerdo al **Artículo 245 de la LCT**, el despido sin causa da derecho a una indemnización equivalente a un mes de sueldo por cada año de servicio o fracción mayor a tres meses. En tu caso, con 5 años de antigüedad, la indemnización básica sería:
+
+- **Indemnización por antigüedad**: Si el sueldo mensual era de $50,000, la indemnización sería de:
+  - \(5 \text{ años} \times 50,000 = 250,000\).
+
+**Preaviso:**
+El **Artículo 232 de la LCT** establece que, dado que la antigüedad es menor a 5 años, corresponde un preaviso de 1 mes, que también se paga si no se da el aviso. Por lo tanto, se sumaría:
+- **Preaviso**: \(50,000\).
+
+**Integración del Mes de Despido:**
+El **Artículo 233 de la LCT** indica que se debe pagar la integración del mes de despido, que corresponde a los días que faltan hasta el final del mes. Si el despido fue el 15 de un mes, se deben pagar 15 días:
+- **Integración del mes de despido**: \(50,000 \div 30 \times 15 = 25,000\).
+
+**SAC Proporcional:**
+El **SAC proporcional** se calcula como el mejor sueldo semestral multiplicado por los días trabajados en el semestre dividido por 180. Si se considera que se trabajó 6 meses completos:
+- **SAC Proporcional**: \(50,000 \div 180 \times 180 = 50,000\).
+
+**Vacaciones Proporcionales:**
+Se calculan sobre los días de vacaciones correspondientes, que son 14 días por año, por lo que para 5 años se tendrían 70 días de vacaciones. Si se trabajaron 5 años:
+- **Vacaciones proporcionales**: \(50,000 \div 365 \times 70 \approx 9,589.04\).
+
+**Total de Indemnizaciones:**
+Sumando todos los conceptos:
+- Indemnización por antigüedad: \(250,000\)
+- Preaviso: \(50,000\)
+- Integración del mes de despido: \(25,000\)
+- SAC proporcional: \(50,000\)
+- Vacaciones proporcionales: \(9,589.04\)
+
+**Total**: 
+- \(250,000 + 50,000 + 25,000 + 50,000 + 9,589.04 = 384,589.04\).
+
+### 2. PROCEDIMIENTO RECOMENDADO EN ARGENTINA
+
+**Pasos a seguir:**
+1. **Reunir Documentación:** Recibos de sueldo, telegrama de despido, cualquier comunicación escrita de la empresa, y prueba del embarazo (si corresponde).
+2. **Presentar Reclamación:** Presentar una nota de reclamo ante el empleador, solicitando la indemnización correspondiente.
+3. **Conciliación (SECLO):** Si no hay respuesta, acudir al **Servicio de Conciliación Laboral Obligatoria (SECLO)** para intentar una solución amistosa.
+   - **Plazo:** Las audiencias se fijan generalmente dentro de los 15 días hábiles después de la presentación.
+4. **Ministerio de Trabajo:** Si no se alcanza un acuerdo, se puede presentar una denuncia ante el **Ministerio de Trabajo** o acudir directamente a la vía judicial.
+5. **Demanda Judicial:** Si no se resuelve, se puede iniciar una demanda ante el **Fuero Laboral** correspondiente.
+   - **Plazo para presentar la demanda:** 2 años desde el despido (prescripción).
+
+### 3. RECOMENDACIONES LEGALES
+
+**Documentación Necesaria:**
+- Recibos de sueldo.
+- Comunicación del despido (telegrama o carta documento).
+- Pruebas del embarazo (certificado médico, etc.).
+- Testigos que puedan corroborar la situación.
+
+**Alternativas de Solución:**
+- Se puede optar por un acuerdo en la audiencia del SECLO, donde se puede negociar la indemnización.
+- En caso de no llegar a un acuerdo, se puede iniciar juicio laboral.
+
+**Defensas del Empleador:**
+- El empleador podría alegar que el despido fue por causa justificada, por lo que es importante tener pruebas que respalden la reclamación.
+
+**Particularidades de Convenios Colectivos:**
+- Revisar si existe un convenio colectivo que contemple mejores condiciones que las mínimas establecidas por la LCT, ya que podría haber beneficios adicionales.
+
+Es importante que busques asesoría legal para que te guíen en el proceso y te ayuden a presentar tu caso de la mejor manera posible.
+
+==============
+
+PROMPT UTILIZADO:
+==============
+
+Eres un asistente legal especializado en derecho laboral argentino. Debes proporcionar asesoramiento legal preciso y detallado sobre la siguiente consulta utilizando únicamente la información presente en los artículos proporcionados:
+
+CONSULTA DEL USUARIO: Trabaje 5 años en una empresa, cuando quedé embarazada me despidieron sin motivo ni indemnizacion
+
+CONTEXTO DETECTADO:
+- Dominio legal principal: Embarazo, Discriminación, Prestaciones
+- Información específica detectada:
+  * Antigüedad mencionada: 5 año
+
+NORMATIVA LABORAL ARGENTINA APLICABLE:
+- Ley de Contrato de Trabajo (Ley 20.744)
+- Ley Nacional de Empleo (Ley 24.013)
+- Ley de Riesgos del Trabajo (Ley 24.557)
+- Convenios Colectivos de Trabajo según la actividad
+
+A continuación se presentan los artículos legales más relevantes para tu consulta:
+
+[ARTÍCULO 1] Ley de empleo, Artículo 31° (Relevancia: 50.00)
+Categoría: Título III: De la promoción y defensa del empleo
+### Artículo 31°
+
+Los contratos de trabajo que se celebren bajo las modalidades reguladas en este capítulo, salvo el contrato de trabajo de temporada, deberán instrumentarse por escrito y entregarse copias al trabajador y a la asociación sindical que lo represente, en el plazo de 30 días.
+
+(Segundo párrafo derogado por art. 21 de la Ley N° 25.013 B.O. 24/9/1998)
+
+[ARTÍCULO 2] Ley de contrato de trabajo, Artículo 66 (Relevancia: 7.22)
+Categoría: Título II: Del Contrato de Trabajo en General
+### Artículo 66
+
+El empleador está facultado para introducir todos aquellos cambios relativos a la forma y modalidades de la prestación del trabajo, en tanto esos cambios no importen un ejercicio irrazonable de esa facultad, ni alteren modalidades esenciales del contrato, ni causen perjuicio material ni moral al trabajador.
+
+Cuando el empleador disponga medidas vedadas por este artículo, al trabajador le asistirá la posibilidad de optar por considerarse despedido sin causa o accionar persiguiendo el restablecimiento de las condiciones alteradas. En este último supuesto la acción se substanciará por el procedimiento sumarísimo, no pudiéndose innovar en las condiciones y modalidades de trabajo, salvo que éstas sean generales para el establecimiento o sección, hasta que recaiga sentencia definitiva.
+
+(Artículo sustituido por art. 1º de la Ley Nº 26.088, B.O. 24/04/2006.)
+
+[ARTÍCULO 3] Codigo Civil y Comercial, Artículo 1662 (Relevancia: 7.22)
+Categoría: Capítulo 29: Contrato de arbitraje
+### Artículo 1662
+
+El árbitro que acepta el cargo celebra un contrato con cada una de las partes y se obliga a:
+
+a) revelar cualquier circunstancia previa a la aceptación o que surja con posterioridad que pueda afectar su independencia e imparcialidad;
+
+b) permanecer en el tribunal arbitral hasta la terminación del arbitraje, excepto que justifique la existencia de un impedimento o una causa legítima de renuncia;
+
+c) respetar la confidencialidad del procedimiento;
+
+d) disponer de tiempo suficiente para atender diligentemente el arbitraje;
+
+e) participar personalmente de las audiencias;
+
+f) deliberar con los demás árbitros;
+
+g) dictar el laudo motivado y en el plazo establecido.
+
+En todos los casos los árbitros deben garantizar la igualdad de las partes y el principio del debate contradictorio, así como que se dé a cada una de ellas suficiente oportunidad de hacer valer sus derechos.
+
+[ARTÍCULO 4] Codigo Civil y Comercial, Artículo 1464 (Relevancia: 6.02)
+Categoría: Capítulo 16
+### Artículo 1464
+
+El contrato se debe otorgar por instrumento público o privado con firma certificada notarialmente, que debe contener:
+
+a) el objeto, con determinación concreta de las actividades y los medios para su realización;
+
+b) la duración, que debe ser igual a la de la obra, servicio o suministro que constituye el objeto;
+
+c) la denominación, que debe ser la de alguno, algunos o todos los miembros, seguida de la expresión “unión transitoria”;
+
+d) el nombre, razón social o denominación, el domicilio y, si los tiene, los datos de la inscripción registral del contrato o estatuto o de la matriculación o individualización que corresponde a cada uno de los miembros. En el caso de sociedades, la relación de la resolución del órgano social que aprueba la celebración de la unión transitoria, su fecha y número de acta;
+
+e) la constitución de un domicilio especial para todos los efectos que deriven del contrato, tanto entre partes como respecto de terceros;
+
+f) las obligaciones asumidas, las contribuciones debidas al fondo común operativo y los modos de financiar las actividades comunes en su caso;
+
+g) el nombre y el domicilio del representante, que puede ser persona humana o jurídica;
+
+h) el método para determinar la participación de las partes en la distribución de los ingresos y la asunción de los gastos de la unión o, en su caso, de los resultados;
+
+i) los supuestos de separación y exclusión de los miembros y las causales de extinción del contrato;
+
+j) los requisitos de admisión de nuevos miembros;
+
+k) las sanciones por incumplimiento de obligaciones;
+
+l) las normas para la elaboración de los estados de situación, a cuyo efecto los administradores deben llevar, con las formalidades establecidas en los artículos 320 y siguientes, los libros exigibles y habilitados a nombre de la unión transitoria que requieran la naturaleza e importancia de la actividad común.
+
+[ARTÍCULO 5] Ley de contrato de trabajo, Artículo 240 (Relevancia: 6.02)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 240
+
+La extinción del contrato de trabajo por renuncia del trabajador, medie o no preaviso, como requisito para su validez, deberá formalizarse mediante despacho telegráfico colacionado cursado personalmente por el trabajador a su empleador o ante la autoridad administrativa del trabajo.
+
+Los despachos telegráficos serán expedidos por las oficinas de correo en forma gratuita, requiriéndose la presencia personal del remitente y la justificación de su identidad.
+
+Cuando la renuncia se formalizara ante la autoridad administrativa ésta dará inmediata comunicación de la misma al empleador, siendo ello suficiente a los fines del artículo 235 de esta ley.
+
+[ARTÍCULO 6] Ley de contrato de trabajo, Artículo 241 (Relevancia: 6.02)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 241
+
+Las partes, por mutuo acuerdo, podrán extinguir el contrato de trabajo. El acto deberá formalizarse mediante escritura pública o ante la autoridad judicial o administrativa del trabajo.
+
+Será nulo y sin valor el acto que se celebre sin la presencia personal del trabajador y los requisitos consignados precedentemente.
+
+Se considerará igualmente que la relación laboral ha quedado extinguida por voluntad concurrente de las partes, si ello resultase del comportamiento concluyente y recíproco de las mismas, que traduzca inequívocamente el abandono de la relación.
+
+[ARTÍCULO 7] Codigo Civil y Comercial, Artículo 583 (Relevancia: 5.56)
+Categoría: Libro Segundo: Relaciones de Familia
+### Artículo 583
+
+Reclamación en los supuestos de filiación en los que está determinada sólo la maternidad. En todos los casos en que un niño o niña aparezca inscripto sólo con filiación materna, el Registro Civil debe comunicar al Ministerio Público, el cual debe procurar la determinación de la paternidad y el reconocimiento del hijo por el presunto padre. A estos fines, se debe instar a la madre a suministrar el nombre del presunto padre y toda información que contribuya a su individualización y paradero. La declaración sobre la identidad del presunto padre debe hacerse bajo juramento; previamente se hace saber a la madre las consecuencias jurídicas que se derivan de una manifestación falsa.
+
+Antes de remitir la comunicación al Ministerio Público, el jefe u oficial del Registro Civil debe citar a la madre e informarle sobre los derechos del niño y los correlativos deberes maternos, de conformidad con lo dispuesto en la ley especial. Cumplida esta etapa, las actuaciones se remiten al Ministerio Público para promover acción judicial.
+
+[ARTÍCULO 8] Ley de contrato de trabajo, Artículo 178 (Relevancia: 4.81)
+Categoría: Título VII: Trabajo de Mujeres
+### Artículo 178
+
+Se presume, salvo prueba en contrario, que el despido de la mujer trabajadora obedece a razones de maternidad o embarazo cuando fuese dispuesto dentro del plazo de siete y medio (7 y 1/2) meses anteriores o posteriores a la fecha del parto, siempre y cuando la mujer haya cumplido con su obligación de notificar y acreditar en forma el hecho del embarazo así, en su caso, el del nacimiento. En tales condiciones, dará lugar al pago de una indemnización igual a la prevista en el artículo 182 de esta ley.
+
+[ARTÍCULO 9] Ley de contrato de trabajo, Artículo 18 (Relevancia: 4.81)
+Categoría: Título I: Disposiciones Generales
+### Artículo 18
+
+Cuando se concedan derechos al trabajador en función de su antigüedad, se considerará tiempo de servicio el efectivamente trabajado desde el comienzo de la vinculación, el que corresponda a los sucesivos contratos a plazo que hubieren celebrado las partes y el tiempo de servicio anterior, cuando el trabajador, cesado en el trabajo por cualquier causa, reingrese a las órdenes del mismo empleador.
+
+[ARTÍCULO 10] Ley de contrato de trabajo, Artículo 211 (Relevancia: 4.81)
+Categoría: Título X: De la Suspensión de Ciertos Efectos del Contrato de Trabajo
+### Artículo 211
+
+Vencidos los plazos de interrupción del trabajo por causa de accidente o enfermedad inculpable, si el trabajador no estuviera en condiciones de volver a su empleo, el empleador deberá conservárselo durante el plazo de un (1) año contado desde el vencimiento de aquéllos. Vencido dicho plazo, la relación de empleo subsistirá hasta tanto alguna de las partes decida y notifique a la otra su voluntad de rescindirla. La extinción del contrato de trabajo en tal forma, exime a las partes de responsabilidad indemnizatoria.
+
+[ARTÍCULO 11] Codigo Civil y Comercial, Artículo 1474 (Relevancia: 4.81)
+Categoría: Capítulo 16
+### Artículo 1474
+
+El contrato debe contener:
+
+a) el nombre y datos personales de los miembros individuales, y en el caso de personas jurídicas, el nombre, denominación, domicilio y, si los tiene, datos de inscripción del contrato o estatuto social de cada uno de los participantes. Las personas jurídicas, además, deben consignar la fecha del acta y, la mención del órgano social que aprueba la participación en el consorcio;
+
+b) el objeto del consorcio;
+
+c) el plazo de duración del contrato;
+
+d) la denominación, que se forma con un nombre de fantasía integrado con la leyenda “Consorcio de cooperación”;
+
+e) la constitución de un domicilio especial para todos los efectos que deriven del contrato, tanto respecto de las partes como con relación a terceros;
+
+f) la constitución del fondo común operativo y la determinación de su monto, así como la participación que cada parte asume en el mismo, incluyéndose la forma de su actualización o aumento en su caso;
+
+g) las obligaciones y derechos que pactan los integrantes;
+
+h) la participación de cada contratante en la inversión del o de los proyectos del consorcio, si existen, y la proporción en que cada uno participa de los resultados;
+
+i) la proporción en que los participantes se responsabilizan por las obligaciones que asumen los representantes en su nombre;
+
+j) las formas y ámbitos de adopción de decisiones para el cumplimiento del objeto. Debe preverse la obligatoriedad de celebrar reunión para tratar los temas relacionados con los negocios propios del objeto cuando así lo solicita cualquiera de los participantes por sí o por representante. Las resoluciones se adoptan por mayoría absoluta de las partes, excepto que el contrato de constitución disponga otra forma de cómputo;
+
+k) la determinación del número de representantes del consorcio, nombre, domicilio y demás datos personales, forma de elección y de sustitución, así como sus facultades, poderes y, en caso de que la representación sea plural, formas de actuación. En caso de renuncia, incapacidad o revocación de mandato, el nuevo representante se designa por mayoría absoluta de los miembros, excepto disposición en contrario del contrato. Igual mecanismo se debe requerir para autorizar la sustitución de poder;
+
+l) las mayorías necesarias para la modificación del contrato constitutivo. En caso de silencio, se requiere unanimidad;
+
+m) las formas de tratamiento y las mayorías para decidir la exclusión y la admisión de nuevos participantes. En caso de silencio, la admisión de nuevos miembros requiere unanimidad;
+
+n) las sanciones por incumplimientos de los miembros y representantes;
+
+ñ) las causales de extinción del contrato y las formas de liquidación del consorcio;
+
+o) una fecha anual para el tratamiento del estado de situación patrimonial por los miembros del consorcio;
+
+p) la constitución del fondo operativo, el cual debe permanecer indiviso por todo el plazo de duración del consorcio.
+
+[ARTÍCULO 12] Codigo Civil y Comercial, Artículo 588 (Relevancia: 3.70)
+Categoría: Libro Segundo: Relaciones de Familia
+### Artículo 588
+
+Impugnación de la maternidad. En los supuestos de determinación de la maternidad de conformidad con lo dispuesto en el artículo 565, el vínculo filial puede ser impugnado por no ser la mujer la madre del hijo que pasa por suyo. Esta acción de impugnación puede ser interpuesta por el hijo, la madre, el o la cónyuge y todo tercero que invoque un interés legítimo.
+
+La acción caduca si transcurre un año desde la inscripción del nacimiento o desde que se conoció la sustitución o incertidumbre sobre la identidad del hijo. El hijo puede iniciar la acción en cualquier tiempo.
+
+En los supuestos de filiación por técnicas de reproducción humana asistida la falta de vínculo genético no puede invocarse para impugnar la maternidad, si ha mediado consentimiento previo, informado y libre.
+
+[ARTÍCULO 13] Ley de contrato de trabajo, Artículo 245bis (Relevancia: 1.20)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 245 bis
+
+Será considerado despido por un acto de discriminación aquel originado por motivos de raza o etnia, religión, nacionalidad, ideología, opinión política o gremial, sexo o género, orientación sexual, posición económica, caracteres físicos o discapacidad.
+
+En este supuesto la prueba estará a cargo de quien invoque la causal, y en caso de sentencia judicial que corrobore el origen discriminatorio del despido, corresponderá el pago de una indemnización agravada especial que ascenderá a un monto equivalente al cincuenta por ciento (50%) de la establecida por el artículo 245 de la ley 20.744 (t.o. 1976) y sus modificatorias o de la indemnización por antigüedad del régimen especial aplicable al caso.
+
+Según la gravedad de los hechos, los jueces podrán incrementar esta indemnización hasta el cien por ciento (100%), conforme los parámetros referidos anteriormente. La indemnización prevista en el presente artículo no será acumulable con ningún otro régimen especial que establezca agravamientos indemnizatorios.
+
+El despido dispuesto, en todos los casos, producirá la extinción definitiva del vínculo laboral a todos los efectos.
+
+(Artículo sustituido por art. 95 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+[ARTÍCULO 14] Ley de contrato de trabajo, Artículo 5° (Relevancia: 0.99)
+Categoría: Título I: Disposiciones Generales
+### Artículo 5°
+
+A los fines de esta ley, se entiende como "empresa" la organización instrumental de medios personales, materiales e inmateriales, ordenados bajo una dirección para el logro de fines económicos o benéficos.
+
+A los mismos fines, se llama "empresario" a quien dirige la empresa por sí, o por medio de otras personas, y con el cual se relacionan jerárquicamente los trabajadores, cualquiera sea la participación que las leyes asignen a éstos en la gestión y dirección de la "empresa".
+
+[ARTÍCULO 15] Ley de contrato de trabajo, Artículo 245 (Relevancia: 0.91)
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+### Artículo 245
+
+En los casos de despido dispuesto por el empleador sin justa causa, habiendo o no mediado preaviso y luego de transcurrido el periodo de prueba, se deberá abonar al trabajador una indemnización equivalente a UN (1) mes de sueldo por cada año de servicio o fracción mayor de TRES (3) meses, tomando como base de cálculo la mejor remuneración mensual, normal y habitual devengada durante el último año o durante el tiempo de prestación de servicios si este fuera menor. La base de cálculo de esta indemnización no incluirá el Sueldo Anual Complementario, ni conceptos de pago semestral o anual.
+
+Para aquellos trabajadores remunerados a comisión o con remuneraciones mensuales variables, será de aplicación el promedio de los últimos SEIS (6) meses, o del último año si fuera más favorable al trabajador.
+
+Dicha base no podrá exceder el equivalente de TRES (3) veces el importe mensual de la suma que resulte del promedio de todas las remuneraciones previstas en el convenio colectivo de trabajo aplicable al trabajador, al momento del despido, por la jornada legal o convencional, excluida la antigüedad. Le corresponderá a la Autoridad de Aplicación fijar y publicar el promedio resultante, conjuntamente con las escalas salariales de cada convenio colectivo de trabajo.
+
+Para aquellos trabajadores excluidos de todo convenio colectivo de trabajo, el tope establecido en el párrafo anterior será el del convenio aplicable al establecimiento donde preste servicios o al convenio más favorable, en el caso de que hubiera más de uno.
+
+La base de cálculo de la indemnización no podrá en ningún caso ser inferior al SESENTA Y SIETE POR CIENTO (67 %) del importe correspondiente a UN (1) mes de sueldo, obtenido conforme el método descripto en el primer y segundo párrafo del presente.
+
+La indemnización en ningún caso podrá ser inferior a UN (1) mes de sueldo calculado sobre la base del sistema establecido en el primer y segundo párrafo del presente.
+
+Mediante convenio colectivo de trabajo, las partes podrán sustituir el presente régimen indemnizatorio por un fondo o sistema de cese laboral cuyo costo estará siempre a cargo del empleador, con un aporte mensual que no podrá ser superior al OCHO POR CIENTO (8%) de la remuneración computable.
+
+Por su parte, los empleadores podrán optar por contratar un sistema privado de capitalización a su costo, a fin de solventar la indemnización prevista en el presente artículo y/o la suma que libremente se pacte entre las partes para el supuesto de desvinculación por mutuo acuerdo conforme artículo 241 de la presente ley.
+
+(Artículo sustituido por art. 81 del Decreto N° 70/2023 B.O. 21/12/2023.)
+
+(Nota Infoleg: Ver - Fondo de cese- art. 96 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+
+Basándote ÚNICAMENTE en los artículos proporcionados, construye una respuesta DETALLADA Y ESTRUCTURADA con las siguientes secciones:
+
+1. ANÁLISIS DETALLADO: 
+   - Explica cómo las leyes y artículos se aplican específicamente a la situación
+   - Incluye TODOS los conceptos indemnizatorios que corresponden según la normativa:
+     * Indemnización por antigüedad (Art. 245 LCT) = Mejor remuneración mensual × años de servicio
+     * Preaviso (Art. 232 LCT) = 1 mes de sueldo (menor a 5 años) o 2 meses (mayor a 5 años)
+     * Integración del mes de despido (Art. 233 LCT) = días faltantes hasta fin de mes
+     * SAC proporcional = Mejor sueldo semestral × días trabajados / 180
+     * Vacaciones proporcionales = Días vacaciones × días trabajados / 365
+     * Indemnización Art. 2 Ley 25.323 (duplicación) si corresponde
+     * Indemnización Art. 8 Ley 24.013 (empleo no registrado) si corresponde
+     * Indemnización Art. 15 Ley 24.013 (registro parcial) si corresponde
+   - Especifica EXACTAMENTE la base de cálculo para cada concepto
+   - Incluye TODOS los montos, porcentajes y plazos exactos mencionados en los artículos
+   - Calcula ejemplos numéricos concretos cuando sea posible (ej. "Si el trabajador ganaba $50,000...")
+   
+2. PROCEDIMIENTO RECOMENDADO EN ARGENTINA:
+   - Enumera los pasos prácticos que debe seguir la persona, en orden cronológico
+   - Menciona TODOS los plazos legales para cada acción (especifica días hábiles o corridos)
+   - Explica el plazo de prescripción para realizar el reclamo (2 años en materia laboral)
+   - Incluye instancias específicas argentinas:
+     * Servicio de Conciliación Laboral Obligatoria (SECLO) en CABA
+     * Delegaciones del Ministerio de Trabajo
+     * Fuero Laboral (Juzgados Nacionales/Provinciales del Trabajo)
+   - Detalla el procedimiento según la jurisdicción en Argentina
+   
+3. RECOMENDACIONES LEGALES:
+   - Ofrece consejos sobre documentación necesaria según la legislación argentina
+   - Especifica qué pruebas debería reunir el consultante (recibos, testigos, etc.)
+   - Menciona alternativas de solución (ej. acuerdo, audiencia SECLO, juicio)
+   - Advierte sobre posibles defensas del empleador en el contexto argentino
+   - Advierte sobre posibles particularidades de convenios colectivos
+
+IMPORTANTE:
+- Utiliza SOLAMENTE la información de los artículos proporcionados
+- Cita los artículos específicos para cada afirmación legal que hagas (Por ejemplo: "Según el Art. 231 de la LCT...")
+- INCLUYE TODOS LOS PLAZOS Y VALORES NUMÉRICOS mencionados en los artículos (días, meses, años, montos)
+- MENCIONA INSTITUCIONES ESPECÍFICAS ARGENTINAS cuando corresponda (SECLO, Ministerio de Trabajo, etc.)
+- PROPORCIONA EJEMPLOS NUMÉRICOS para ilustrar cálculos cuando sea posible
+- EXPLICA el cálculo de TODAS las indemnizaciones que corresponden legalmente 
+- Si la información proporcionada es insuficiente para algún aspecto, indícalo claramente
+- Usa un lenguaje claro y accesible, evitando jerga legal excesiva
+- No inventes información que no esté respaldada por los artículos proporcionados
+
+SITUACIONES ESPECÍFICAS:
+
+PARA CASOS DE DESPIDO:
+- Aclara la diferencia entre despido con justa causa (sin indemnización) y sin justa causa (con indemnización)
+- Explica los requisitos del preaviso y su indemnización sustitutiva
+- Detalla la forma válida de comunicar y recibir un despido en Argentina (telegrama laboral/carta documento)
+
+PARA CASOS DE LICENCIAS:
+- Especifica los días correspondientes según la legislación argentina
+- Aclara si la licencia es con o sin goce de sueldo
+- Detalla los requisitos de aviso previo y documentación
+
+PARA CASOS DE ACCIDENTES DE TRABAJO:
+- Explica el procedimiento de denuncia ante la ART
+- Detalla las prestaciones que corresponden (médicas y económicas)
+- Informa sobre los plazos de reclamación y vías administrativas
+
+PARA CASOS DE REMUNERACIÓN:
+- Diferencia conceptos remunerativos y no remunerativos
+- Explica plazos de pago según normativa argentina (4° día hábil)
+- Detalla vías de reclamo por falta/retraso de pago
+
+Tu respuesta:
+
+
+==============
+
+ARTÍCULOS UTILIZADOS:
+
+1. Ley de empleo, Artículo 31°
+   Relevancia: 50.00
+   Categoría: Título III: De la promoción y defensa del empleo
+
+2. Ley de contrato de trabajo, Artículo 66
+   Relevancia: 7.22
+   Categoría: Título II: Del Contrato de Trabajo en General
+
+3. Codigo Civil y Comercial, Artículo 1662
+   Relevancia: 7.22
+   Categoría: Capítulo 29: Contrato de arbitraje
+
+4. Codigo Civil y Comercial, Artículo 1464
+   Relevancia: 6.02
+   Categoría: Capítulo 16
+
+5. Ley de contrato de trabajo, Artículo 240
+   Relevancia: 6.02
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+6. Ley de contrato de trabajo, Artículo 241
+   Relevancia: 6.02
+   Categoría: Título XII: De la Extinción del Contrato de Trabajo
+
+7. Codigo Civil y Comercial, Artículo 583
+   Relevancia: 5.56
+   Categoría: Libro Segundo: Relaciones de Familia
+
+8. Ley de contrato de trabajo, Artículo 178
+   Relevancia: 4.81
+   Categoría: Título VII: Trabajo de Mujeres
+
+9. Ley de contrato de trabajo, Artículo 18
+   Relevancia: 4.81
+   Categoría: Título I: Disposiciones Generales
+
+10. Ley de contrato de trabajo, Artículo 211
+   Relevancia: 4.81
+   Categoría: Título X: De la Suspensión de Ciertos Efectos del Contrato de Trabajo
+
