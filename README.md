@@ -135,27 +135,6 @@ retrieval:
   min_score_threshold: 0.3
 ```
 
-## Estructura del Proyecto
-
-```
-sistema-recuperacion-legal/
-├── main.py                 # Punto de entrada principal
-├── config.yaml             # Configuración del sistema
-├── data/                   # Directorio para archivos de datos
-├── cache/                  # Directorio para caché de embeddings
-├── results/                # Resultados de búsquedas guardados
-├── setup/                  # Scripts de configuración
-│   ├── install_dependencies.py
-│   ├── setup_system.py
-│   ├── setup_neo4j.py
-│   └── setup_weaviate.py
-└── src/                    # Código fuente
-    ├── config_loader.py
-    ├── data_loader.py
-    ├── neo4j_utils.py
-    └── weaviate_utils.py
-```
-
 ## Técnicas Implementadas
 
 ### 1. Expansión de Consulta Multi-perspectiva
