@@ -1,5 +1,9 @@
 # Guía de Uso - Sistema de Recuperación de Documentos Legales
 
+python ./setup/setup_system.py --all
+
+python main.py --query "fui despedida luego de trabajar durante 5 años en relacion de dependencia, sin anticipacion o previo aviso y sin indemnizacion luego de avisar que estoy embarazada"
+
 ## Introducción
 
 Este sistema permite la búsqueda y recuperación de documentos legales utilizando técnicas avanzadas de procesamiento de lenguaje natural y bases de datos gráficas y vectoriales. El sistema implementa un enfoque de búsqueda federada que combina:

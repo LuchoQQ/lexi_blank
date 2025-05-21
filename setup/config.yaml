@@ -1,0 +1,22 @@
+weaviate:
+  enabled: true
+  url: http://localhost:8080
+  api_key: null
+  collection_name: ArticulosLegales
+  embedding_model: paraphrase-multilingual-MiniLM-L12-v2
+  use_cache: true
+neo4j:
+  enabled: true
+  uri: bolt://localhost:7687
+  username: neo4j
+  password: password
+bm25:
+  enabled: true
+retrieval:
+  top_n: 15
+  weights:
+  - 0.4
+  - 0.4
+  - 0.2
+  save_results: true
+  results_dir: results
