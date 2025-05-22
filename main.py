@@ -545,260 +545,106 @@ def merge_search_results(results_list: List[List[Dict[str, Any]]], weights: List
 
 def search_query(query: str, config: Dict[str, Any], weaviate_client=None, neo4j_driver=None, documents=None) -> List[Dict[str, Any]]:
     """
-    Procesa una consulta del usuario y devuelve resultados relevantes con
-    optimización específica para consultas de derecho laboral argentino.
-    
-    Args:
-        query: Consulta del usuario
-        config: Diccionario de configuración
-        weaviate_client: Cliente de Weaviate (opcional)
-        neo4j_driver: Driver de Neo4j (opcional)
-        documents: Lista de documentos para búsqueda léxica (opcional)
-        
-    Returns:
-        Lista de resultados relevantes
+    Versión mejorada con especialización legal
     """
     print(f"\nProcesando consulta: '{query}'")
     start_time = time.time()
     
-    # 1. Multi-perspective query expansion
-    print("Clasificando consulta...")
+    # 1. Clasificar y extraer información de la consulta
     category_scores = classify_query(query)
-    print(f"Categorías identificadas: {category_scores}")
-    
-    print("Extrayendo entidades legales...")
     entities = extract_legal_entities(query)
-    print(f"Entidades extraídas: {entities}")
-    
-    # Incrementar peso del dominio laboral
-    if "LABORAL" in category_scores:
-        category_scores["LABORAL"] *= 1.5
-        print("Incrementando peso del dominio LABORAL")
-    
-    # Detectar dominios laborales específicos usando el módulo especializado
-    from src.legal_domains import detect_domains_in_query, extract_labor_entities
     labor_domains = detect_domains_in_query(query)
     labor_entities = extract_labor_entities(query)
     
-    print(f"Dominios laborales específicos: {labor_domains}")
-    print(f"Entidades laborales extraídas: {labor_entities}")
-    
-    # 2. Consultas expandidas especializadas para el dominio laboral
-    print("Generando consultas expandidas...")
-    expanded_queries = generate_expanded_queries(query, category_scores, entities)
-    
-    # 2a. Añadir consultas expandidas específicas del dominio laboral
-    for domain in labor_domains:
-        if domain in LEGAL_DOMAINS:
-            labor_keywords = LEGAL_DOMAINS.get(domain, [])[:3]  # Usar hasta 3 keywords por dominio
-            labor_query = f"{query} {' '.join(labor_keywords)}"
-            if labor_query not in expanded_queries:
-                expanded_queries.append(labor_query)
-                print(f"Añadida consulta específica laboral: '{labor_query}'")
-    
-    # 2b. Añadir consultas expandidas con entidades laborales específicas
-    if labor_entities:
-        for entity_type, values in labor_entities.items():
-            if entity_type == "laws" and values:
-                # Expandir con leyes específicas
-                for law in values[:2]:  # Limitar a 2 leyes para evitar consultas muy largas
-                    law_query = f"{query} {law}"
-                    if law_query not in expanded_queries:
-                        expanded_queries.append(law_query)
-                        print(f"Añadida consulta con ley específica: '{law_query}'")
-            
-            elif entity_type == "procedures" and values:
-                # Expandir con procedimientos específicos
-                for procedure in values[:2]:
-                    proc_query = f"{query} {procedure}"
-                    if proc_query not in expanded_queries:
-                        expanded_queries.append(proc_query)
-                        print(f"Añadida consulta con procedimiento específico: '{proc_query}'")
-    
-    print(f"Consultas expandidas finales: {expanded_queries}")
-    
-    # 3. Multi-modal search - ejecutar búsquedas en paralelo
+    # 2. Realizar búsquedas en diferentes fuentes
     all_results = []
-    
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Iniciar búsquedas en paralelo para cada consulta expandida
-        future_to_query = {}
-        
-        for exp_query in expanded_queries:
-            # Búsqueda vectorial (Weaviate)
-            if weaviate_client and config.get("weaviate", {}).get("enabled", False):
-                future = executor.submit(search_with_weaviate, weaviate_client, config, exp_query)
-                future_to_query[future] = f"vectorial_{exp_query}"
-            
-            # Búsqueda por grafo (Neo4j)
-            if neo4j_driver and config.get("neo4j", {}).get("enabled", False):
-                future = executor.submit(search_with_neo4j, neo4j_driver, config, exp_query, entities)
-                future_to_query[future] = f"grafo_{exp_query}"
-            
-            # Búsqueda léxica (BM25)
-            if documents and config.get("bm25", {}).get("enabled", False):
-                future = executor.submit(search_with_bm25, config, exp_query, documents)
-                future_to_query[future] = f"lexico_{exp_query}"
-                
-        # 3a. Búsqueda adicional especializada laboral usando dominios detectados
-        if neo4j_driver and labor_domains:
-            for domain in labor_domains:
-                labor_future = executor.submit(search_by_legal_domain, neo4j_driver, domain, 10)
-                future_to_query[labor_future] = f"dominio_laboral_{domain}"
-                print(f"Añadida búsqueda especializada para dominio laboral: {domain}")
-        
-        # Recopilar resultados a medida que se completan
-        for future in concurrent.futures.as_completed(future_to_query):
-            query_name = future_to_query[future]
-            try:
-                results = future.result()
-                print(f"Búsqueda completada: {query_name} - {len(results)} resultados")
-                
-                # Dar prioridad a resultados de dominios laborales específicos
-                if query_name.startswith("dominio_laboral_"):
-                    # Incrementar score de estos resultados para darles más peso
-                    for result in results:
-                        result["score"] = result.get("score", 1.0) * 1.3  # Incrementar score en un 30%
-                        
-                all_results.append(results)
-            except Exception as e:
-                print(f"Error en búsqueda {query_name}: {str(e)}")
-    
-    # 4. Fusión inteligente de resultados con ponderación especializada laboral
-    print("Fusionando resultados...")
     weights = []
     
-    # Asignar pesos según configuración, priorizando resultados de dominios laborales
-    if config.get("retrieval", {}).get("weights"):
-        weights = config["retrieval"]["weights"]
-    else:
-        # Definir pesos para cada tipo de búsqueda
-        for k in future_to_query.values():
-            if k.startswith("dominio_laboral_"):
-                weights.append(0.5)  # Mayor peso para resultados de dominio laboral
-            elif k.startswith("vectorial_"):
-                weights.append(0.3)
-            elif k.startswith("grafo_"):
-                weights.append(0.3)
-            elif k.startswith("lexico_"):
-                weights.append(0.2)
+    # Búsqueda vectorial en Weaviate
+    if weaviate_client and config.get("weaviate", {}).get("enabled", False):
+        weaviate_results = search_with_weaviate(weaviate_client, config, query)
+        if weaviate_results:
+            all_results.append(weaviate_results)
+            weights.append(0.4)  # 40% peso para búsqueda vectorial
     
-    # Fusionar resultados con pesos
+    # Búsqueda en grafo Neo4j
+    if neo4j_driver and config.get("neo4j", {}).get("enabled", False):
+        neo4j_results = search_with_neo4j(neo4j_driver, config, query, entities)
+        if neo4j_results:
+            all_results.append(neo4j_results)
+            weights.append(0.4)  # 40% peso para búsqueda en grafo
+    
+    # Búsqueda léxica BM25
+    if documents and config.get("bm25", {}).get("enabled", False):
+        bm25_results = search_with_bm25(config, query, documents)
+        if bm25_results:
+            all_results.append(bm25_results)
+            weights.append(0.2)  # 20% peso para búsqueda léxica
+    
+    # 3. Fusionar resultados
+    if not all_results:
+        print("No se encontraron resultados en ninguna fuente de búsqueda")
+        return []
+        
     base_results = merge_search_results(all_results, weights)
     
-    # 5. Aplicar ranking especializado por dominio legal específico
-    print("Aplicando ranking especializado...")
+    # 4. NUEVA: Aplicar especialización legal
+    print("Aplicando especialización legal...")
     
-    # Detectar el dominio legal de la consulta
-    domain_names = detect_domains_in_query(query)
-    if domain_names:
-        print(f"Dominios legales detectados: {domain_names}")
-    else:
-        # Si no se detectó ningún dominio pero la consulta es claramente laboral,
-        # establecer "LABORAL" como dominio predeterminado
-        if "LABORAL" in category_scores and category_scores["LABORAL"] > 0.3:
-            domains = [("LABORAL", 1.0)]
-            print("Estableciendo LABORAL como dominio predeterminado")
+    # Importar el módulo especializado
+    from src.specialized_retriever import enhance_search_with_specialization
     
-    # Usar los resultados base directamente sin ranking especializado
-    # Ya que enhanced_ranking fue eliminado
-    results = base_results
-    print(f"Dominios laborales detectados: {labor_domains}")
+    specialized_results = enhance_search_with_specialization(
+        query=query,
+        base_results=base_results,
+        detected_domains=labor_domains,
+        category_scores=category_scores,
+        neo4j_driver=neo4j_driver
+    )
     
-    # 6. Enriquecimiento semántico de resultados específico para el contexto laboral
-    results = enrich_labor_context(results, query, neo4j_driver, labor_domains, labor_entities)
+    # 5. Continuar con enriquecimiento y verificación de artículos críticos
+    results = enrich_labor_context(specialized_results, query, neo4j_driver, labor_domains, labor_entities)
     
-    # 7. NUEVO: Verificar normativa relevante específica que podría faltar
-    critical_labor_laws = {
-        "despido": ["Artículo 245", "Artículo 232", "Artículo 233"],
-        "licencia": ["Artículo 158", "Artículo 161", "Artículo 177"],
-        "jornada": ["Artículo 197", "Artículo 201"],
-        "remuneración": ["Artículo 103", "Artículo 128", "Artículo 121", "Artículo 123"],
-        "preaviso": ["Artículo 231", "Artículo 232", "Artículo 233"],
-        "indemnización": ["Artículo 245", "Artículo 232", "Artículo 233"]
-    }
+    # 6. Tu lógica existente para artículos críticos faltantes...
+    # (Esta parte se podría simplificar ya que la especialización debería manejar esto)
     
-    # Verificar si la consulta se relaciona con alguno de estos temas cruciales
-    missing_critical_articles = []
-    for key, articles in critical_labor_laws.items():
-        if key in query.lower():
-            # Verificar si estos artículos cruciales están presentes
-            found_articles = set()
-            for result in results:
-                article_number = result.get("article_number", "")
-                for critical_art in articles:
-                    if critical_art.lower() == f"artículo {article_number}".lower():
-                        found_articles.add(critical_art)
-            
-            # Identificar artículos cruciales que faltan
-            missing = [art for art in articles if art not in found_articles]
-            if missing:
-                print(f"Faltan artículos cruciales para '{key}': {missing}")
-                missing_critical_articles.extend(missing)
-    
-    # Si hay artículos críticos faltantes, intentar encontrarlos específicamente
-    if missing_critical_articles and neo4j_driver:
-        print(f"Buscando artículos cruciales que faltan: {missing_critical_articles}")
-        try:
-            missing_results = []
-            for article in missing_critical_articles:
-                # Extraer número de artículo
-                article_num = article.replace("Artículo ", "")
-                
-                # Buscar específicamente este artículo en Neo4j
-                with neo4j_driver.session() as session:
-                    query = """
-                    MATCH (a:Article)
-                    WHERE a.article_number = $article_num AND 
-                          (a.law_name CONTAINS 'Contrato' OR a.law_name CONTAINS 'LCT')
-                    RETURN a.article_id as article_id,
-                           a.content as content,
-                           a.law_name as law_name,
-                           a.article_number as article_number,
-                           a.category as category,
-                           a.source as source
-                    LIMIT 1
-                    """
-                    result = session.run(query, article_num=article_num)
-                    record = result.single()
-                    
-                    if record:
-                        # Crear un resultado con alta puntuación para asegurar su inclusión
-                        missing_result = {
-                            "article_id": record["article_id"],
-                            "content": record["content"],
-                            "law_name": record["law_name"],
-                            "article_number": record["article_number"],
-                            "category": record["category"],
-                            "source": record["source"],
-                            "score": 100.0  # Alta puntuación para asegurar su inclusión
-                        }
-                        missing_results.append(missing_result)
-                        print(f"Encontrado artículo crucial: {article} - {record['law_name']}")
-            
-            # Añadir estos resultados al principio
-            if missing_results:
-                print(f"Añadiendo {len(missing_results)} artículos cruciales a los resultados")
-                # Evitar duplicados verificando article_number
-                existing_articles = set(r.get("article_number", "") for r in results)
-                for mr in missing_results:
-                    if mr.get("article_number") not in existing_articles:
-                        results.insert(0, mr)  # Insertar al principio
-                        existing_articles.add(mr.get("article_number", ""))
-                
-                # Re-ordenar por score
-                results.sort(key=lambda x: x.get("score", 0), reverse=True)
-        except Exception as e:
-            print(f"Error al buscar artículos cruciales: {str(e)}")
-    
-    # 8. Limitar a top_n resultados
+    # 7. Limitar resultados finales
     top_n = config.get("retrieval", {}).get("top_n", 15)
-    results = results[:top_n]
+    final_results = results[:top_n]
     
     end_time = time.time()
-    print(f"Búsqueda completada en {end_time - start_time:.2f} segundos, {len(results)} resultados.")
+    print(f"Búsqueda completada en {end_time - start_time:.2f} segundos, {len(final_results)} resultados.")
     
-    return results
+    return final_results
+
+# También podrías crear una versión específica para casos laborales:
+
+def search_labor_case(query: str, config: Dict[str, Any], neo4j_driver=None) -> List[Dict[str, Any]]:
+    """
+    Búsqueda especializada para casos laborales con mayor precisión
+    """
+    from src.specialized_retriever import LaborLawRetriever
+    from src.legal_domains import detect_domains_in_query
+    
+    print(f"Búsqueda especializada laboral: '{query}'")
+    
+    # Búsqueda directa por dominios laborales
+    labor_domains = detect_domains_in_query(query)
+    
+    if neo4j_driver and labor_domains:
+        domain_results = []
+        for domain in labor_domains:
+            results = search_by_legal_domain(neo4j_driver, query, 20)  # Más resultados para filtrar
+            domain_results.extend(results)
+        
+        # Aplicar especialización
+        retriever = LaborLawRetriever()
+        specialized_results = retriever.retrieve(query, domain_results)
+        
+        print(f"Encontrados {len(specialized_results)} resultados especializados")
+        return specialized_results
+    
+    return []
 
 def enrich_labor_context(results_list, query_text, neo4j_driver, labor_domains, labor_entities):
     """
