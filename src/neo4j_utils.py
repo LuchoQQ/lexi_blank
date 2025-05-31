@@ -810,7 +810,7 @@ def search_by_legal_domain(driver: GraphDatabase.driver, query: str, limit: int 
         List of relevant articles with their properties
     """
     # Import detection function from our simplified module
-    from src.legal_domain import detect_domains_in_query
+    from src.legal_domains import detect_domains_in_query
     
     results = []
     
