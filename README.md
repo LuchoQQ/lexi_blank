@@ -1,3 +1,14 @@
+python main.py --query "fui despedida luego de trabajar durante 5 años en relacion de dependencia, sin anticipacion o previo aviso y sin indemnizacion luego de avisar que estoy embarazada"
+
+
+
+
+
+
+
+
+
+
 # Sistema de Recuperación de Documentos Legales
 
 Sistema simplificado para búsqueda y recuperación de documentos legales utilizando técnicas de procesamiento de lenguaje natural y bases de datos gráficas y vectoriales.

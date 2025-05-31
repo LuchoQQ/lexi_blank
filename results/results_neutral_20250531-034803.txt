@@ -1,0 +1,313 @@
+Consulta: fui despedida luego de trabajar durante 5 años en relacion de dependencia, sin anticipacion o previo aviso y sin indemnizacion luego de avisar que estoy embarazada
+Sistema: Búsqueda Semántica Neutral (Sin Sesgos)
+Timestamp: 20250531-034803
+
+
+=== RESULTADOS DE BÚSQUEDA NEUTRAL (SIN SESGOS) ===
+
+RESULTADO #1 (Relevancia: 94.19)
+Ley/Código: Codigo Penal
+Artículo: 142bis
+Categoría: Título V: Delitos contra la Libertad
+Método: neutral_bm25
+Coincidencias exactas: 7
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 142 bis
+
+Se impondrá prisión o reclusión de cinco (5) a quince (15) años, al que sustrajere, retuviere u ocultare a una persona con el fin de obligar a la víctima o a un tercero, a hacer, no hacer, o tolerar algo contra su voluntad. Si el autor lograre su propósito, el mínimo de la pena se elevará a ocho (8) años.
+
+La pena será de diez (10) a veinticinco (25) años de prisión o reclusión:
+
+1. Si la víctima fuese una mujer embarazada; un menor de dieciocho (18) años de edad; o un mayor de setenta (70) años de edad.
+
+2. Si el hecho se cometiere en la persona de un ascendiente; de un hermano; del cónyuge o conviviente; o de otro individuo a quien se deba respeto particular.
+
+3. Si se causare a la víctima lesiones graves o gravísimas.
+
+4. Cuando la víctima sea una persona discapacitada, enferma o que no pueda valerse por sí misma.
+
+5. Cuando el agente sea funcionario o empleado público o pertenezca o haya pertenecido al momento de comisión del hecho a una fuerza armada, de seguridad u organismo de inteligencia del Estado. *(Inciso sustituido por art. 3° del Anexo I de la [Ley N° 26.394](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=143873) B.O. 29/8/2008. Vigencia: comenzará a regir a los SEIS (6) meses de su promulgación. Durante dicho período se llevará a cabo en las áreas pertinentes un programa de divulgación y capacitación sobre su contenido y aplicación)*
+
+6. Cuando participaran en el hecho tres (3) o más personas.
+================================================================================
+
+RESULTADO #2 (Relevancia: 78.15)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 209
+Categoría: Título X: De la Suspensión de Ciertos Efectos del Contrato de Trabajo
+Método: neutral_bm25
+Coincidencias exactas: 7
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 209
+
+El trabajador, salvo casos de fuerza mayor, deberá dar aviso de la enfermedad o accidente y del lugar en que se encuentra, en el transcurso de la primera jornada de trabajo respecto de la cual estuviere imposibilitado de concurrir por alguna de esas causas. Mientras no la haga, perderá el derecho a percibir la remuneración correspondiente salvo que la existencia de la enfermedad o accidente, teniendo en consideración su carácter y gravedad, resulte luego inequívocamente acreditada.
+================================================================================
+
+RESULTADO #3 (Relevancia: 75.62)
+Ley/Código: Codigo Penal
+Artículo: 266
+Categoría: Título XI: Delitos contra la Administración Pública
+Método: neutral_bm25
+Coincidencias exactas: 4
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 266
+
+Será reprimido con prisión de un (1) a cuatro (4) años e inhabilitación especial de uno (1) a (5) cinco años, el funcionario público que, abusando de su cargo, solicitare, exigiere o hiciere pagar o entregar indebidamente, por sí o por interpuesta persona, una contribución, un derecho o una dádiva o cobrase mayores derechos que los que corresponden.
+
+Se aplicará también multa de dos (2) a cinco (5) veces del monto de la exacción.
+================================================================================
+
+RESULTADO #4 (Relevancia: 19.29)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 245
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: semantic_similarity
+Coincidencias exactas: 8
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 245
+
+En los casos de despido dispuesto por el empleador sin justa causa, habiendo o no mediado preaviso y luego de transcurrido el periodo de prueba, se deberá abonar al trabajador una indemnización equivalente a UN (1) mes de sueldo por cada año de servicio o fracción mayor de TRES (3) meses, tomando como base de cálculo la mejor remuneración mensual, normal y habitual devengada durante el último año o durante el tiempo de prestación de servicios si este fuera menor. La base de cálculo de esta indemnización no incluirá el Sueldo Anual Complementario, ni conceptos de pago semestral o anual.
+
+Para aquellos trabajadores remunerados a comisión o con remuneraciones mensuales variables, será de aplicación el promedio de los últimos SEIS (6) meses, o del último año si fuera más favorable al trabajador.
+
+Dicha base no podrá exceder el equivalente de TRES (3) veces el importe mensual de la suma que resulte del promedio de todas las remuneraciones previstas en el convenio colectivo de trabajo aplicable al trabajador, al momento del despido, por la jornada legal o convencional, excluida la antigüedad. Le corresponderá a la Autoridad de Aplicación fijar y publicar el promedio resultante, conjuntamente con las escalas salariales de cada convenio colectivo de trabajo.
+
+Para aquellos trabajadores excluidos de todo convenio colectivo de trabajo, el tope establecido en el párrafo anterior será el del convenio aplicable al establecimiento donde preste servicios o al convenio más favorable, en el caso de que hubiera más de uno.
+
+La base de cálculo de la indemnización no podrá en ningún caso ser inferior al SESENTA Y SIETE POR CIENTO (67 %) del importe correspondiente a UN (1) mes de sueldo, obtenido conforme el método descripto en el primer y segundo párrafo del presente.
+
+La indemnización en ningún caso podrá ser inferior a UN (1) mes de sueldo calculado sobre la base del sistema establecido en el primer y segundo párrafo del presente.
+
+Mediante convenio colectivo de trabajo, las partes podrán sustituir el presente régimen indemnizatorio por un fondo o sistema de cese laboral cuyo costo estará siempre a cargo del empleador, con un aporte mensual que no podrá ser superior al OCHO POR CIENTO (8%) de la remuneración computable.
+
+Por su parte, los empleadores podrán optar por contratar un sistema privado de capitalización a su costo, a fin de solventar la indemnización prevista en el presente artículo y/o la suma que libremente se pacte entre las partes para el supuesto de desvinculación por mutuo acuerdo conforme artículo 241 de la presente ley.
+
+(Artículo sustituido por art. 81 del Decreto N° 70/2023 B.O. 21/12/2023.)
+
+(Nota Infoleg: Ver - Fondo de cese- art. 96 de la Ley N° 27.742 B.O. 8/7/2024. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina.)
+================================================================================
+
+RESULTADO #5 (Relevancia: 18.81)
+Ley/Código: Ley de empleo
+Artículo: 153
+Categoría: Título XI: Indemnización por despido injustificado
+Método: semantic_similarity
+Coincidencias exactas: 7
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 153
+
+Sustitúyese el artículo 245 de la Ley de Contrato de Trabajo (t.o. 1976) por el siguiente:
+
+"Artículo 245. — Indemnización por antigüedad o despido. En los casos de despido dispuesto por el empleador sin justa causa, habiendo o no mediado preaviso, éste deberá abonar al trabajador una indemnización equivalente a un mes de sueldo por cada año de servicio o fracción mayor de tres meses, tomando como base la mejor remuneración mensual, normal y habitual, percibida durante el último año o durante el tiempo de prestación de servicios si éste fuera menor.
+
+Dicha base no podrá exceder el equivalente de tres veces el importe mensual de la suma que resulta del promedio de todas las remuneraciones previstas en el convenio colectivo de trabajo aplicable al trabajador al momento del despido por la jornada legal o convencional, excluida la antigüedad. Al Ministerio de Trabajo y Seguridad Social le corresponderá fijar y publicar el monto que corresponda juntamente con las escalas salariales de cada convenio colectivo de trabajo.
+
+Para aquellos trabajadores no amparados por convenios colectivos de trabajo el tope establecido en el párrafo anterior será el que corresponda al convenio de actividad aplicable al establecimiento donde preste servicio o al convenio más favorable, en el caso de que hubiera más de uno.
+
+Para aquellos trabajadores remunerados a comisión o con remuneraciones variables, será de aplicación el convenio de la actividad a la que pertenezcan o aquel que se aplique en la empresa o establecimiento donde preste servicios, si éste fuere más favorable.
+
+El importe de esta indemnización en ningún caso podrá ser inferior a dos meses del sueldo calculados en base al sistema del primer párrafo."
+================================================================================
+
+RESULTADO #6 (Relevancia: 17.70)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 177
+Categoría: TITULO VII: Trabajo de Mujeres
+Método: semantic_similarity
+Coincidencias exactas: 7
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 177
+
+Queda prohibido el trabajo del personal femenino o persona gestante durante los cuarenta y cinco (45) días anteriores al parto y hasta cuarenta y cinco (45) días después del mismo.
+
+Sin embargo, la persona interesada podrá optar por que se le reduzca la licencia anterior al parto, que en tal caso no podrá ser inferior a diez (10) días; el resto del período total de licencia se acumulará al período de descanso posterior al parto. En caso de nacimiento pretérmino se acumulará al descanso posterior todo el lapso de licencia que no se hubiere gozado antes del parto, de modo de completar los noventa (90) días.
+
+La trabajadora o persona gestante deberá comunicar fehacientemente su embarazo al empleador, con presentación de certificado médico en el que conste la fecha presunta del parto, o requerir su comprobación por el empleador.
+
+La misma conservará su empleo durante los períodos indicados, y gozará de las asignaciones que le confieren los sistemas de seguridad social, que garantizarán a la misma la percepción de una suma igual a la retribución que corresponda al período de licencia legal, todo de conformidad con las exigencias y demás requisitos que prevean las reglamentaciones respectivas.
+
+Garantízase a toda mujer o persona gestante durante la gestación el derecho a la estabilidad en el empleo, el que tendrá carácter de derecho adquirido a partir del momento en que la misma practique la notificación a que se refiere el párrafo anterior.
+================================================================================
+
+RESULTADO #7 (Relevancia: 15.66)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 254
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: semantic_similarity
+Coincidencias exactas: 5
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 254
+
+Cuando el trabajador fuese despedido por incapacidad física o mental para cumplir con sus obligaciones, y la misma fuese sobreviniente a la iniciación de la prestación de los servicios, la situación estará regida por lo dispuesto en el artículo 212 de esta ley.
+
+Tratándose de un trabajador que contare con la habilitación especial que se requiera para prestar los servicios objeto del contrato, y fuese sobrevinientemente inhabilitado, en caso de despido será acreedor a la indemnización prevista en el artículo 247, salvo que la inhabilitación provenga de dolo o culpa grave e inexcusable de su parte.
+================================================================================
+
+RESULTADO #8 (Relevancia: 14.36)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 181
+Categoría: Título VII: Trabajo de Mujeres
+Método: semantic_similarity
+Coincidencias exactas: 5
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 181
+
+Se considera que el despido responde a la causa mencionada cuando el mismo fuese dispuesto sin invocación de causa por el empleador, o no fuese probada la que se invocare, y el despido se produjere dentro de los tres (3) meses anteriores o seis (6) meses posteriores al matrimonio y siempre que haya mediado notificación fehaciente del mismo a su empleador, no pudiendo esta notificación efectuarse con anterioridad o posteridad a los plazos señalados.
+================================================================================
+
+RESULTADO #9 (Relevancia: 14.21)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 178
+Categoría: Título VII: Trabajo de Mujeres
+Método: semantic_similarity
+Coincidencias exactas: 5
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 178
+
+Se presume, salvo prueba en contrario, que el despido de la mujer trabajadora obedece a razones de maternidad o embarazo cuando fuese dispuesto dentro del plazo de siete y medio (7 y 1/2) meses anteriores o posteriores a la fecha del parto, siempre y cuando la mujer haya cumplido con su obligación de notificar y acreditar en forma el hecho del embarazo así, en su caso, el del nacimiento. En tales condiciones, dará lugar al pago de una indemnización igual a la prevista en el artículo 182 de esta ley.
+================================================================================
+
+RESULTADO #10 (Relevancia: 14.07)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 247
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: semantic_similarity
+Coincidencias exactas: 4
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 247
+
+En los casos en que el despido fuese dispuesto por causa de fuerza mayor o por falta o disminución de trabajo no imputable al empleador fehacientemente justificada, el trabajador tendrá derecho a percibir una indemnización equivalente a la mitad de la prevista en el artículo 245 de esta ley.
+
+En tales casos el despido deberá comenzar por el personal menos antiguo dentro de cada especialidad.
+
+Respecto del personal ingresado en un mismo semestre, deberá comenzarse por el que tuviere menos cargas de familia, aunque con ello se alterara el orden de antigüedad.
+================================================================================
+
+RESULTADO #11 (Relevancia: 12.22)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 236
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: semantic_similarity
+Coincidencias exactas: 5
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 236
+
+Cuando el preaviso hubiera sido otorgado por el empleador, el trabajador podrá considerar extinguido el contrato de trabajo, antes del vencimiento del plazo, sin derecho a la remuneración por el período faltante del preaviso, pero conservará el derecho a percibir la indemnización que le corresponda en virtud del despido. Esta manifestación deberá hacerse en la forma prevista en el artículo 240.
+
+El empleador podrá relevar al trabajador de la obligación de prestar servicios durante el plazo de preaviso abonándole el importe de los salarios correspondientes.
+================================================================================
+
+RESULTADO #12 (Relevancia: 10.83)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 273
+Categoría: Título XIV: De los Privilegios
+Método: semantic_similarity
+Coincidencias exactas: 4
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 273
+
+Los créditos por remuneraciones y subsidios familiares debidos al trabajador por seis (6) meses y los provenientes de indemnizaciones por accidente del trabajo, por antigüedad o despido y por falta de preaviso, vacaciones y sueldo anual complementario, los importes por fondo de desempleo y cualquier otro derivado de la relación laboral, gozarán del privilegio general. Se incluyen las costas judiciales en su caso. Serán preferidos a cualquier otro crédito, salvo los alimentarios.
+================================================================================
+
+RESULTADO #13 (Relevancia: 2.22)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 253
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: neutral_neo4j
+Coincidencias exactas: 8
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 253
+
+En caso de que el trabajador titular de un beneficio previsional de cualquier régimen volviera a prestar servicios en relación de dependencia, sin que ello implique violación a la legislación vigente, el empleador podrá disponer la extinción del contrato invocando esa situación, con obligación de preavisarlo y abonar la indemnización en razón de la antigüedad prevista en el artículo 245 de esta ley o en su caso lo dispuesto en el artículo 247.
+
+En este supuesto sólo se computará como antigüedad el tiempo de servicios posterior al cese. (Párrafo incorporado por art. 7 de la Ley N° 24.347 B.O. 29/6/1994)
+
+También es aplicable lo dispuesto por el presente artículo al trabajador que sigue prestando servicios sin interrupción a las órdenes del mismo empleador, luego del goce del beneficio de la jubilación, considerándose la fecha del acuerdo de la prestación como inicio del cómputo de la antigüedad posterior al mismo. (Párrafo incorporado por art. 8° de la Ley N° 27.426 B.O. 28/12/2017. Vigencia: el día siguiente de su publicación en el Boletín Oficial)
+================================================================================
+
+RESULTADO #14 (Relevancia: 2.22)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 252
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: neutral_neo4j
+Coincidencias exactas: 8
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 252
+
+A partir de que el trabajador cumpla setenta (70) años de edad y reúna los requisitos necesarios para acceder a la Prestación Básica Universal (PBU) establecida en el artículo 17, inciso a) de la ley 24.241 y sus modificaciones, el empleador podrá intimarlo a que inicie los trámites pertinentes, extendiéndole los certificados de servicios y demás documentación necesaria a esos fines. A partir de ese momento, el empleador deberá mantener la relación de trabajo hasta que el trabajador obtenga el beneficio y por un plazo máximo de un (1) año.
+
+Lo dispuesto en el párrafo precedente no afecta el derecho del trabajador de solicitar el beneficio previsional con anterioridad al cumplimiento de los setenta (70) años de edad.
+
+Concedido el beneficio o vencido dicho plazo, el contrato de trabajo quedará extinguido sin obligación para el empleador del pago de la indemnización por antigüedad que prevean las leyes o estatutos profesionales.
+
+La intimación a que se refiere el primer párrafo de este artículo implicará la notificación del preaviso establecido por la presente ley o disposiciones similares contenidas en otros estatutos, cuyo plazo se considerará comprendido dentro del término durante el cual el empleador deberá mantener la relación de trabajo.
+
+(Artículo sustituido por art. 7° de la Ley N° 27.426 B.O. 28/12/2017. Vigencia: el día siguiente de su publicación en el Boletín Oficial)
+================================================================================
+
+RESULTADO #15 (Relevancia: 2.22)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 231
+Categoría: Título XII: De la Extinción del Contrato de Trabajo
+Método: neutral_neo4j
+Coincidencias exactas: 8
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 231
+
+El contrato de trabajo no podrá ser disuelto por voluntad de una de las partes, sin previo aviso, o en su defecto, indemnización además de la que corresponda al trabajador por su antigüedad en el empleo, cuando el contrato se disuelva por voluntad del empleador. El preaviso, cuando las partes no lo fijen en un término mayor, deberá darse con la anticipación siguiente:
+
+a) por el trabajador, de QUINCE (15) días;
+
+b) por el empleador, de QUINCE (15) días cuando el trabajador se encontrare en período de prueba; de UN (1) mes cuando el trabajador tuviese una antigüedad en el empleo que no exceda de CINCO (5) años y de DOS (2) meses cuando fuere superior.
+
+(Artículo sustituido por art. 3° de la Ley N° 25.877 B.O. 19/3/2004)
+================================================================================
+
+RESULTADO #16 (Relevancia: 1.76)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 95
+Categoría: Título III: De las Modalidades del Contrato de Trabajo
+Método: neutral_neo4j
+Coincidencias exactas: 5
+Referencias temporales detectadas
+Contexto de negación detectado
+--------------------------------------------------
+### Artículo 95
+
+En los contratos a plazo fijo, el despido injustificado dispuesto antes del vencimiento del plazo, dará derecho al trabajador, además de las indemnizaciones que correspondan por extinción del contrato en tales condiciones, a la de daños y perjuicios provenientes del derecho común, la que se fijará en función directa de los que justifique haber sufrido quien los alegue o los que, a falta de demostración, fije el juez o tribunal prudencialmente, por la sola ruptura anticipada del contrato.
+
+Cuando la extinción del contrato se produjere mediante preaviso, y estando el contrato íntegramente cumplido, el trabajador recibirá una suma de dinero equivalente a la indemnización prevista en el artículo 250 de esta ley.
+
+En los casos del párrafo primero de este artículo, si el tiempo que faltare para cumplir el plazo del contrato fuese igual o superior al que corresponda al de preaviso, el reconocimiento de la indemnización por daño suplirá al que corresponde por omisión de éste, si el monto reconocido fuese también igual o superior a los salarios del mismo.
+================================================================================
+

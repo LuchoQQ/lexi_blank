@@ -263,6 +263,88 @@ def neutral_neo4j_search(neo4j_driver, query: str, entities: Dict, limit: int = 
         print(f"Error en búsqueda Neo4j neutral: {str(e)}")
         return []
 
+def final_rerank(results: List[Dict], query: str) -> List[Dict]:
+    """Re-ranking final basado en relevancia semántica real"""
+    print(f"Filtrando {len(results)} resultados por relevancia semántica...")
+    
+    # Cargar modelo UNA SOLA VEZ para todos los resultados
+    try:
+        from sentence_transformers import SentenceTransformer
+        import pickle
+        import os
+        
+        # Intentar cargar modelo desde cache
+        cache_file = os.path.join(DEFAULT_CACHE_PATH, "semantic_model.pkl")
+        try:
+            if os.path.exists(cache_file):
+                with open(cache_file, 'rb') as f:
+                    model = pickle.load(f)
+            else:
+                model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+                with open(cache_file, 'wb') as f:
+                    pickle.dump(model, f)
+        except:
+            model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+        
+        # Generar embedding de la consulta UNA SOLA VEZ
+        query_emb = model.encode(query)
+        
+        # Función interna para filtrar con modelo ya cargado
+        def filter_with_model(result: Dict, threshold: float = 0.3) -> Tuple[bool, float]:
+            try:
+                content_emb = model.encode(result.get('content', '')[:500])
+                similarity = np.dot(query_emb, content_emb) / (
+                    np.linalg.norm(query_emb) * np.linalg.norm(content_emb)
+                )
+                
+                if similarity <= threshold:
+                    article_info = f"{result.get('law_name', 'N/A')} Art. {result.get('article_number', 'N/A')}"
+                    print(f"   ❌ Filtrado por baja similitud ({similarity:.3f}): {article_info}")
+                
+                return similarity > threshold, similarity
+            except Exception as e:
+                print(f"Error calculando similitud: {str(e)}")
+                return True, 0.0
+        
+        # Filtrar con threshold inicial
+        filtered_with_scores = []
+        for result in results:
+            passes, similarity = filter_with_model(result, threshold=0.3)
+            if passes:
+                result['semantic_similarity'] = similarity
+                filtered_with_scores.append(result)
+        
+        print(f"Con threshold 0.3: {len(filtered_with_scores)} resultados")
+        
+        # Si se filtraron demasiados, usar threshold más bajo
+        if len(filtered_with_scores) < len(results) * 0.3:
+            print("Pocos resultados, usando threshold más bajo (0.2)...")
+            filtered_with_scores = []
+            for result in results:
+                passes, similarity = filter_with_model(result, threshold=0.2)
+                if passes:
+                    result['semantic_similarity'] = similarity
+                    filtered_with_scores.append(result)
+            print(f"Con threshold 0.2: {len(filtered_with_scores)} resultados")
+        
+        # Si aún son muy pocos, usar threshold muy bajo
+        if len(filtered_with_scores) < len(results) * 0.2:
+            print("Muy pocos resultados, usando threshold mínimo (0.1)...")
+            filtered_with_scores = []
+            for result in results:
+                passes, similarity = filter_with_model(result, threshold=0.1)
+                if passes:
+                    result['semantic_similarity'] = similarity
+                    filtered_with_scores.append(result)
+            print(f"Con threshold 0.1: {len(filtered_with_scores)} resultados")
+        
+        return filtered_with_scores
+        
+    except Exception as e:
+        print(f"Error en filtro semántico: {str(e)}")
+        print("Devolviendo resultados sin filtrar...")
+        return results
+
 def neutral_bm25_search(query: str, documents: List[Dict], entities: Dict, top_k: int = 10) -> List[Dict]:
     """
     Búsqueda BM25 neutral usando expansión mínima de consulta.
@@ -345,23 +427,18 @@ def neutral_scoring(results: List[Dict], entities: Dict, query: str) -> List[Dic
         
         # Factor neutral por método (basado en capacidad técnica, no en dominio)
         method_multipliers = {
-            'semantic_similarity': 2.0,  # Era 1.3, aumentar a 2.0
-            'weaviate': 1.5,             # Era 1.1, aumentar a 1.5
-            'neutral_neo4j': 0.8,        # Era 1.0, reducir a 0.8
-            'neutral_bm25': 0.6          # Era 0.9, reducir a 0.6
+            'semantic_similarity': 3.0,  # PRIORIDAD MÁXIMA
+            'weaviate': 2.0,             # Segunda prioridad
+            'neutral_neo4j': 0.8,        # Reducir
+            'neutral_bm25': 0.3          # MUY REDUCIDO (es el que está causando problemas)
         }
         score *= method_multipliers.get(method, 1.0)
         
         # Boost neutral por coincidencias exactas de palabras
         content_words = set(content_lower.split())
         exact_matches = len(query_words.intersection(content_words))
-        # Booth por coincidencias exactas SOLO si son semánticamente relevantes
         if exact_matches > 0:
-            # Verificar que las coincidencias no sean solo stopwords comunes
-            meaningful_matches = [w for w in query_words.intersection(content_words) 
-                                 if w not in ['de', 'la', 'el', 'que', 'por', 'con', 'sin', 'para']]
-            if meaningful_matches:
-                score *= (1.0 + len(meaningful_matches) * 0.1)  # Reducido de 0.15 a 0.1
+            score *= (1.0 + exact_matches * 0.15)
         
         # Factor neutral de longitud (evitar extremos)
         content_length = len(content_lower)
@@ -748,34 +825,6 @@ def main():
     # Cerrar conexiones
     if neo4j_driver:
         neo4j_driver.close()
-
-def final_rerank(results: List[Dict], query: str) -> List[Dict]:
-    """Re-ranking final basado en relevancia semántica real"""
-    # Filtrar resultados irrelevantes
-    filtered = [r for r in results if semantic_relevance_filter(r, query)]
-    
-    # Si se filtraron demasiados, usar threshold más bajo
-    if len(filtered) < len(results) * 0.3:
-        filtered = [r for r in results if semantic_relevance_filter(r, query, 0.2)]
-    
-    return filtered
-
-def semantic_relevance_filter(result: Dict, query: str, threshold: float = 0.3) -> bool:
-    """Filtrar resultados que no son semánticamente relevantes"""
-    try:
-        from sentence_transformers import SentenceTransformer
-        model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-        
-        query_emb = model.encode(query)
-        content_emb = model.encode(result.get('content', '')[:500])  # Primeros 500 chars
-        
-        similarity = np.dot(query_emb, content_emb) / (
-            np.linalg.norm(query_emb) * np.linalg.norm(content_emb)
-        )
-        
-        return similarity > threshold
-    except:
-        return True  # Si falla, no filtrar
 
 if __name__ == "__main__":
     # Parsear argumentos de la línea de comandos
