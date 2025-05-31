@@ -17,8 +17,14 @@ import json
 from src.config_loader import load_config
 from src.data_loader import load_json_data
 from src.weaviate_utils import connect_weaviate, create_weaviate_schema, store_embeddings_weaviate, search_weaviate
-from src.neo4j_utils import connect_neo4j, create_neo4j_nodes, create_law_relationship, check_data_exists, search_neo4j, create_thematic_relationships, create_cross_law_relationships, create_topic_relationships_from_tags, create_semantic_content_relationships, detect_query_topics, clear_neo4j_data, create_legal_domain_relationships, search_by_legal_domain
-from src.legal_domains import LEGAL_DOMAINS, detect_domains_in_query, extract_labor_entities
+from src.neo4j_utils import (
+    connect_neo4j, create_neo4j_nodes, create_law_relationship, check_data_exists, 
+    search_neo4j, create_thematic_relationships, create_cross_law_relationships, 
+    create_topic_relationships_from_tags, create_semantic_content_relationships, 
+    detect_query_topics, clear_neo4j_data, create_legal_domain_relationships, 
+    search_by_legal_domain
+)
+from src.legal_domain import detect_domains_in_query
 
 # Cargar variables de entorno
 load_dotenv()
@@ -32,6 +38,9 @@ DEFAULT_CACHE_PATH = os.path.join(os.path.dirname(__file__), "cache")
 for directory in [DEFAULT_CACHE_PATH]:
     os.makedirs(directory, exist_ok=True)
 
+# Dominios legales básicos para detección (importados desde legal_domains.py)
+# Esto se mantiene aquí como fallback pero se usa detect_domains_in_query de legal_domains.py
+
 # Categorías legales principales para clasificación
 LEGAL_CATEGORIES = {
     "PENAL": ["delito", "crimen", "pena", "sentencia", "prisión", "multa", "cárcel", "homicidio", "robo", "estafa", "defraudación", "lesiones"],
@@ -42,6 +51,21 @@ LEGAL_CATEGORIES = {
     "CONSTITUCIONAL": ["derecho fundamental", "garantía constitucional", "amparo", "habeas corpus", "habeas data", "inconstitucionalidad", "acción de tutela"],
     "PROCESAL": ["demanda", "contestación", "prueba", "audiencia", "sentencia", "recurso", "apelación", "casación", "medida cautelar", "embargo", "ejecución"]
 }
+
+def detect_domains_in_query(query: str) -> List[str]:
+    """
+    Detecta dominios legales en la consulta del usuario.
+    Esta función ahora es un wrapper que utiliza la función del módulo legal_domains.
+    
+    Args:
+        query: Consulta del usuario
+        
+    Returns:
+        Lista de dominios detectados
+    """
+    # Importar y usar la función del módulo legal_domains
+    from src.legal_domain import detect_domains_in_query as detect_domains
+    return detect_domains(query)
 
 def check_connections(config: Dict[str, Any]) -> Tuple[Optional[Any], Optional[Any]]:
     """
@@ -238,9 +262,6 @@ def extract_legal_entities(query: str) -> Dict[str, List[str]]:
     Returns:
         Diccionario con tipos de entidades y sus valores
     """
-    # En una implementación completa, aquí se usaría NER o modelos específicos
-    # para extraer entidades. Esta es una implementación simplificada.
-    
     # Palabras clave para diferentes tipos de entidades
     entity_keywords = {
         "ACCION": ["apropiación", "falsificación", "estafa", "robo", "hurto", "daño", "lesión", "homicidio", 
@@ -270,50 +291,6 @@ def extract_legal_entities(query: str) -> Dict[str, List[str]]:
                         entities[entity_type].append(context)
     
     return entities
-
-def generate_expanded_queries(query: str, category_scores: Dict[str, float], entities: Dict[str, List[str]]) -> List[str]:
-    """
-    Genera consultas expandidas basadas en la categorización y entidades extraídas.
-    
-    Args:
-        query: Consulta original del usuario
-        category_scores: Puntajes de categorías
-        entities: Entidades extraídas
-        
-    Returns:
-        Lista de consultas expandidas
-    """
-    expanded_queries = [query]  # Incluir la consulta original
-    
-    # Seleccionar las categorías más relevantes (top 2)
-    top_categories = sorted(category_scores.items(), key=lambda x: x[1], reverse=True)[:2]
-    
-    # Para cada categoría relevante, generar consultas específicas
-    for category, score in top_categories:
-        if score < 0.1:  # Ignorar categorías con puntaje muy bajo
-            continue
-            
-        # Añadir términos específicos de la categoría
-        category_keywords = LEGAL_CATEGORIES.get(category, [])
-        if category_keywords:
-            # Seleccionar algunas palabras clave relevantes (no todas para evitar sobreexpansión)
-            selected_keywords = category_keywords[:3]
-            category_query = f"{query} {' '.join(selected_keywords)}"
-            expanded_queries.append(category_query)
-    
-    # Generar consultas basadas en entidades extraídas
-    for entity_type, entity_values in entities.items():
-        if not entity_values:
-            continue
-            
-        # Usar hasta 2 entidades de cada tipo para evitar consultas demasiado largas
-        for value in entity_values[:2]:
-            entity_query = f"{query} {value}"
-            if entity_query not in expanded_queries:
-                expanded_queries.append(entity_query)
-    
-    # Eliminar duplicados mientras se mantiene el orden
-    return list(dict.fromkeys(expanded_queries))
 
 def search_with_weaviate(weaviate_client, config: Dict[str, Any], query: str) -> List[Dict[str, Any]]:
     """
@@ -370,15 +347,18 @@ def search_with_neo4j(neo4j_driver, config: Dict[str, Any], query: str, entities
     # Configuración de búsqueda
     limit = config.get("neo4j", {}).get("limit", 10)
     
-    # 1. Primero, intentar búsqueda por dominios legales específicos
-    domain_results = search_by_legal_domain(neo4j_driver, query, limit)
+    # Detectar dominios legales específicos
+    detected_domains = detect_domains_in_query(query)
     
-    # Si encontramos resultados por dominio, usarlos
-    if domain_results:
-        print(f"Encontrados {len(domain_results)} resultados por dominios legales específicos")
-        return domain_results
+    if detected_domains:
+        print(f"Dominios legales detectados en la consulta: {detected_domains}")
+        domain_results = search_by_legal_domain(neo4j_driver, query, limit)
+        
+        if domain_results:
+            print(f"Encontrados {len(domain_results)} resultados por dominios legales específicos")
+            return domain_results
     
-    # 2. Si no hay resultados por dominio, realizar búsqueda tradicional
+    # Si no hay resultados por dominio, realizar búsqueda tradicional
     # Detectar temas relevantes en la consulta
     topics = detect_query_topics(query, neo4j_driver)
     print(f"Temas detectados: {topics}")
@@ -542,10 +522,19 @@ def merge_search_results(results_list: List[List[Dict[str, Any]]], weights: List
     
     return results
 
-
 def search_query(query: str, config: Dict[str, Any], weaviate_client=None, neo4j_driver=None, documents=None) -> List[Dict[str, Any]]:
     """
-    Versión mejorada con especialización legal
+    Realiza búsqueda integrada usando múltiples fuentes.
+    
+    Args:
+        query: Consulta del usuario
+        config: Configuración del sistema
+        weaviate_client: Cliente de Weaviate (opcional)
+        neo4j_driver: Driver de Neo4j (opcional)
+        documents: Lista de documentos para BM25 (opcional)
+        
+    Returns:
+        Lista de resultados combinados y ordenados por relevancia
     """
     print(f"\nProcesando consulta: '{query}'")
     start_time = time.time()
@@ -553,8 +542,6 @@ def search_query(query: str, config: Dict[str, Any], weaviate_client=None, neo4j
     # 1. Clasificar y extraer información de la consulta
     category_scores = classify_query(query)
     entities = extract_legal_entities(query)
-    labor_domains = detect_domains_in_query(query)
-    labor_entities = extract_labor_entities(query)
     
     # 2. Realizar búsquedas en diferentes fuentes
     all_results = []
@@ -586,29 +573,9 @@ def search_query(query: str, config: Dict[str, Any], weaviate_client=None, neo4j
         print("No se encontraron resultados en ninguna fuente de búsqueda")
         return []
         
-    base_results = merge_search_results(all_results, weights)
+    results = merge_search_results(all_results, weights)
     
-    # 4. NUEVA: Aplicar especialización legal
-    print("Aplicando especialización legal...")
-    
-    # Importar el módulo especializado
-    from src.specialized_retriever import enhance_search_with_specialization
-    
-    specialized_results = enhance_search_with_specialization(
-        query=query,
-        base_results=base_results,
-        detected_domains=labor_domains,
-        category_scores=category_scores,
-        neo4j_driver=neo4j_driver
-    )
-    
-    # 5. Continuar con enriquecimiento y verificación de artículos críticos
-    results = enrich_labor_context(specialized_results, query, neo4j_driver, labor_domains, labor_entities)
-    
-    # 6. Tu lógica existente para artículos críticos faltantes...
-    # (Esta parte se podría simplificar ya que la especialización debería manejar esto)
-    
-    # 7. Limitar resultados finales
+    # 4. Limitar resultados finales
     top_n = config.get("retrieval", {}).get("top_n", 15)
     final_results = results[:top_n]
     
@@ -616,315 +583,6 @@ def search_query(query: str, config: Dict[str, Any], weaviate_client=None, neo4j
     print(f"Búsqueda completada en {end_time - start_time:.2f} segundos, {len(final_results)} resultados.")
     
     return final_results
-
-# También podrías crear una versión específica para casos laborales:
-
-def search_labor_case(query: str, config: Dict[str, Any], neo4j_driver=None) -> List[Dict[str, Any]]:
-    """
-    Búsqueda especializada para casos laborales con mayor precisión
-    """
-    from src.specialized_retriever import LaborLawRetriever
-    from src.legal_domains import detect_domains_in_query
-    
-    print(f"Búsqueda especializada laboral: '{query}'")
-    
-    # Búsqueda directa por dominios laborales
-    labor_domains = detect_domains_in_query(query)
-    
-    if neo4j_driver and labor_domains:
-        domain_results = []
-        for domain in labor_domains:
-            results = search_by_legal_domain(neo4j_driver, query, 20)  # Más resultados para filtrar
-            domain_results.extend(results)
-        
-        # Aplicar especialización
-        retriever = LaborLawRetriever()
-        specialized_results = retriever.retrieve(query, domain_results)
-        
-        print(f"Encontrados {len(specialized_results)} resultados especializados")
-        return specialized_results
-    
-    return []
-
-def enrich_labor_context(results_list, query_text, neo4j_driver, labor_domains, labor_entities):
-    """
-    Enriquece los resultados de búsqueda con contexto específico laboral,
-    asegurando que se incluyan artículos relevantes para el caso específico.
-    
-    Args:
-        results_list: Lista de resultados de búsqueda
-        query_text: Texto de la consulta del usuario
-        neo4j_driver: Driver de conexión a Neo4j
-        labor_domains: Dominios laborales identificados
-        labor_entities: Entidades laborales extraídas
-        
-    Returns:
-        Lista enriquecida de resultados
-    """
-    if not neo4j_driver:
-        return results_list
-        
-    print("Enriqueciendo resultados con contexto laboral específico...")
-    
-    # Artículos ya incluidos en los resultados (para evitar duplicados)
-    included_articles = set()
-    for result in results_list:
-        article_id = f"{result.get('law_name', '')}-{result.get('article_number', '')}"
-        included_articles.add(article_id)
-    
-    additional_results = []
-    
-    # 1. Buscar artículos complementarios basados en dominios laborales
-    if labor_domains:
-        try:
-            # Buscar artículos que contengan procedimientos específicos
-            procedural_patterns = [
-                "procedimiento", "plazo", "requisito", "formulario", "solicitud", 
-                "presentar", "corresponde", "deberá", "días", "hábiles"
-            ]
-            
-            with neo4j_driver.session() as session:
-                for pattern in procedural_patterns[:3]:  # Limitar a 3 patrones para eficiencia
-                    query = """
-                    MATCH (d:LegalDomain)
-                    WHERE d.name IN $domains
-                    MATCH (d)<-[:RELATED_TO]-(a:Article)
-                    WHERE toLower(a.content) CONTAINS $pattern
-                    RETURN a.article_id as article_id, 
-                           a.content as content,
-                           a.law_name as law_name,
-                           a.article_number as article_number,
-                           a.category as category,
-                           a.source as source
-                    LIMIT 5
-                    """
-                    
-                    result = session.run(query, domains=labor_domains, pattern=pattern)
-                    
-                    for record in result:
-                        article_id = f"{record['law_name']}-{record['article_number']}"
-                        
-                        # Evitar duplicados
-                        if article_id in included_articles:
-                            continue
-                            
-                        # Crear resultado y añadirlo
-                        proc_article = {
-                            "article_id": record["article_id"],
-                            "content": record["content"],
-                            "law_name": record["law_name"],
-                            "article_number": record["article_number"],
-                            "category": record["category"],
-                            "source": record["source"],
-                            "score": 50.0,  # Score alto para asegurar inclusión
-                            "domain": "Procedimiento"
-                        }
-                        
-                        additional_results.append(proc_article)
-                        included_articles.add(article_id)
-                        print(f"Añadido artículo de procedimiento: {article_id}")
-        except Exception as e:
-            print(f"Error al buscar artículos de procedimiento: {str(e)}")
-    
-    # 2. Si hay entidades legales específicas (leyes, organismos), buscar artículos relacionados
-    if labor_entities and 'laws' in labor_entities and labor_entities['laws']:
-        try:
-            with neo4j_driver.session() as session:
-                for law in labor_entities['laws'][:2]:  # Limitar a 2 leyes
-                    query = """
-                    MATCH (l:Law)
-                    WHERE toLower(l.name) CONTAINS toLower($law)
-                    MATCH (l)-[:CONTAINS]->(a:Article)
-                    RETURN a.article_id as article_id, 
-                           a.content as content,
-                           a.law_name as law_name,
-                           a.article_number as article_number,
-                           a.category as category,
-                           a.source as source
-                    ORDER BY a.article_number ASC
-                    LIMIT 5
-                    """
-                    
-                    result = session.run(query, law=law)
-                    
-                    for record in result:
-                        article_id = f"{record['law_name']}-{record['article_number']}"
-                        
-                        # Evitar duplicados
-                        if article_id in included_articles:
-                            continue
-                            
-                        # Crear resultado y añadirlo
-                        law_article = {
-                            "article_id": record["article_id"],
-                            "content": record["content"],
-                            "law_name": record["law_name"],
-                            "article_number": record["article_number"],
-                            "category": record["category"],
-                            "source": record["source"],
-                            "score": 40.0,  # Score alto para asegurar inclusión
-                            "domain": "Normativa_Específica"
-                        }
-                        
-                        additional_results.append(law_article)
-                        included_articles.add(article_id)
-                        print(f"Añadido artículo de ley específica: {article_id}")
-        except Exception as e:
-            print(f"Error al buscar artículos de leyes específicas: {str(e)}")
-    
-    # Si no encontramos artículos adicionales, devolver los originales
-    if not additional_results:
-        return results_list
-    
-    # Combinar resultados originales con los adicionales
-    combined_results = results_list + additional_results
-    
-    # Reordenar por puntuación
-    combined_results.sort(key=lambda x: x.get("score", 0), reverse=True)
-    
-    print(f"Añadidos {len(additional_results)} artículos complementarios para enriquecer el contexto laboral")
-    
-    return combined_results
-
-def enrich_labor_context(results_list, query_text, neo4j_driver, labor_domains, labor_entities):
-    """
-    Enriquece los resultados de búsqueda con contexto específico laboral,
-    asegurando que se incluyan artículos relevantes para el caso específico.
-    
-    Args:
-        results_list: Lista de resultados de búsqueda
-        query_text: Texto de la consulta del usuario
-        neo4j_driver: Driver de conexión a Neo4j
-        labor_domains: Dominios laborales identificados
-        labor_entities: Entidades laborales extraídas
-        
-    Returns:
-        Lista enriquecida de resultados
-    """
-    if not neo4j_driver:
-        return results_list
-        
-    print("Enriqueciendo resultados con contexto laboral específico...")
-    
-    # Artículos ya incluidos en los resultados (para evitar duplicados)
-    included_articles = set()
-    for result in results_list:
-        article_id = f"{result.get('law_name', '')}-{result.get('article_number', '')}"
-        included_articles.add(article_id)
-    
-    additional_results = []
-    
-    # 1. Buscar artículos complementarios basados en dominios laborales
-    if labor_domains:
-        try:
-            # Buscar artículos que contengan procedimientos específicos
-            procedural_patterns = [
-                "procedimiento", "plazo", "requisito", "formulario", "solicitud", 
-                "presentar", "corresponde", "deberá", "días", "hábiles"
-            ]
-            
-            with neo4j_driver.session() as session:
-                for pattern in procedural_patterns[:3]:  # Limitar a 3 patrones para eficiencia
-                    query = """
-                    MATCH (d:LegalDomain)
-                    WHERE d.name IN $domains
-                    MATCH (d)<-[:RELATED_TO]-(a:Article)
-                    WHERE toLower(a.content) CONTAINS $pattern
-                    RETURN a.article_id as article_id, 
-                           a.content as content,
-                           a.law_name as law_name,
-                           a.article_number as article_number,
-                           a.category as category,
-                           a.source as source
-                    LIMIT 5
-                    """
-                    
-                    result = session.run(query, domains=labor_domains, pattern=pattern)
-                    
-                    for record in result:
-                        article_id = f"{record['law_name']}-{record['article_number']}"
-                        
-                        # Evitar duplicados
-                        if article_id in included_articles:
-                            continue
-                            
-                        # Crear resultado y añadirlo
-                        proc_article = {
-                            "article_id": record["article_id"],
-                            "content": record["content"],
-                            "law_name": record["law_name"],
-                            "article_number": record["article_number"],
-                            "category": record["category"],
-                            "source": record["source"],
-                            "score": 50.0,  # Score alto para asegurar inclusión
-                            "domain": "Procedimiento"
-                        }
-                        
-                        additional_results.append(proc_article)
-                        included_articles.add(article_id)
-                        print(f"Añadido artículo de procedimiento: {article_id}")
-        except Exception as e:
-            print(f"Error al buscar artículos de procedimiento: {str(e)}")
-    
-    # 2. Si hay entidades legales específicas (leyes, organismos), buscar artículos relacionados
-    if labor_entities and 'laws' in labor_entities and labor_entities['laws']:
-        try:
-            with neo4j_driver.session() as session:
-                for law in labor_entities['laws'][:2]:  # Limitar a 2 leyes
-                    query = """
-                    MATCH (l:Law)
-                    WHERE toLower(l.name) CONTAINS toLower($law)
-                    MATCH (l)-[:CONTAINS]->(a:Article)
-                    RETURN a.article_id as article_id, 
-                           a.content as content,
-                           a.law_name as law_name,
-                           a.article_number as article_number,
-                           a.category as category,
-                           a.source as source
-                    ORDER BY a.article_number ASC
-                    LIMIT 5
-                    """
-                    
-                    result = session.run(query, law=law)
-                    
-                    for record in result:
-                        article_id = f"{record['law_name']}-{record['article_number']}"
-                        
-                        # Evitar duplicados
-                        if article_id in included_articles:
-                            continue
-                            
-                        # Crear resultado y añadirlo
-                        law_article = {
-                            "article_id": record["article_id"],
-                            "content": record["content"],
-                            "law_name": record["law_name"],
-                            "article_number": record["article_number"],
-                            "category": record["category"],
-                            "source": record["source"],
-                            "score": 40.0,  # Score alto para asegurar inclusión
-                            "domain": "Normativa_Específica"
-                        }
-                        
-                        additional_results.append(law_article)
-                        included_articles.add(article_id)
-                        print(f"Añadido artículo de ley específica: {article_id}")
-        except Exception as e:
-            print(f"Error al buscar artículos de leyes específicas: {str(e)}")
-    
-    # Si no encontramos artículos adicionales, devolver los originales
-    if not additional_results:
-        return results_list
-    
-    # Combinar resultados originales con los adicionales
-    combined_results = results_list + additional_results
-    
-    # Reordenar por puntuación
-    combined_results.sort(key=lambda x: x.get("score", 0), reverse=True)
-    
-    print(f"Añadidos {len(additional_results)} artículos complementarios para enriquecer el contexto laboral")
-    
-    return combined_results
 
 def format_search_results(results: List[Dict[str, Any]]) -> str:
     """
@@ -946,6 +604,11 @@ def format_search_results(results: List[Dict[str, Any]]) -> str:
         formatted += f"Ley/Código: {result.get('law_name', 'N/A')}\n"
         formatted += f"Artículo: {result.get('article_number', 'N/A')}\n"
         formatted += f"Categoría: {result.get('category', 'N/A')}\n"
+        
+        # Añadir dominio si está disponible
+        if 'domain' in result:
+            formatted += f"Dominio: {result.get('domain', 'N/A')}\n"
+            
         formatted += "-" * 50 + "\n"
         formatted += f"{result.get('content', 'Sin contenido')}\n"
         formatted += "=" * 80 + "\n\n"
@@ -1040,7 +703,7 @@ def main():
     if not args.query:
         print("\n=== Sistema de Recuperación de Documentos Legales ===")
         print("Utilice --query para realizar una búsqueda o --setup para configurar el sistema")
-        print("Ejemplo: python main.py --query \"estafa defraudación incumplimiento contractual\"")
+        print("Ejemplo: python main.py --query \"fui despedida sin indemnización por embarazo\"")
         parser.print_help()
         
         if neo4j_driver:
@@ -1081,6 +744,6 @@ def main():
     if neo4j_driver:
         neo4j_driver.close()
     # Weaviate no necesita cierre explícito
-    
+
 if __name__ == "__main__":
     main()

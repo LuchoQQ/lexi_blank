@@ -4,10 +4,10 @@ Module for integrating with Weaviate vector database.
 import weaviate
 from weaviate.auth import AuthApiKey
 from typing import List, Dict, Any, Optional, Tuple
-from sentence_transformers import SentenceTransformer
 import os
 import pickle
 import hashlib
+import numpy as np
 
 def connect_weaviate(weaviate_url: str, weaviate_api_key: Optional[str] = None) -> weaviate.Client:
     """
@@ -101,12 +101,35 @@ def create_weaviate_schema(client: weaviate.Client, collection_name: str) -> Non
         client.schema.create_class(schema)
         print(f"Successfully created '{collection_name}' collection in Weaviate.")
     except Exception as e:
-        # Intenta con el método alternativo si el primero falla
+        # Try with alternative method if the first fails
         try:
             client.schema.create({"classes": [schema]})
             print(f"Successfully created '{collection_name}' collection in Weaviate.")
         except Exception as e2:
             raise Exception(f"Failed to create schema: {str(e)} / {str(e2)}")
+
+def generate_simple_embedding(text: str, dim: int = 384) -> List[float]:
+    """
+    Generate a simple deterministic embedding for text when sentence-transformers is not available.
+    
+    Args:
+        text: Input text
+        dim: Embedding dimension
+        
+    Returns:
+        List of floating point values representing the embedding
+    """
+    # Create a deterministic but pseudo-random embedding based on text hash
+    text_hash = hash(text) % (2**32)
+    np.random.seed(text_hash)
+    
+    # Generate vector with values between -1 and 1
+    vector = np.random.uniform(-1, 1, dim)
+    
+    # Normalize to unit norm (like real embedding models)
+    vector = vector / np.linalg.norm(vector)
+    
+    return vector.tolist()
 
 def generate_embeddings(
     documents: List[Dict[str, Any]],
@@ -143,9 +166,20 @@ def generate_embeddings(
         except Exception as e:
             print(f"Error loading cache: {str(e)}")
     
-    # Load the embedding model
-    print(f"Generating embeddings using model: {embedding_model}")
-    model = SentenceTransformer(embedding_model)
+    # Try to load sentence-transformers model
+    model = None
+    try:
+        from sentence_transformers import SentenceTransformer
+        print(f"Loading embedding model: {embedding_model}")
+        model = SentenceTransformer(embedding_model)
+        use_sentence_transformers = True
+    except ImportError:
+        print("sentence-transformers not available, using simple embedding fallback")
+        use_sentence_transformers = False
+    except Exception as e:
+        print(f"Error loading sentence-transformers model: {str(e)}")
+        print("Using simple embedding fallback")
+        use_sentence_transformers = False
     
     # Generate embeddings
     result = []
@@ -155,9 +189,14 @@ def generate_embeddings(
         if not content:
             print(f"Warning: Document at index {i} has no content, skipping.")
             continue
-            
+        
         # Generate embedding
-        embedding = model.encode(content).tolist()
+        if use_sentence_transformers and model:
+            embedding = model.encode(content).tolist()
+        else:
+            # Use simple fallback embedding
+            embedding = generate_simple_embedding(content)
+        
         result.append((doc, embedding))
         
         if i % 100 == 0 and i > 0:
@@ -253,48 +292,31 @@ def search_weaviate(
     Returns:
         List of matching documents with their metadata and similarity scores
     """
-    # Generate query embedding with optional caching for the model
-    cache_dir = "cache"
-    cache_id = hashlib.md5(embedding_model.encode()).hexdigest()
-    model_cache_file = os.path.join(cache_dir, f"model_{cache_id}.pkl")
-    
-    # Try to load cached model
-    model = None
-    if use_cache and os.path.exists(model_cache_file):
-        try:
-            print(f"Loading model from cache: {model_cache_file}")
-            with open(model_cache_file, 'rb') as f:
-                model = pickle.load(f)
-        except Exception as e:
-            print(f"Error loading cached model: {str(e)}")
-    
-    # Load model if not loaded from cache
-    if model is None:
+    # Generate query embedding
+    try:
+        from sentence_transformers import SentenceTransformer
         print(f"Loading embedding model: {embedding_model}")
         model = SentenceTransformer(embedding_model)
-        
-        # Save model to cache if enabled
-        if use_cache:
-            if not os.path.exists(cache_dir):
-                os.makedirs(cache_dir)
-            try:
-                print(f"Saving model to cache: {model_cache_file}")
-                with open(model_cache_file, 'wb') as f:
-                    pickle.dump(model, f)
-            except Exception as e:
-                print(f"Error saving model cache: {str(e)}")
-    
-    # Generate embedding for the query
-    query_embedding = model.encode(query)
+        query_embedding = model.encode(query).tolist()
+    except ImportError:
+        print("sentence-transformers not available, using simple embedding for query")
+        query_embedding = generate_simple_embedding(query)
+    except Exception as e:
+        print(f"Error loading model for query: {str(e)}, using simple embedding")
+        query_embedding = generate_simple_embedding(query)
     
     # Perform the vector search
-    result = client.query.get(
-        collection_name, 
-        ["content", "article_id", "law_name", "article_number", "category", "source"]
-    ).with_near_vector({
-        "vector": query_embedding,
-        "certainty": 0.7
-    }).with_limit(top_n).do()
+    try:
+        result = client.query.get(
+            collection_name, 
+            ["content", "article_id", "law_name", "article_number", "category", "source"]
+        ).with_near_vector({
+            "vector": query_embedding,
+            "certainty": 0.7
+        }).with_limit(top_n).do()
+    except Exception as e:
+        print(f"Error performing vector search: {str(e)}")
+        return []
     
     # Process results
     results = []

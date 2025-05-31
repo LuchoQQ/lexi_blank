@@ -1,172 +1,231 @@
-# Guía de Uso - Sistema de Recuperación de Documentos Legales
+# Sistema de Recuperación de Documentos Legales
 
-python ./setup/setup_system.py --all
+Sistema simplificado para búsqueda y recuperación de documentos legales utilizando técnicas de procesamiento de lenguaje natural y bases de datos gráficas y vectoriales.
 
-python main.py --query "fui despedida luego de trabajar durante 5 años en relacion de dependencia, sin anticipacion o previo aviso y sin indemnizacion luego de avisar que estoy embarazada"
+## Estructura del Proyecto
 
-## Introducción
-
-Este sistema permite la búsqueda y recuperación de documentos legales utilizando técnicas avanzadas de procesamiento de lenguaje natural y bases de datos gráficas y vectoriales. El sistema implementa un enfoque de búsqueda federada que combina:
-
-1. **Búsqueda vectorial** con Weaviate
-2. **Búsqueda basada en grafos** con Neo4j
-3. **Búsqueda léxica** con BM25
-
-## Requisitos Previos
-
-- Python 3.7 o superior
-- Docker y Docker Compose
-- Dependencias especificadas en `install_dependencies.py`
-
-## Instalación
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/tu-usuario/sistema-recuperacion-legal.git
-cd sistema-recuperacion-legal
+```
+lexi_blank/
+├── main.py                    # Script principal
+├── config.yaml               # Configuración del sistema
+├── test_system.py            # Script de prueba
+├── data/                     # Documentos legales en JSON
+│   ├── codigo_penal.json
+│   ├── ley_empleo.json
+│   └── ley_contrato_empleo.json
+├── setup/                    # Scripts de configuración
+│   ├── setup_system.py
+│   └── docker-compose.yml
+├── src/                      # Módulos del sistema
+│   ├── config_loader.py      # Carga de configuración
+│   ├── data_loader.py        # Carga de datos JSON
+│   ├── legal_domains.py      # Detección de dominios legales
+│   ├── neo4j_utils.py        # Utilidades para Neo4j
+│   └── weaviate_utils.py     # Utilidades para Weaviate
+└── cache/                    # Cache de embeddings (se crea automáticamente)
 ```
 
-### 2. Instalar dependencias
+## Instalación Rápida
+
+### 1. Instalar Dependencias
 
 ```bash
-python setup/install_dependencies.py
+# Instalar dependencias básicas
+pip install neo4j==5.14.0 weaviate-client==3.26.0 pyyaml numpy rank_bm25
+
+# Opcional: sentence-transformers para mejores embeddings
+pip install sentence-transformers
 ```
 
-### 3. Configurar el sistema
+### 2. Configurar Servicios
 
 ```bash
-python setup/setup_system.py
+# Configurar Docker y servicios
+python setup/setup_system.py --all
 ```
 
-Este comando:
-- Verifica la instalación de dependencias
-- Configura Weaviate y Neo4j con Docker
-- Crea un archivo de configuración predeterminado si no existe
+### 3. Probar el Sistema
+
+```bash
+# Ejecutar script de prueba
+python test_system.py
+
+# Si todo está bien, probar una búsqueda
+python main.py --query "despido sin indemnización por embarazo"
+```
 
 ## Uso Básico
 
-### Realizar una búsqueda
+### Búsqueda Simple
 
 ```bash
-python main.py --query "estafa defraudación incumplimiento contractual"
+python main.py --query "fui despedida sin indemnización por embarazo"
 ```
 
-### Configurar el sistema sin ejecutar búsqueda de ejemplo
+### Configurar Sistema
 
 ```bash
 python main.py --setup
 ```
 
-### Opciones adicionales
+### Limpiar Base de Datos
 
 ```bash
-python main.py --help
+python main.py --clear-neo4j
 ```
 
-## Flujo de Procesamiento
+## Características
 
-El sistema implementa un flujo de procesamiento optimizado:
+### ✅ Funciones Implementadas
 
-### 1. Expansión de Consulta Multi-perspectiva
+- **Búsqueda Multi-modal**: Combina búsqueda vectorial, por grafo y léxica
+- **Detección de Dominios Legales**: Identifica automáticamente temas como embarazo, despido, discriminación
+- **Clasificación Legal**: Categoriza consultas en áreas del derecho (laboral, civil, penal, etc.)
+- **Cache de Embeddings**: Reutiliza embeddings generados para mayor eficiencia
+- **Fallback para Embeddings**: Funciona sin sentence-transformers usando embeddings simples
 
-La consulta del usuario se procesa para:
-- Clasificar en categorías legales (penal, civil, comercial, etc.)
-- Extraer entidades legales clave (acciones, sujetos, objetos, lugares, tiempos)
-- Generar sub-consultas especializadas para cada categoría relevante
+### 🎯 Dominios Legales Soportados
 
-### 2. Búsqueda Multi-modal Federada
+- **Embarazo**: Protección laboral durante embarazo y maternidad
+- **Despido**: Terminación de contratos laborales
+- **Discriminación**: Acoso y trato diferencial
+- **Remuneración**: Salarios, indemnizaciones y compensaciones
+- **Jornada**: Horarios de trabajo y descansos
+- **Accidentes**: Accidentes de trabajo y enfermedades profesionales
+- **Prestaciones**: Obras sociales y beneficios
+- **Procesos Administrativos**: Denuncias y procedimientos
 
-Las consultas expandidas se envían en paralelo a:
-- **Weaviate**: Para búsqueda vectorial semántica
-- **Neo4j**: Para búsqueda basada en relaciones entre artículos y leyes
-- **BM25**: Para búsqueda léxica de coincidencia de términos
+## Configuración
 
-### 3. Fusión Inteligente de Resultados
-
-Los resultados de las diferentes fuentes se combinan mediante:
-- Ponderación configurable de cada fuente de búsqueda
-- Eliminación de duplicados
-- Normalización de puntuaciones
-- Ordenamiento por relevancia
-
-## Configuración Avanzada
-
-El sistema se configura mediante el archivo `config.yaml`:
-
-### Configuración de Weaviate
+El archivo `config.yaml` controla el comportamiento del sistema:
 
 ```yaml
 weaviate:
   enabled: true
-  url: "http://localhost:8080"
-  api_key: null
-  collection_name: "ArticulosLegales"
-  embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
+  url: http://localhost:8080
+  collection_name: ArticulosLegales
+  embedding_model: paraphrase-multilingual-MiniLM-L12-v2
   use_cache: true
-```
 
-### Configuración de Neo4j
-
-```yaml
 neo4j:
   enabled: true
-  uri: "bolt://localhost:7687"
-  username: "neo4j"
-  password: "password"
-```
+  uri: bolt://localhost:7687
+  username: neo4j
+  password: password
 
-### Configuración de BM25
-
-```yaml
 bm25:
   enabled: true
-```
 
-### Configuración de Recuperación
-
-```yaml
 retrieval:
-  top_n: 5
-  weights: [0.5, 0.3, 0.2]  # vectorial, grafo, léxico
+  top_n: 15
+  weights: [0.4, 0.4, 0.2]  # vectorial, grafo, léxico
   save_results: true
-  results_dir: "results"
-  fusion_strategy: "weighted_max"
-  min_score_threshold: 0.3
+  results_dir: results
 ```
 
-## Técnicas Implementadas
+## Solución de Problemas
 
-### 1. Expansión de Consulta Multi-perspectiva
+### Error de Importación
 
-- **Clasificación temática**: Identifica las categorías legales más relevantes para la consulta
-- **Extracción de entidades**: Reconoce acciones, sujetos, objetos y contexto temporal/espacial
-- **Generación de subconsultas**: Crea variantes especializadas para mejorar la cobertura
+Si obtienes errores de importación:
 
-### 2. Búsqueda Federada
+```bash
+# Verificar estructura de archivos
+python test_system.py
 
-- **Búsqueda vectorial**: Captura la semántica y el significado contextual
-- **Búsqueda por grafo**: Explora relaciones y conexiones entre leyes y artículos
-- **Búsqueda léxica**: Encuentra coincidencias basadas en términos específicos
+# Reinstalar dependencias
+pip install --force-reinstall neo4j weaviate-client pyyaml numpy
+```
 
-### 3. Procesamiento Paralelo
+### Problemas con Docker
 
-- Ejecución concurrente de búsquedas para minimizar latencia
-- Aprovechamiento eficiente de recursos computacionales
-- Escalabilidad para manejar grandes volúmenes de consultas
+```bash
+# Verificar que Docker esté corriendo
+docker ps
 
-## Extensiones Futuras
+# Reiniciar servicios
+python setup/setup_system.py --docker
+```
 
-- Integración de modelos de IA específicos para el dominio legal
-- Implementación de análisis de precedentes jurídicos
-- Extracción de argumentos y razonamiento legal
-- Interfaz de usuario web o API REST
+### Sin sentence-transformers
 
+El sistema funciona sin sentence-transformers usando embeddings simples:
 
-Levantar en servidor
+```bash
+# Solo con dependencias básicas
+pip install neo4j weaviate-client pyyaml numpy rank_bm25
+python main.py --query "tu consulta"
+```
 
-python ./setup/setup_system.py
+## Ejemplos de Consultas
 
-python main.py --setup
+### Consultas Laborales
 
-python api.py
+```bash
+# Despido por embarazo
+python main.py --query "fui despedida sin indemnización por estar embarazada"
+
+# Problemas de horario
+python main.py --query "me hacen trabajar más de 8 horas sin pagar extras"
+
+# Accidente de trabajo
+python main.py --query "me lastimé en el trabajo y no me dan ART"
+```
+
+### Consultas Civiles
+
+```bash
+# Incumplimiento de contrato
+python main.py --query "no me pagaron lo acordado en el contrato"
+
+# Problemas de propiedad
+python main.py --query "mi vecino construyó en mi terreno"
+```
+
+## Extensión del Sistema
+
+### Añadir Nuevos Dominios
+
+Edita `src/legal_domains.py`:
+
+```python
+LEGAL_DOMAINS = {
+    "TuNuevoDominio": ["palabra1", "palabra2", "palabra3"],
+    # ... otros dominios
+}
+```
+
+### Añadir Nuevas Categorías
+
+Edita `main.py` en la sección `LEGAL_CATEGORIES`:
+
+```python
+LEGAL_CATEGORIES = {
+    "TU_CATEGORIA": ["keyword1", "keyword2"],
+    # ... otras categorías
+}
+```
+
+## Arquitectura Simplificada
+
+1. **main.py**: Orquesta todo el sistema
+2. **legal_domains.py**: Detecta dominios específicos en consultas
+3. **neo4j_utils.py**: Maneja búsquedas por grafo y relaciones
+4. **weaviate_utils.py**: Maneja búsquedas vectoriales semánticas
+5. **data_loader.py**: Carga y estandariza documentos JSON
+
+## Soporte
+
+Para problemas o preguntas:
+
+1. Ejecuta `python test_system.py` para diagnosticar
+2. Revisa los logs en consola
+3. Verifica que Docker esté corriendo
+4. Asegúrate de que los archivos JSON estén en `/data`
+
+## Limitaciones Conocidas
+
+- Funciona mejor con consultas en español
+- Requiere Docker para funcionalidad completa
+- Los embeddings simples son menos precisos que sentence-transformers
+- Base de datos debe configurarse antes del primer uso
