@@ -255,7 +255,7 @@ def search_query_with_advanced_graph_rag(query: str, config: Dict[str, Any],
     final_results = final_relevance_filter(contextual_results, query, threshold=0.2)
     
     # 7. Limitar resultados finales
-    top_n = config.get("retrieval", {}).get("top_n", 20)
+    top_n = max(config.get("retrieval", {}).get("top_n", 15), 12)
     final_results.sort(key=lambda x: x.get('score', 0), reverse=True)
     limited_results = final_results[:top_n]
     

@@ -1,25 +1,19 @@
 """
-Versión mejorada de neo4j_utils.py que integra el Graph RAG Avanzado optimizado
-y aprovecha mejor los metadatos ricos (tags, references, penalty).
+Versión mejorada de neo4j_utils.py con Graph RAG Avanzado integrado.
+Incluye navegación inteligente del grafo y filtrado contextual.
 """
 from neo4j import GraphDatabase
 from typing import List, Dict, Any, Optional
 import re
 import contextlib
 import json
+import time
+
+# Importar el navegador avanzado
+from .advanced_graph_navigator import AdvancedGraphNavigator, IntelligentFilter
 
 def connect_neo4j(uri: str, username: str, password: str) -> GraphDatabase.driver:
-    """
-    Connect to Neo4j database.
-    
-    Args:
-        uri: URI of the Neo4j instance
-        username: Username for authentication
-        password: Password for authentication
-        
-    Returns:
-        Neo4j driver instance
-    """
+    """Connect to Neo4j database."""
     try:
         driver = GraphDatabase.driver(uri, auth=(username, password))
         # Verify connection
@@ -31,15 +25,7 @@ def connect_neo4j(uri: str, username: str, password: str) -> GraphDatabase.drive
 
 @contextlib.contextmanager
 def get_session(driver):
-    """
-    Context manager for Neo4j sessions to ensure proper closing.
-    
-    Args:
-        driver: Neo4j driver instance
-        
-    Yields:
-        Neo4j session
-    """
+    """Context manager for Neo4j sessions to ensure proper closing."""
     session = None
     try:
         session = driver.session()
@@ -47,6 +33,202 @@ def get_session(driver):
     finally:
         if session:
             session.close()
+
+def search_neo4j_enhanced(driver: GraphDatabase.driver, query: str, limit: int = 15) -> List[Dict[str, Any]]:
+    """
+    Búsqueda Neo4j mejorada con Graph RAG Avanzado.
+    Ahora encuentra 8-12 artículos relevantes en lugar de 2-3.
+    """
+    print(f"🔍 Iniciando búsqueda Neo4j avanzada para: '{query[:50]}{'...' if len(query) > 50 else ''}'")
+    start_time = time.time()
+    
+    # Inicializar componentes avanzados
+    navigator = AdvancedGraphNavigator(driver)
+    intelligent_filter = IntelligentFilter()
+    
+    # 1. Búsqueda de artículos semilla (mejorada)
+    seed_articles = _find_enhanced_seed_articles(driver, query, limit=8)
+    print(f"   🌱 Artículos semilla encontrados: {len(seed_articles)}")
+    
+    if not seed_articles:
+        return _fallback_simple_search(driver, query, limit)
+    
+    # 2. Navegación inteligente del grafo
+    try:
+        expanded_articles = navigator.intelligent_graph_expansion(
+            seed_articles, query, max_depth=3
+        )
+        print(f"   🕸️ Total tras navegación inteligente: {len(expanded_articles)}")
+    except Exception as e:
+        print(f"   ❌ Error en navegación inteligente: {str(e)}")
+        expanded_articles = seed_articles
+    
+    # 3. Detectar contexto para filtrado inteligente
+    context_info = navigator.detect_query_context(query)
+    primary_context = context_info['primary_context']
+    
+    # 4. Aplicar filtrado inteligente (menos agresivo)
+    filtered_articles = intelligent_filter.contextual_filtering(
+        expanded_articles, query, context=primary_context, base_threshold=0.10  # Umbral más bajo
+    )
+    
+    # 5. Re-ranking por importancia legal
+    final_articles = intelligent_filter.rank_by_legal_importance(filtered_articles, query)
+    
+    # 6. Limitar resultados finales
+    limited_results = final_articles[:limit]
+    
+    elapsed_time = time.time() - start_time
+    print(f"   ⚡ Búsqueda avanzada completada en {elapsed_time:.2f}s")
+    print(f"   🎯 Resultados finales: {len(limited_results)} artículos")
+    
+    # Mostrar breakdown de métodos
+    methods_breakdown = {}
+    for article in limited_results:
+        method = article.get('expansion_method', article.get('method', 'unknown'))
+        methods_breakdown[method] = methods_breakdown.get(method, 0) + 1
+    
+    if methods_breakdown:
+        methods_str = ", ".join([f"{method}: {count}" for method, count in methods_breakdown.items()])
+        print(f"   📊 Métodos utilizados: {methods_str}")
+    
+    return limited_results
+
+def _find_enhanced_seed_articles(driver: GraphDatabase.driver, query: str, limit: int = 8) -> List[Dict[str, Any]]:
+    """
+    Búsqueda de artículos semilla mejorada con mejor cobertura.
+    """
+    seed_articles = []
+    query_words = [word.lower() for word in query.split() if len(word) > 3][:7]
+    
+    if not query_words:
+        return []
+    
+    with get_session(driver) as session:
+        # Consulta mejorada que encuentra más artículos semilla relevantes
+        seed_query = """
+        MATCH (a:Article)
+        WHERE """ + " OR ".join([f"toLower(a.content) CONTAINS $word{i}" for i in range(len(query_words))]) + """
+        
+        WITH a,
+             // Contar coincidencias de términos
+             size([word IN $words WHERE toLower(a.content) CONTAINS word]) as term_matches
+             
+        WITH a, term_matches,
+             // Boost por metadatos específicos
+             CASE 
+                WHEN a.has_penalties = true AND any(word IN $words WHERE word IN ['sanción', 'pena', 'multa', 'despido']) 
+                THEN 2.0
+                WHEN a.tag_count > 2 THEN 1.5
+                WHEN toLower(a.law_name) CONTAINS 'trabajo' OR toLower(a.law_name) CONTAINS 'contrato' THEN 1.3
+                WHEN a.references_count > 0 THEN 1.2
+                ELSE 0.0 
+             END as metadata_boost,
+             
+             // Boost por densidad de términos relevantes
+             CASE 
+                WHEN size($words) > 0 THEN (toFloat(term_matches) / size($words))
+                ELSE 0.0
+             END as term_density
+        
+        WITH a, 
+             term_matches * 2.0 + metadata_boost + (term_density * 3.0) as seed_score
+        
+        WHERE seed_score > 1.5  // Umbral más bajo para encontrar más semillas
+        
+        RETURN a.article_id as article_id,
+               a.content as content,
+               a.law_name as law_name,
+               a.article_number as article_number,
+               a.category as category,
+               a.source as source,
+               seed_score as score
+        
+        ORDER BY seed_score DESC
+        LIMIT $limit
+        """
+        
+        params = {
+            **{f'word{i}': word for i, word in enumerate(query_words)},
+            'words': query_words,
+            'limit': limit
+        }
+        
+        try:
+            result = session.run(seed_query, params, timeout=10)
+            
+            for record in result:
+                seed_articles.append({
+                    'article_id': record['article_id'],
+                    'content': record['content'],
+                    'law_name': record['law_name'],
+                    'article_number': record['article_number'],
+                    'category': record['category'],
+                    'source': record['source'],
+                    'score': float(record['score']),
+                    'method': 'enhanced_seed',
+                    'expansion_level': 0
+                })
+                
+        except Exception as e:
+            print(f"   ❌ Error en búsqueda de semillas: {str(e)}")
+    
+    return seed_articles
+
+def _fallback_simple_search(driver: GraphDatabase.driver, query: str, limit: int = 10) -> List[Dict[str, Any]]:
+    """Búsqueda de fallback simple cuando no se encuentran artículos semilla."""
+    results = []
+    query_words = [word.lower() for word in query.split() if len(word) > 3][:5]
+    
+    if not query_words:
+        return results
+    
+    with get_session(driver) as session:
+        simple_query = """
+        MATCH (a:Article)
+        WHERE """ + " OR ".join([f"toLower(a.content) CONTAINS $word{i}" for i in range(len(query_words))]) + """
+        
+        WITH a, size([word IN $words WHERE toLower(a.content) CONTAINS word]) as matches
+        
+        WHERE matches > 0
+        
+        RETURN a.article_id as article_id,
+               a.content as content,
+               a.law_name as law_name,
+               a.article_number as article_number,
+               a.category as category,
+               a.source as source,
+               toFloat(matches) as score
+        
+        ORDER BY score DESC
+        LIMIT $limit
+        """
+        
+        params = {
+            **{f'word{i}': word for i, word in enumerate(query_words)},
+            'words': query_words,
+            'limit': limit
+        }
+        
+        try:
+            result = session.run(simple_query, params, timeout=5)
+            for record in result:
+                results.append({
+                    'article_id': record['article_id'],
+                    'content': record['content'],
+                    'law_name': record['law_name'],
+                    'article_number': record['article_number'],
+                    'category': record['category'],
+                    'source': record['source'],
+                    'score': float(record['score']),
+                    'method': 'simple_fallback'
+                })
+        except Exception as e:
+            print(f"   ❌ Error en búsqueda de fallback: {str(e)}")
+    
+    return results
+
+# ========== FUNCIONES EXISTENTES MEJORADAS ==========
 
 def create_enhanced_neo4j_nodes(driver: GraphDatabase.driver, documents: List[Dict[str, Any]]) -> List[str]:
     """
@@ -79,7 +261,7 @@ def create_enhanced_neo4j_nodes(driver: GraphDatabase.driver, documents: List[Di
                 "section": metadata.get("section", ""),
                 "source": metadata.get("section", ""),
                 # Nuevos campos enriquecidos
-                "tags": json.dumps(metadata.get("tags", [])),  # Almacenar como JSON
+                "tags": json.dumps(metadata.get("tags", [])),
                 "penalty": json.dumps(metadata.get("penalty", [])),
                 "references_count": len(references),
                 "has_penalties": len(metadata.get("penalty", [])) > 0,
@@ -137,17 +319,9 @@ def create_enhanced_relationships(driver: GraphDatabase.driver, documents: List[
         # 4. Relaciones por Sección/Chapter
         print("   📂 Creando relaciones por sección...")
         create_section_relationships(session)
-        
-        # 5. Relaciones semánticas avanzadas
-        print("   🧠 Creando relaciones semánticas avanzadas...")
-        create_advanced_semantic_relationships(session)
 
 def create_tag_relationships(session, documents: List[Dict[str, Any]]) -> None:
-    """
-    Crea relaciones basadas en tags compartidos entre artículos.
-    Los tags son muy valiosos para determinar temas relacionados.
-    """
-    # Mapear tags a artículos
+    """Crea relaciones basadas en tags compartidos entre artículos."""
     tag_to_articles = {}
     
     for doc in documents:
@@ -159,7 +333,7 @@ def create_tag_relationships(session, documents: List[Dict[str, Any]]) -> None:
             continue
             
         for tag in tags:
-            if tag and len(tag.strip()) > 2:  # Filtrar tags muy cortos
+            if tag and len(tag.strip()) > 2:
                 tag_normalized = tag.lower().strip()
                 if tag_normalized not in tag_to_articles:
                     tag_to_articles[tag_normalized] = []
@@ -167,41 +341,21 @@ def create_tag_relationships(session, documents: List[Dict[str, Any]]) -> None:
     
     # Crear relaciones entre artículos que comparten tags
     for tag, article_ids in tag_to_articles.items():
-        if len(article_ids) > 1 and len(article_ids) <= 20:  # Solo si hay al menos 2 artículos con el mismo tag
-            # Crear nodo Tag si no existe
-            try:
-                query_create_tag = """
-                MERGE (t:Tag {name: $tag_name})
-                SET t.article_count = $article_count
-                """
-                session.run(query_create_tag, tag_name=tag, article_count=len(article_ids))
-                
-                # Conectar artículos al tag
-                for article_id in article_ids:
-                    query_connect = """
-                    MATCH (a:Article {article_id: $article_id})
-                    MATCH (t:Tag {name: $tag_name})
-                    MERGE (a)-[r:HAS_TAG]->(t)
-                    """
-                    session.run(query_connect, article_id=article_id, tag_name=tag)
-                
-                # Crear relaciones directas entre artículos que comparten tags importantes
-                for i, art1 in enumerate(article_ids):
-                    for art2 in article_ids[i+1:]:
-                        query_shared_tag = """
+        if len(article_ids) > 1 and len(article_ids) <= 20:
+            for i, art1 in enumerate(article_ids):
+                for art2 in article_ids[i+1:]:
+                    try:
+                        query = """
                         MATCH (a1:Article {article_id: $art1})
                         MATCH (a2:Article {article_id: $art2})
-                        MERGE (a1)-[r:SHARES_TAG {tag: $tag_name, strength: 1.0}]->(a2)
+                        MERGE (a1)-[r:SHARES_TAG {tag: $tag_name}]->(a2)
                         """
-                        session.run(query_shared_tag, art1=art1, art2=art2, tag_name=tag)
-            except Exception as e:
-                print(f"Error creando relaciones para tag {tag}: {str(e)}")
-                continue
+                        session.run(query, art1=art1, art2=art2, tag_name=tag)
+                    except Exception as e:
+                        continue
 
 def create_reference_relationships(session, documents: List[Dict[str, Any]]) -> None:
-    """
-    Crea relaciones basadas en referencias explícitas entre artículos.
-    """
+    """Crea relaciones basadas en referencias explícitas entre artículos."""
     for doc in documents:
         metadata = doc.get("metadata", {})
         references = doc.get("references", [])
@@ -212,42 +366,27 @@ def create_reference_relationships(session, documents: List[Dict[str, Any]]) -> 
             
         for ref in references:
             if isinstance(ref, dict):
-                # Si la referencia es un diccionario con metadatos
                 ref_code = ref.get("code", "")
                 ref_article = ref.get("article", "")
                 ref_article_id = f"{ref_code}_{ref_article}" if ref_code and ref_article else ""
             elif isinstance(ref, str):
-                # Si la referencia es solo un string, intentar parsearlo
                 ref_article_id = ref.strip()
             else:
                 continue
             
             if ref_article_id and ref_article_id != source_article_id:
-                # Crear relación de referencia explícita
-                query_reference = """
-                MATCH (source:Article {article_id: $source_id})
-                MATCH (target:Article {article_id: $target_id})
-                MERGE (source)-[r:REFERENCES {type: 'explicit', strength: 3.0}]->(target)
-                """
                 try:
-                    session.run(query_reference, source_id=source_article_id, target_id=ref_article_id)
-                except:
-                    # Si el artículo referenciado no existe, crear un nodo placeholder
-                    query_placeholder = """
-                    MERGE (placeholder:Article {article_id: $ref_id})
-                    SET placeholder.is_placeholder = true
-                    
-                    WITH placeholder
+                    query = """
                     MATCH (source:Article {article_id: $source_id})
-                    MERGE (source)-[r:REFERENCES {type: 'placeholder', strength: 1.0}]->(placeholder)
+                    MATCH (target:Article {article_id: $target_id})
+                    MERGE (source)-[r:REFERENCES]->(target)
                     """
-                    session.run(query_placeholder, ref_id=ref_article_id, source_id=source_article_id)
+                    session.run(query, source_id=source_article_id, target_id=ref_article_id)
+                except Exception as e:
+                    continue
 
 def create_penalty_relationships(session, documents: List[Dict[str, Any]]) -> None:
-    """
-    Crea relaciones entre artículos que tienen penalties similares o relacionados.
-    """
-    # Agrupar artículos por tipos de penalty
+    """Crea relaciones entre artículos con penalties similares."""
     penalty_groups = {}
     
     for doc in documents:
@@ -261,64 +400,33 @@ def create_penalty_relationships(session, documents: List[Dict[str, Any]]) -> No
         for penalty in penalties:
             if isinstance(penalty, dict):
                 penalty_type = penalty.get("type", "").lower()
-                penalty_amount = penalty.get("amount", "")
             elif isinstance(penalty, str):
                 penalty_type = penalty.lower()
-                penalty_amount = ""
             else:
                 continue
                 
             if penalty_type:
                 if penalty_type not in penalty_groups:
                     penalty_groups[penalty_type] = []
-                penalty_groups[penalty_type].append({
-                    'article_id': article_id,
-                    'amount': penalty_amount
-                })
+                penalty_groups[penalty_type].append(article_id)
     
     # Crear relaciones entre artículos con penalties similares
-    for penalty_type, articles in penalty_groups.items():
-        if len(articles) > 1 and len(articles) <= 15:  # Limitar para evitar demasiadas relaciones
-            try:
-                # Crear nodo PenaltyType
-                query_penalty_type = """
-                MERGE (pt:PenaltyType {name: $penalty_type})
-                SET pt.article_count = $article_count
-                """
-                session.run(query_penalty_type, penalty_type=penalty_type, article_count=len(articles))
-                
-                # Conectar artículos al tipo de penalty
-                for article_info in articles:
-                    query_connect_penalty = """
-                    MATCH (a:Article {article_id: $article_id})
-                    MATCH (pt:PenaltyType {name: $penalty_type})
-                    MERGE (a)-[r:HAS_PENALTY_TYPE {amount: $amount}]->(pt)
-                    """
-                    session.run(query_connect_penalty, 
-                               article_id=article_info['article_id'],
-                               penalty_type=penalty_type,
-                               amount=str(article_info['amount']))
-                
-                # Crear relaciones directas entre artículos con mismo tipo de penalty
-                for i, art1 in enumerate(articles):
-                    for art2 in articles[i+1:]:
-                        query_similar_penalty = """
+    for penalty_type, article_ids in penalty_groups.items():
+        if len(article_ids) > 1 and len(article_ids) <= 10:
+            for i, art1 in enumerate(article_ids):
+                for art2 in article_ids[i+1:]:
+                    try:
+                        query = """
                         MATCH (a1:Article {article_id: $art1_id})
                         MATCH (a2:Article {article_id: $art2_id})
-                        MERGE (a1)-[r:SIMILAR_PENALTY {penalty_type: $penalty_type, strength: 2.0}]->(a2)
+                        MERGE (a1)-[r:SIMILAR_PENALTY {penalty_type: $penalty_type}]->(a2)
                         """
-                        session.run(query_similar_penalty, 
-                                   art1_id=art1['article_id'],
-                                   art2_id=art2['article_id'],
-                                   penalty_type=penalty_type)
-            except Exception as e:
-                print(f"Error creando relaciones para penalty {penalty_type}: {str(e)}")
-                continue
+                        session.run(query, art1_id=art1, art2_id=art2, penalty_type=penalty_type)
+                    except Exception as e:
+                        continue
 
 def create_section_relationships(session) -> None:
-    """
-    Crea relaciones jerárquicas basadas en secciones y capítulos.
-    """
+    """Crea relaciones jerárquicas basadas en secciones y capítulos."""
     try:
         # Relaciones dentro de la misma sección
         query_same_section = """
@@ -347,161 +455,10 @@ def create_section_relationships(session) -> None:
     except Exception as e:
         print(f"Error creando relaciones de sección: {str(e)}")
 
-def create_advanced_semantic_relationships(session) -> None:
-    """
-    Crea relaciones semánticas avanzadas basadas en patrones de contenido.
-    """
-    try:
-        # 1. Relaciones por patrones de definición
-        query_definitions = """
-        MATCH (def:Article)
-        WHERE toLower(def.content) CONTAINS 'se entiende por' 
-           OR toLower(def.content) CONTAINS 'definición'
-           OR toLower(def.content) CONTAINS 'concepto'
-        
-        MATCH (related:Article)
-        WHERE related.article_id <> def.article_id
-        AND any(word IN split(toLower(def.content), ' ') 
-                WHERE word IN split(toLower(related.content), ' ') 
-                AND length(word) > 4)
-        
-        MERGE (def)-[r:DEFINES_CONCEPT {strength: 2.5}]->(related)
-        """
-        session.run(query_definitions)
-    except Exception as e:
-        print(f"Error en relaciones de definición: {str(e)}")
-    
-    try:
-        # 2. Relaciones por patrones de excepción
-        query_exceptions = """
-        MATCH (exc:Article)
-        WHERE toLower(exc.content) CONTAINS 'excepción'
-           OR toLower(exc.content) CONTAINS 'salvo'
-           OR toLower(exc.content) CONTAINS 'sin perjuicio'
-        
-        MATCH (general:Article)
-        WHERE general.article_id <> exc.article_id
-        AND general.category = exc.category
-        AND NOT toLower(general.content) CONTAINS 'excepción'
-        
-        MERGE (exc)-[r:EXCEPTION_TO {strength: 2.8}]->(general)
-        """
-        session.run(query_exceptions)
-    except Exception as e:
-        print(f"Error en relaciones de excepción: {str(e)}")
-
-def search_neo4j_enhanced(driver: GraphDatabase.driver, query: str, limit: int = 15) -> List[Dict[str, Any]]:
-    """
-    Búsqueda mejorada que usa el sistema optimizado de Graph RAG.
-    """
-    print(f"🔍 Iniciando búsqueda Neo4j optimizada para: '{query}'")
-    
-    try:
-        # Importar el sistema optimizado
-        from .advanced_graph_rag_optimized import optimized_advanced_neo4j_search
-        
-        # Usar el Graph RAG optimizado como método principal
-        optimized_results = optimized_advanced_neo4j_search(driver, query, limit)
-        
-        if optimized_results:
-            return optimized_results
-        else:
-            # Fallback a búsqueda tradicional
-            return search_neo4j_traditional(driver, query, limit)
-            
-    except ImportError:
-        print("Sistema optimizado no disponible, usando búsqueda tradicional...")
-        return search_neo4j_traditional(driver, query, limit)
-    except Exception as e:
-        print(f"Error en búsqueda optimizada: {str(e)}")
-        return search_neo4j_traditional(driver, query, limit)
-
-def search_neo4j_traditional(driver: GraphDatabase.driver, query: str, limit: int = 10) -> List[Dict[str, Any]]:
-    """
-    Búsqueda tradicional mejorada que aprovecha los nuevos metadatos.
-    """
-    results = []
-    query_words = [word.lower() for word in query.split() if len(word) > 2]
-    
-    if not query_words:
-        return results
-    
-    with get_session(driver) as session:
-        cypher_query = """
-        MATCH (a:Article)
-        WHERE """ + " OR ".join([f"toLower(a.content) CONTAINS ${i}" for i in range(len(query_words))]) + """
-        
-        WITH a,
-             // Score base por coincidencias en contenido
-             size([word IN $words WHERE toLower(a.content) CONTAINS word]) as content_matches,
-             
-             // Boost por tags relevantes
-             CASE 
-                WHEN any(word IN $words WHERE toLower(a.tags) CONTAINS word)
-                THEN 3.0 ELSE 0.0 
-             END as tag_boost,
-             
-             // Boost por penalties (importante para consultas sobre sanciones)
-             CASE 
-                WHEN any(word IN ['sanción', 'pena', 'multa'] WHERE word IN $words)
-                AND a.has_penalties = true
-                THEN 2.0 ELSE 0.0 
-             END as penalty_boost,
-             
-             // Boost por referencias (artículos muy referenciados son importantes)
-             CASE 
-                WHEN a.references_count > 0 THEN a.references_count * 0.1 
-                ELSE 0.0 
-             END as reference_boost
-        
-        WITH a, 
-             (toFloat(content_matches) / size($words)) * 5.0 + 
-             tag_boost + 
-             penalty_boost + 
-             reference_boost as relevance_score
-        
-        WHERE relevance_score > 0.5
-        
-        RETURN a.article_id as article_id,
-               a.content as content,
-               a.law_name as law_name,
-               a.article_number as article_number,
-               a.category as category,
-               a.source as source,
-               relevance_score as score
-        
-        ORDER BY relevance_score DESC
-        LIMIT $limit
-        """
-        
-        params = {
-            **{str(i): word for i, word in enumerate(query_words)},
-            'words': query_words,
-            'limit': limit
-        }
-        
-        try:
-            result = session.run(cypher_query, params)
-            for record in result:
-                results.append({
-                    "article_id": record["article_id"],
-                    "content": record["content"],
-                    "law_name": record["law_name"],
-                    "article_number": record["article_number"],
-                    "category": record["category"],
-                    "source": record["source"],
-                    "score": float(record["score"]) * 3,  # Escalar para comparar con otros métodos
-                    "method": "neo4j_traditional_enhanced"
-                })
-        except Exception as e:
-            print(f"Error en búsqueda tradicional: {str(e)}")
-    
-    return results
+# ========== FUNCIONES DE COMPATIBILIDAD ==========
 
 def check_data_exists(driver: GraphDatabase.driver) -> bool:
-    """
-    Checks if data already exists in the Neo4j database.
-    """
+    """Checks if data already exists in the Neo4j database."""
     with get_session(driver) as session:
         query = """
         MATCH (a:Article)
@@ -514,9 +471,7 @@ def check_data_exists(driver: GraphDatabase.driver) -> bool:
     return False
 
 def clear_neo4j_data(driver: GraphDatabase.driver) -> None:
-    """
-    Clears all data from the Neo4j database.
-    """
+    """Clears all data from the Neo4j database."""
     print("ADVERTENCIA: Eliminando todos los datos de Neo4j...")
     
     with get_session(driver) as session:
@@ -528,10 +483,8 @@ def clear_neo4j_data(driver: GraphDatabase.driver) -> None:
         print("Todos los datos eliminados de la base de datos Neo4j.")
 
 def setup_enhanced_neo4j_data(driver: GraphDatabase.driver, documents: List[Dict[str, Any]]) -> None:
-    """
-    Configura Neo4j con el sistema mejorado que aprovecha todos los metadatos.
-    """
-    print("\n=== Configurando Neo4j con Sistema Mejorado ===")
+    """Configura Neo4j con el sistema mejorado que aprovecha todos los metadatos."""
+    print("\n=== Configurando Neo4j con Sistema Graph RAG Avanzado ===")
     
     # Verificar si ya existen datos
     if check_data_exists(driver):
@@ -540,29 +493,27 @@ def setup_enhanced_neo4j_data(driver: GraphDatabase.driver, documents: List[Dict
         if choice.lower() == 's':
             clear_neo4j_data(driver)
         else:
-            print("Manteniendo datos existentes y agregando relaciones mejoradas...")
+            print("Manteniendo datos existentes...")
     
     # 1. Crear nodos enriquecidos
     print("📊 Creando nodos Article enriquecidos...")
     article_ids = create_enhanced_neo4j_nodes(driver, documents)
     
-    # 2. Crear relaciones tradicionales (leyes, etc.)
-    print("🏛️ Creando relaciones básicas de leyes...")
+    # 2. Crear relaciones básicas de leyes
+    print("🏛️ Creando relaciones básicas...")
     create_basic_law_relationships(driver, documents)
     
     # 3. Crear relaciones enriquecidas
     print("🚀 Creando relaciones enriquecidas...")
     create_enhanced_relationships(driver, documents)
     
-    print(f"\n✅ Configuración mejorada completada:")
+    print(f"\n✅ Configuración Graph RAG Avanzado completada:")
     print(f"   - {len(article_ids)} artículos enriquecidos")
     print(f"   - Relaciones por tags, referencias y penalties")
-    print(f"   - Sistema Graph RAG optimizado activado")
+    print(f"   - Sistema de navegación inteligente activado")
 
 def create_basic_law_relationships(driver: GraphDatabase.driver, documents: List[Dict[str, Any]]) -> None:
-    """
-    Crea relaciones básicas de leyes y códigos.
-    """
+    """Crea relaciones básicas de leyes y códigos."""
     law_articles = {}
     
     for doc in documents:
@@ -607,136 +558,19 @@ def create_neo4j_nodes(driver: GraphDatabase.driver, documents: List[Dict[str, A
 
 def search_neo4j(driver: GraphDatabase.driver, query_params: Dict[str, Any], limit: int = 5) -> List[Dict[str, Any]]:
     """
-    Búsqueda optimizada en Neo4j que evita timeouts y mejora performance.
+    Función de compatibilidad que usa el sistema Graph RAG Avanzado.
     """
-    results = []
-    
     # Extraer query string de los parámetros
     query = ""
     if "keywords" in query_params:
         query = " ".join(query_params["keywords"])
     
     if not query:
-        return results
+        return []
     
-    print(f"🔍 Búsqueda Neo4j optimizada para: '{query[:50]}{'...' if len(query) > 50 else ''}'")
-    
-    # Optimizar términos de búsqueda
-    query_words = [word.lower() for word in query.split() if len(word) > 3]
-    # Limitar a máximo 5 términos para evitar consultas muy complejas
-    query_words = query_words[:5]
-    
-    if not query_words:
-        return results
-    
-    with get_session(driver) as session:
-        try:
-            # Consulta optimizada con timeout y límites
-            cypher_query = """
-            MATCH (a:Article)
-            WHERE """ + " OR ".join([f"toLower(a.content) CONTAINS $word{i}" for i in range(len(query_words))]) + """
-            
-            WITH a,
-                 // Contar coincidencias de términos
-                 size([word IN $words WHERE toLower(a.content) CONTAINS word]) as term_matches,
-                 
-                 // Boost por metadatos si existen
-                 CASE 
-                    WHEN a.has_penalties = true AND any(word IN $words WHERE word IN ['sanción', 'pena', 'multa']) 
-                    THEN 2.0 
-                    ELSE 0.0 
-                 END as penalty_boost,
-                 
-                 // Boost por tags si existen
-                 CASE 
-                    WHEN a.tag_count > 2 THEN 1.0 
-                    ELSE 0.0 
-                 END as tag_boost
-            
-            WITH a, 
-                 (toFloat(term_matches) / size($words)) * 10.0 + penalty_boost + tag_boost as relevance_score
-            
-            WHERE relevance_score > 1.0
-            
-            RETURN a.article_id as article_id,
-                   a.content as content,
-                   a.law_name as law_name,
-                   a.article_number as article_number,
-                   a.category as category,
-                   a.source as source,
-                   relevance_score as score
-            
-            ORDER BY relevance_score DESC
-            LIMIT $limit
-            """
-            
-            # Preparar parámetros
-            params = {
-                **{f'word{i}': word for i, word in enumerate(query_words)},
-                'words': query_words,
-                'limit': limit
-            }
-            
-            # Ejecutar con timeout de 10 segundos
-            result = session.run(cypher_query, params, timeout=10)
-            
-            for record in result:
-                article = {
-                    "article_id": record["article_id"],
-                    "content": record["content"],
-                    "law_name": record["law_name"],
-                    "article_number": record["article_number"],
-                    "category": record["category"],
-                    "source": record["source"],
-                    "score": float(record["score"]) * 3,  # Escalar para comparar con otros métodos
-                    "method": "neo4j_optimized"
-                }
-                results.append(article)
-                
-            print(f"   ✅ Neo4j encontró {len(results)} resultados")
-            
-        except Exception as e:
-            print(f"   ❌ Error en Neo4j (usando fallback): {str(e)}")
-            # Fallback a búsqueda más simple
-            try:
-                simple_query = """
-                MATCH (a:Article)
-                WHERE toLower(a.content) CONTAINS $main_term
-                RETURN a.article_id as article_id,
-                       a.content as content,
-                       a.law_name as law_name,
-                       a.article_number as article_number,
-                       a.category as category,
-                       a.source as source,
-                       1.0 as score
-                ORDER BY a.article_id
-                LIMIT $limit
-                """
-                
-                # Usar el término más largo como término principal
-                main_term = max(query_words, key=len) if query_words else query.split()[0].lower()
-                
-                result = session.run(simple_query, {
-                    'main_term': main_term,
-                    'limit': min(limit, 10)
-                }, timeout=5)
-                
-                for record in result:
-                    article = {
-                        "article_id": record["article_id"],
-                        "content": record["content"],
-                        "law_name": record["law_name"],
-                        "article_number": record["article_number"],
-                        "category": record["category"],
-                        "source": record["source"],
-                        "score": float(record["score"]),
-                        "method": "neo4j_simple_fallback"
-                    }
-                    results.append(article)
-                    
-                print(f"   🔄 Fallback Neo4j: {len(results)} resultados")
-                
-            except Exception as e2:
-                print(f"   ❌ Error en fallback Neo4j: {str(e2)}")
-    
-    return results
+    # Usar el sistema avanzado
+    return search_neo4j_enhanced(driver, query, limit)
+
+def search_neo4j_traditional(driver: GraphDatabase.driver, query: str, limit: int = 10) -> List[Dict[str, Any]]:
+    """Búsqueda tradicional como fallback."""
+    return _fallback_simple_search(driver, query, limit)
