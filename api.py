@@ -332,7 +332,7 @@ async def obtener_estadisticas():
 
 if __name__ == "__main__":
     # Configuración para desarrollo
-    port = int(os.getenv("PORT", 4000))  # Cambiado a puerto 8080 para evitar conflictos
+    port = int(os.getenv("PORT", 3500))  # Cambiado a puerto 3500 para evitar conflictos
     host = os.getenv("HOST", "0.0.0.0")
     
     print(f"🚀 Iniciando servidor en {host}:{port}")
