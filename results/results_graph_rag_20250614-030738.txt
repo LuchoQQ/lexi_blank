@@ -1,0 +1,380 @@
+Consulta: articulo 14 codigo penal
+Sistema: Graph RAG Avanzado
+Timestamp: 20250614-030738
+
+
+=== RESULTADOS CON GRAPH RAG AVANZADO ===
+
+RESULTADO #1 (Relevancia: 10.25)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 871
+Categoría: Libro Tercero: Derechos Personales
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.452
+--------------------------------------------------
+### Artículo 871
+
+El pago debe hacerse:
+
+a) si la obligación es de exigibilidad inmediata, en el momento de su nacimiento;
+
+b) si hay un plazo determinado, cierto o incierto, el día de su vencimiento;
+
+c) si el plazo es tácito, en el tiempo en que, según la naturaleza y circunstancias de la obligación, debe cumplirse;
+
+d) si el plazo es indeterminado, en el tiempo que fije el juez, a solicitud de cualquiera de las partes, mediante el procedimiento más breve que prevea la ley local.
+================================================================================
+
+RESULTADO #2 (Relevancia: 10.25)
+Ley/Código: Ley de empleo
+Artículo: 125
+Categoría: Título IV: De la protección de los trabajadores desempleados
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.493
+--------------------------------------------------
+### Artículo 125
+
+Las normas de procedimiento a aplicar serán las siguientes:
+
+a) La resolución de la autoridad de aplicación de reconocimiento, suspensión, reanudación y extinción del derecho a las prestaciones de desempleo deberá fundarse y contra ella podrá interponerse reclamación administrativa o judicial.
+
+b) 1. Cuando la actuación administrativa sea denegada expresamente podrá interponerse recurso por ante la Cámara Nacional de Apelaciones de la Seguridad Social, en el plazo de 30 días siguientes a la fecha en que sea notificada la denegatoria.
+
+2. Si no recae resolución expresa en la reclamación administrativa en el plazo de 45 días de presentada, el interesado podrá requerir pronto despacho y si transcurrieren otros 30 días sin emitir resolución, se considerará que existe silencio de la administración y quedará expedita la vía judicial.
+
+c) En todo lo no contemplado expresamente por esta ley, reglará supletoriamente la ley 19.549 de procedimientos administrativos.
+================================================================================
+
+RESULTADO #3 (Relevancia: 10.25)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 170
+Categoría: Título II: Persona jurídica
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.482
+--------------------------------------------------
+### Artículo 170
+
+Contenido. El acto constitutivo debe contener:
+
+a) la identificación de los constituyentes;
+
+b) el nombre de la asociación con el aditamento “Asociación Civil” antepuesto o pospuesto;
+
+c) el objeto;
+
+d) el domicilio social;
+
+e) el plazo de duración o si la asociación es a perpetuidad;
+
+f) las causales de disolución;
+
+g) las contribuciones que conforman el patrimonio inicial de la asociación civil y el valor que se les asigna. Los aportes se consideran transferidos en propiedad, si no consta expresamente su aporte de uso y goce;
+
+h) el régimen de administración y representación;
+
+i) la fecha de cierre del ejercicio económico anual;
+
+j) en su caso, las clases o categorías de asociados, y prerrogativas y deberes de cada una;
+
+k) el régimen de ingreso, admisión, renuncia, sanciones disciplinarias, exclusión de asociados y recursos contra las decisiones;
+
+l) los órganos sociales de gobierno, administración y representación. Deben preverse la comisión directiva, las asambleas y el órgano de fiscalización interna, regulándose su composición, requisitos de integración, duración de sus integrantes, competencias, funciones, atribuciones y funcionamiento en cuanto a convocatoria, constitución, deliberación, decisiones y documentación;
+
+m) el procedimiento de liquidación;
+
+n) el destino de los bienes después de la liquidación, pudiendo atribuirlos a una entidad de bien común, pública o privada, que no tenga fin de lucro y que esté domiciliada en la República.
+================================================================================
+
+RESULTADO #4 (Relevancia: 10.25)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 195
+Categoría: Título II: Persona jurídica
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.390
+--------------------------------------------------
+### Artículo 195
+
+Acto constitutivo. Estatuto. El acto constitutivo de la fundación debe ser otorgado por el o los fundadores o apoderado con poder especial, si se lo hace por acto entre vivos; o por el autorizado por el juez del sucesorio, si lo es por disposición de última voluntad.
+
+El instrumento debe ser presentado ante la autoridad de contralor para su aprobación, y contener:
+
+a) los siguientes datos del o de los fundadores:
+
+i) cuando se trate de personas humanas, su nombre, edad, estado civil, nacionalidad, profesión, domicilio y número de documento de identidad y, en su caso, el de los apoderados o autorizados;
+
+ii) cuando se trate de personas jurídicas, la razón social o denominación y el domicilio, acreditándose la existencia de la entidad fundadora, su inscripción registral y la representación de quienes comparecen por ella;
+
+En cualquier caso, cuando se invoca mandato debe dejarse constancia del documento que lo acredita;
+
+b) nombre y domicilio de la fundación;
+
+c) designación del objeto, que debe ser preciso y determinado;
+
+d) patrimonio inicial, integración y recursos futuros, lo que debe ser expresado en moneda nacional;
+
+e) plazo de duración;
+
+f) organización del consejo de administración, duración de los cargos, régimen de reuniones y procedimiento para la designación de sus miembros;
+
+g) cláusulas atinentes al funcionamiento de la entidad;
+
+h) procedimiento y régimen para la reforma del estatuto;
+
+i) fecha del cierre del ejercicio anual;
+
+j) cláusulas de disolución y procedimiento atinentes a la liquidación y destino de los bienes;
+
+k) plan trienal de acción.
+
+En el mismo instrumento se deben designar los integrantes del primer consejo de administración y las personas facultadas para gestionar la autorización para funcionar.
+================================================================================
+
+RESULTADO #5 (Relevancia: 10.25)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 200
+Categoría: Título IX: De la Duración del Trabajo y Descanso Semanal
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.228
+--------------------------------------------------
+### Artículo 200
+
+La jornada de trabajo integramente nocturna no podrá exceder de siete (7) horas, entendiéndose por tal la que se cumpla entre la hora veintiuna de un día y la hora seis del siguiente.
+
+Esta limitación no tendrá vigencia cuando se apliquen los horarios rotativos del régimen de trabajo por equipos. Cuando se alternen horas diurnas con nocturnas se reducirá proporcionalmente la jornada en ocho (8) minutos por cada hora nocturna trabajada o se pagarán los ocho (8) minutos de exceso como tiempo suplementario según las pautas del artículo 201.
+
+En caso de que la autoridad de aplicación constatara el desempeño de tareas en condiciones de insalubridad, intimará previamente al empleador a adecuar ambientalmente el lugar, establecimiento o actividad para que el trabajo se desarrolle en condiciones de salubridad dentro del plazo razonable que a tal efecto determine.
+
+Si el empleador no cumpliera en tiempo y forma la intimación practicada, la autoridad de aplicación procederá a calificar las tareas o condiciones ambientales del lugar de que se trate.
+
+La jornada de trabajo en tareas o condiciones declaradas insalubres no podrá exceder de seis (6) horas diarias o treinta y seis (36) semanales. La insalubridad no existirá sin declaración previa de la autoridad de aplicación, con fundamento en dictámenes médicos de rigor científico y sólo podrá ser dejado sin efecto por la misma autoridad si desaparecieran las circunstancias determinantes de la insalubridad. La reducción de jornada no importará disminución de las remuneraciones.
+
+Agotada la vía administrativa, toda declaración de insalubridad, o la que deniegue dejarla sin efecto, será recurrible en los términos, formas y procedimientos que rijan para la apelación de sentencias en la jurisdicción judicial laboral de la Capital Federal. Al fundar este recurso el apelante podrá proponer nuevas pruebas.
+
+Por ley nacional se fijarán las jornadas reducidas que correspondan para tareas penosas, mortificantes o riesgosas, con indicación precisa e individualizada de las mismas.
+================================================================================
+
+RESULTADO #6 (Relevancia: 7.65)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 1222
+Categoría: Título IV
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.319
+--------------------------------------------------
+### Artículo 1222
+
+Si el destino es habitacional, previamente a la demanda de desalojo por falta de pago de alquileres, el locador debe intimar fehacientemente al locatario al pago de la cantidad debida, otorgando para ello un plazo que nunca debe ser inferior a diez (10) días corridos contados a partir de la recepción de la intimación, especificando el lugar de pago.
+
+La notificación remitida al domicilio denunciado en el contrato por el locatario se tiene por válida, aun si éste se negara a recibirla o no pudiese perfeccionarse por motivos imputables al mismo.
+
+Cumplido el plazo previsto en el primer párrafo de este artículo, o habiéndose verificado la extinción de la locación por cualquier motivo, el locatario debe restituir la tenencia del inmueble locado. Ante el incumplimiento del locatario, el locador puede iniciar la acción judicial de desalojo, la que debe sustanciarse por el proceso previsto al efecto en cada jurisdicción y en caso de no prever un procedimiento especial, el más abreviado que establezcan sus leyes procesales o especiales.
+
+En ningún caso el locador puede negarse a recibir las llaves del inmueble o condicionar la misma, sin perjuicio de la reserva por las obligaciones pendientes a cargo del locatario. En caso de negativa o silencio frente al requerimiento por parte del inquilino a efectos de que se le reciba la llave del inmueble, éste puede realizar la consignación judicial de las mismas, siendo los gastos y costas a cargo del locador. En ningún caso se adeudarán alquileres ni ningún tipo de obligación accesoria a partir del día de la notificación fehaciente realizada al locador a efectos de que reciba las llaves del inmueble, siempre que el locatario efectúe la consignación judicial dentro de los diez (10) días hábiles siguientes a la misma, o desde que le fuera notificado al locador el depósito judicial de la llave si la consignación se hubiese iniciado después del vencimiento de dicho plazo.
+
+(Artículo sustituido por art. 11 de la Ley Nº 27.551 B.O. 30/6/2020. Vigencia: a partir del día siguiente al de su publicación en el Boletín Oficial de la República Argentina y serán aplicables para los contratos que se celebren a partir de su entrada en vigencia. Ley N° 27.551 abrogada por art. 249 del Decreto N° 70/2023 B.O. 27/12/2023)
+================================================================================
+
+RESULTADO #7 (Relevancia: 7.65)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 1662
+Categoría: Capítulo 29: Contrato de arbitraje
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.452
+--------------------------------------------------
+### Artículo 1662
+
+El árbitro que acepta el cargo celebra un contrato con cada una de las partes y se obliga a:
+
+a) revelar cualquier circunstancia previa a la aceptación o que surja con posterioridad que pueda afectar su independencia e imparcialidad;
+
+b) permanecer en el tribunal arbitral hasta la terminación del arbitraje, excepto que justifique la existencia de un impedimento o una causa legítima de renuncia;
+
+c) respetar la confidencialidad del procedimiento;
+
+d) disponer de tiempo suficiente para atender diligentemente el arbitraje;
+
+e) participar personalmente de las audiencias;
+
+f) deliberar con los demás árbitros;
+
+g) dictar el laudo motivado y en el plazo establecido.
+
+En todos los casos los árbitros deben garantizar la igualdad de las partes y el principio del debate contradictorio, así como que se dé a cada una de ellas suficiente oportunidad de hacer valer sus derechos.
+================================================================================
+
+RESULTADO #8 (Relevancia: 7.65)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 1223
+Categoría: Título IV
+Método: advanced_graph_rag
+Factores de relevancia: Graph RAG (+0.5)
+Similitud semántica: 0.594
+--------------------------------------------------
+### Artículo 1223
+
+Al extinguirse la locación debe restituirse la tenencia de la cosa locada.
+
+El procedimiento previsto en este Código para la cláusula resolutoria implícita no se aplica a la demanda de desalojo por las causas de los artículos 1217 y 1219, inciso c).
+
+El plazo de ejecución de la sentencia de desalojo no puede ser menor a diez días.
+================================================================================
+
+RESULTADO #9 (Relevancia: 6.41)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 15
+Categoría: Título I: Disposiciones Generales
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.472
+--------------------------------------------------
+### Artículo 15
+
+Los acuerdos transaccionales, conciliatorios o liberatorios sólo serán válidos cuando se realicen con intervención de la autoridad judicial o administrativa, y mediare resolución fundada de cualquiera de ésta que acredite que mediante tales actos se ha alcanzado una justa composición de los derechos e intereses de las partes.
+
+Sin perjuicio de ello, si una o ambas partes pretendieren que no se encuentran alcanzadas por las normas que establecen la obligación de pagar o retener los aportes con destino a los organismos de la seguridad social, o si de las constancias disponibles surgieren indicios de que el trabajador afectado no se encuentra regularmente registrado o de que ha sido registrado tardíamente o con indicación de una remuneración inferior a la realmente percibida o de que no se han ingresado parcial o totalmente aquellos aportes y contribuciones, la autoridad administrativa o judicial interviniente deber remitir las actuaciones a la Administración Federal de Ingresos Públicos con el objeto de que la misma establezca si existen obligaciones omitidas y proceda en su consecuencia. (Párrafo incorporado por art. 44 de la Ley N° 25.345 B.O. 17/11/2000. Artículo 44 de la Ley N° 25.345 derogado por art. 56 del Decreto N° 70/2023 B.O. 21/12/2023.)
+
+La autoridad judicial o administrativa que omitiere actuar del modo establecido en esta norma quedará incursa en grave incumplimiento de sus deberes como funcionario y será, en consecuencia, pasible de las sanciones y penalidades previstas para tales casos. (Párrafo incorporado por art. 44 de la Ley N° 25.345 B.O. 17/11/2000. Artículo 44 de la Ley N° 25.345 derogado por art. 56 del Decreto N° 70/2023 B.O. 21/12/2023)
+
+En todos los casos, la homologación administrativa o judicial de los acuerdos conciliatorios, transaccionales o liberatorios les otorgar la autoridad de cosa juzgada entre las partes que los hubieren celebrado, pero no les hará oponibles a los organismos encargados de la recaudación de los aportes, contribuciones y demás cotizaciones destinados a los sistemas de la seguridad social, en cuanto se refiera a la calificación de la naturaleza de los vínculos habidos entre las partes y a la exigibilidad de las obligaciones que de esos vínculos se deriven para con los sistemas de seguridad social. (Párrafo incorporado por art. 44 de la Ley N° 25.345 B.O. 17/11/2000. Artículo 44 de la Ley N° 25.345 derogado por art. 56 del Decreto N° 70/2023 B.O. 21/12/2023)
+================================================================================
+
+RESULTADO #10 (Relevancia: 6.41)
+Ley/Código: Ley de contrato de trabajo
+Artículo: 132
+Categoría: TITULO IV: De la Remuneración del Trabajador
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.324
+--------------------------------------------------
+### Artículo 132 BIS
+
+Si el empleador hubiere retenido aportes del trabajador con destino a los organismos de la seguridad social, o cuotas, aportes periódicos o contribuciones a que estuviesen obligados los trabajadores en virtud de normas legales o provenientes de las convenciones colectivas de trabajo, o que resulten de su carácter de afiliados a asociaciones profesionales de trabajadores con personería gremial, o de miembros de sociedades mutuales o cooperativas, o por servicios y demás prestaciones que otorguen dichas entidades, y al momento de producirse la extinción del contrato de trabajo por cualquier causa no hubiere ingresado total o parcialmente esos importes a favor de los organismos, entidades o instituciones a los que estuvieren destinados, deberá a partir de ese momento pagar al trabajador afectado una sanción conminatoria mensual equivalente a la remuneración que se devengaba mensualmente a favor de este último al momento de operarse la extinción del contrato de trabajo, importe que se devengará con igual periodicidad a la del salario hasta que el empleador acreditare de modo fehaciente haber hecho efectivo el ingreso de los fondos retenidos. La imposición de la sanción conminatoria prevista en este artículo no enerva la aplicación de las penas que procedieren en la hipótesis de que hubiere quedado configurado un delito del derecho penal.
+
+(Artículo incorporado por art. 43 de la Ley N° 25.345 B.O. 17/11/2000. Artículo 43 de la Ley N° 25.345 derogado por art. 56 del Decreto N° 70/2023 B.O. 21/12/2023.)
+================================================================================
+
+RESULTADO #11 (Relevancia: 4.72)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 1383
+Categoría: Capítulo 12
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.420
+--------------------------------------------------
+### Artículo 1383
+
+Rescisión. El cliente tiene derecho, en cualquier momento, a rescindir un contrato por tiempo indeterminado sin penalidad ni gastos, excepto los devengados antes del ejercicio de este derecho.
+================================================================================
+
+RESULTADO #12 (Relevancia: 4.29)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 1775
+Categoría: Título V: Otras fuentes de las obligaciones
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.538
+--------------------------------------------------
+### Artículo 1775
+
+Si la acción penal precede a la acción civil, o es intentada durante su curso, el dictado de la sentencia definitiva debe suspenderse en el proceso civil hasta la conclusión del proceso penal, con excepción de los siguientes casos:
+
+a) si median causas de extinción de la acción penal;
+
+b) si la dilación del procedimiento penal provoca, en los hechos, una frustración efectiva del derecho a ser indemnizado;
+
+c) si la acción civil por reparación del daño está fundada en un factor objetivo de responsabilidad.
+================================================================================
+
+RESULTADO #13 (Relevancia: 4.29)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 702
+Categoría: Libro Segundo: Relaciones de Familia
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.430
+--------------------------------------------------
+### Artículo 702
+
+Suspensión del ejercicio. El ejercicio de la responsabilidad parental queda suspendido mientras dure:
+
+a) La declaración de ausencia con presunción de fallecimiento;
+
+b) El plazo de la condena a reclusión y la prisión por más de tres (3) años;
+
+c) La declaración por sentencia firme de la limitación de la capacidad por razones graves de salud mental que impiden al progenitor dicho ejercicio;
+
+d) La convivencia del hijo o hija con un tercero, separado de sus progenitores por razones graves, de conformidad con lo establecido en leyes especiales;
+
+e) El procesamiento penal o acto equivalente, por los delitos mencionados en el artículo 700 bis. El auto de procesamiento debe ser comunicado al Ministerio Público a los fines de lo previsto en el artículo 703, teniéndose en cuenta la asistencia letrada establecida en el artículo 26, segundo párrafo y a la autoridad de protección de los derechos de las niñas, niños y adolescentes competente en cada jurisdicción, a efectos de que proceda en sede civil, a los fines de este artículo. Se deberá observar lo previsto en el artículo 27 de la ley 26.061. No se procederá a suspender el ejercicio de la responsabilidad parental en los términos del presente inciso en los casos del artículo 700 bis incisos a) y b), cuando en los hechos investigados o en sus antecedentes mediare violencia de género.
+
+(Artículo sustituido por art. 2° de la Ley N° 27.363 B.O. 26/6/2017. Vigencia: será aplicable a las situaciones jurídicas pendientes o en
+================================================================================
+
+RESULTADO #14 (Relevancia: 4.29)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 1774
+Categoría: Título V: Otras fuentes de las obligaciones
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.543
+--------------------------------------------------
+### Artículo 1774
+
+La acción civil y la acción penal resultantes del mismo hecho pueden ser ejercidas independientemente. En los casos en que el hecho dañoso configure al mismo tiempo un delito del derecho criminal, la acción civil puede interponerse ante los jueces penales, conforme a las disposiciones de los códigos procesales o las leyes especiales.
+================================================================================
+
+RESULTADO #15 (Relevancia: 4.29)
+Ley/Código: Codigo Civil y Comercial
+Artículo: 700bis
+Categoría: Libro Segundo: Relaciones de Familia
+Método: advanced_graph_rag
+Factores de relevancia: Entidades legales (+0.3), Graph RAG (+0.5)
+Similitud semántica: 0.594
+--------------------------------------------------
+### Artículo 700 bis
+
+Cualquiera de los progenitores queda privado de la responsabilidad parental por:
+
+a) Ser condenado como autor, coautor, instigador o cómplice del delito de homicidio agravado por el vínculo o mediando violencia de género conforme lo previsto en el artículo 80, incisos 1 y 11 del Código Penal de la Nación, en contra del otro progenitor;
+
+b) Ser condenado como autor, coautor, instigador o cómplice del delito de lesiones previstas en el artículo 91 del Código Penal, contra el otro progenitor, o contra el hijo o hija de que se trata;
+
+c) Ser condenado como autor, coautor, instigador o cómplice del delito contra la integridad sexual previsto en el artículo 119 del Código Penal de la Nación, cometido contra el hijo o hija de que se trata.
+
+La privación operará también cuando los delitos descriptos se configuren en grado de tentativa, si correspondiere.
+
+La condena penal firme produce de pleno derecho la privación de la responsabilidad parental. La sentencia definitiva debe ser comunicada al Ministerio Público a los fines de lo previsto en el artículo 703, teniéndose en cuenta la asistencia letrada establecida en el artículo 26, segundo párrafo y a la autoridad de protección de los derechos de las niñas, niños y adolescentes competente en cada jurisdicción, a efectos de que proceda en sede civil, a los efectos de este artículo. Se deberá observar lo previsto en el artículo 27 de la ley 26.061.
+
+(Artículo incorporado por art. 1° de la Ley N° 27.363 B.O. 26/6/2017. Vigencia: será aplicable a las situaciones jurídicas pendientes o en curso de ejecución.)
+================================================================================
+
+RESULTADO #16 (Relevancia: 0.00)
+Ley/Código: Codigo Penal
+Artículo: 157
+Categoría: Título XIII: Delitos contra el Orden Económico y Financiero
+Método: weaviate_vectorial
+Similitud semántica: 0.788
+--------------------------------------------------
+### Artículo 157
+
+Quedan derogadas las leyes números 49, 1920, 3335, 3900, 3972, 4189, 7029, 9077 y 9143, lo mismo que las demás en cuanto se opusieran a este código. Las penas de presidio y penitenciaría que establecen las leyes especiales no derogadas por este código, quedan reemplazadas por la de reclusión y las de prisión y arresto por la de prisión. *(Artículo 306 renumerado como Artículo 314 por art. 10 de la [Ley N° 26.733](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=192139) B.O. 28/12/2011). (Artículo 305 renumerado como Artículo 308 por art. 5º de la [Ley Nº 26.683](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=183497) B.O. 21/06/2011)*
+================================================================================
+
+RESULTADO #17 (Relevancia: 0.00)
+Ley/Código: Codigo Penal
+Artículo: 279
+Categoría: Título XIII: Delitos contra el Orden Económico y Financiero
+Método: weaviate_vectorial
+Similitud semántica: 0.784
+--------------------------------------------------
+### Artículo 279
+
+Quedan derogadas las leyes números 49, 1920, 3335, 3900, 3972, 4189, 7029, 9077 y 9143, lo mismo que las demás en cuanto se opusieran a este código. Las penas de presidio y penitenciaría que establecen las leyes especiales no derogadas por este código, quedan reemplazadas por la de reclusión y las de prisión y arresto por la de prisión. *(Artículo 306 renumerado como Artículo 314 por art. 10 de la [Ley N° 26.733](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=192139) B.O. 28/12/2011). (Artículo 305 renumerado como Artículo 308 por art. 5º de la [Ley Nº 26.683](https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=183497) B.O. 21/06/2011)*
+================================================================================
+
